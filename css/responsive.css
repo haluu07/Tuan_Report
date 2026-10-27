@@ -1,52 +1,12 @@
+/* ==========================================================================
+   CÔNG TY TNHH KT XANH THÁI NGUYÊN - RESPONSIVE STYLESHEET
+   Sắp xếp chuẩn theo thứ tự breakpoint giảm dần (Desktop -> Tablet -> Mobile)
+   ========================================================================== */
+
 /* --------------------------------------------------------------------------
-   16. RESPONSIVE DESIGN
+   1. MÀN HÌNH LAPTOP VỪA (MAX-WIDTH: 1240PX)
    -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
-  .pillars-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .poster-display-card {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .booking-wrapper {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .contact-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-}
-
 @media (max-width: 1240px) {
-  .header-hotline-pill {
-    display: none;
-  }
-
   .nav-link {
     padding: 7px 10px;
     font-size: 0.84rem;
@@ -65,6 +25,18 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   2. MÀN HÌNH 1100PX
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLET & MÀN HÌNH DƯỚI 1040PX (CHUYỂN MENU SANG MOBILE DRAWER)
+   -------------------------------------------------------------------------- */
 @media (max-width: 1040px) {
   .top-bar {
     display: none;
@@ -249,25 +221,49 @@
   }
 }
 
-@media (max-width: 576px) {
-  .btn-header-cta {
-    display: none;
+/* --------------------------------------------------------------------------
+   4. TABLET NGANG (MAX-WIDTH: 1024PX)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
-  .brand-title {
-    font-size: 0.98rem;
+  .poster-display-card {
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .brand-subtitle {
-    font-size: 0.6rem;
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .logo-image-wrap {
-    width: 40px;
-    height: 40px;
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .booking-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
+/* --------------------------------------------------------------------------
+   5. MOBILE & TABLET DỌC (MAX-WIDTH: 768PX)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
   .hero-title {
     font-size: 2.1rem;
   }
@@ -286,6 +282,7 @@
 
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .form-row-2 {
@@ -310,6 +307,28 @@
     gap: 6px;
     text-align: center;
   }
+}
+
+/* --------------------------------------------------------------------------
+   6. MOBILE NHỎ (MAX-WIDTH: 576PX)
+   -------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+  .btn-header-cta {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 0.98rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .logo-image-wrap {
+    width: 40px;
+    height: 40px;
+  }
 
   .chat-window {
     width: calc(100vw - 32px);
@@ -319,6 +338,9 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   7. MOBILE SIÊU NHỎ (MAX-WIDTH: 480PX)
+   -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 1.75rem;

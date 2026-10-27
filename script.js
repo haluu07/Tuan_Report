@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Khởi động các khối chức năng
   initNavigation();
   initServiceCardActions();
+  initServiceFilter();
   initBookingForm();
   initChatbotWidget();
   initModal();
@@ -139,6 +140,82 @@ function initServiceCardActions() {
             setTimeout(() => { serviceSelect.style.outline = ''; }, 1200);
           }, 600);
         }
+      }
+    });
+  });
+}
+
+function initServiceFilter() {
+  const filterBtns = document.querySelectorAll('.service-filter-btn');
+  const serviceCards = document.querySelectorAll('.service-card[data-category]');
+  const toggleWrap = document.getElementById('servicesToggleWrap');
+  const btnToggle = document.getElementById('btnToggleAllServices');
+  let isAllExpanded = false;
+
+  if (!filterBtns.length || !serviceCards.length) return;
+
+  function updateAllVisibility() {
+    serviceCards.forEach(card => {
+      card.classList.remove('is-hidden');
+      if (!isAllExpanded && card.classList.contains('service-card-extra')) {
+        card.classList.add('is-extra-hidden');
+      } else {
+        card.classList.remove('is-extra-hidden');
+      }
+    });
+
+    if (toggleWrap && btnToggle) {
+      toggleWrap.style.display = 'flex';
+      const toggleText = btnToggle.querySelector('.toggle-text');
+      if (isAllExpanded) {
+        if (toggleText) toggleText.textContent = 'Thu Gọn Bớt';
+        btnToggle.classList.add('expanded');
+      } else {
+        if (toggleText) toggleText.textContent = 'Xem Thêm 5 Dịch Vụ Khác';
+        btnToggle.classList.remove('expanded');
+      }
+    }
+  }
+
+  updateAllVisibility();
+
+  if (btnToggle) {
+    btnToggle.addEventListener('click', () => {
+      isAllExpanded = !isAllExpanded;
+      updateAllVisibility();
+      if (!isAllExpanded) {
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+          servicesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedCategory = btn.getAttribute('data-filter');
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (selectedCategory === 'all') {
+        updateAllVisibility();
+      } else {
+        if (toggleWrap) toggleWrap.style.display = 'none';
+
+        serviceCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          card.classList.remove('is-extra-hidden');
+          if (cardCat === selectedCategory) {
+            card.classList.remove('is-hidden');
+            card.classList.remove('is-animating');
+            void card.offsetWidth;
+            card.classList.add('is-animating');
+          } else {
+            card.classList.add('is-hidden');
+            card.classList.remove('is-animating');
+          }
+        });
       }
     });
   });
