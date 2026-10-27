@@ -4,18 +4,27 @@
    và hiệu ứng Scroll Reveal cho giao diện chuyên nghiệp
    ========================================================================== */
 
-/* 1. Thanh tiến trình cuộn ở mép đỉnh trang */
+/* 1. Thanh tiến trình cuộn ở mép đỉnh trang (Scroll Progress Bar) */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3.5px;
+  height: 3px;
   width: 0%;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary-green) 100%);
+  background: linear-gradient(90deg, #0b2c5b 0%, #0284c7 35%, #16a34a 75%, #22c55e 100%);
   z-index: 99999;
   pointer-events: none;
-  transition: width 0.08s linear;
-  box-shadow: 0 0 10px rgba(22, 163, 74, 0.6);
+  transition: width 0.05s ease-out;
+  box-shadow: 0 1px 10px rgba(34, 197, 94, 0.75);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Đảm bảo chiều rộng số nhảy mượt không giật dòng */
+.stat-number,
+.p-stat-val,
+.count-up {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
 }
 
 /* 2. Nút Cuộn về đầu trang (Back to Top) kèm vòng tiến trình SVG */
