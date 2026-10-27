@@ -21,7 +21,7 @@
 /* 2. Nút Cuộn về đầu trang (Back to Top) kèm vòng tiến trình SVG */
 .back-to-top-btn {
   position: fixed;
-  bottom: 28px;
+  bottom: 144px;
   right: 28px;
   width: 48px;
   height: 48px;
