@@ -42,6 +42,11 @@ export function initNavigation() {
     hamburgerBtn.addEventListener('click', toggleMobileMenu);
   }
 
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', closeMobileMenu);
+  }
+
   if (navBackdrop) {
     navBackdrop.addEventListener('click', closeMobileMenu);
   }

@@ -1,12 +1,20 @@
+/* ==========================================================================
+   CÔNG TY TNHH KT XANH THÁI NGUYÊN - HEADER & NAVIGATION STYLESHEET
+   Thiết kế cao cấp chuẩn Enterprise: Glassmorphism, Micro-interactions,
+   Typography sắc nét & 100% Responsive chống gãy dòng chữ.
+   ========================================================================== */
+
 /* --------------------------------------------------------------------------
-   5. TOPBAR THÔNG TIN PHÁP LÝ
+   1. TOPBAR THÔNG TIN PHÁP LÝ & LIÊN HỆ DOANH NGHIỆP
    -------------------------------------------------------------------------- */
 .top-bar {
   background-color: var(--bg-topbar);
   color: #94a3b8;
   font-size: 0.8rem;
-  padding: 7px 0;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 901;
 }
 
 .top-bar-container {
@@ -18,17 +26,20 @@
 .top-bar-left, .top-bar-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .top-bar-item {
   display: flex;
   align-items: center;
   gap: 6px;
+  font-weight: 500;
+  color: #cbd5e1;
 }
 
 .top-bar-item strong {
   color: #ffffff;
+  font-weight: 700;
 }
 
 .top-icon {
@@ -39,173 +50,304 @@
 }
 
 .top-bar-divider {
-  opacity: 0.3;
+  opacity: 0.25;
+  color: #64748b;
 }
 
 .top-bar-hotline {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   color: #facc15;
   font-weight: 700;
-  transition: color var(--transition-fast);
+  text-decoration: none;
+  transition: all var(--transition-fast);
 }
 
 .top-bar-hotline:hover {
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
-   6. HEADER & NAVIGATION
+   2. HEADER CONTAINER & GLASSMORPHISM
    -------------------------------------------------------------------------- */
 .site-header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
   z-index: 900;
-  transition: all var(--transition-normal);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-header.scrolled {
-  background: #ffffff;
-  box-shadow: var(--shadow-sm);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  border-bottom-color: rgba(203, 213, 225, 0.6);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 72px;
+  gap: 16px;
 }
 
-/* Logo chính hãng */
+/* --------------------------------------------------------------------------
+   3. BRAND IDENTITY & LOGO
+   -------------------------------------------------------------------------- */
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+  user-select: none;
 }
 
 .logo-image-wrap {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(19, 68, 143, 0.12);
+  box-shadow: 0 2px 8px rgba(19, 68, 143, 0.06);
+  padding: 3px;
   flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-logo:hover .logo-image-wrap {
+  transform: translateY(-1px) scale(1.04);
+  border-color: rgba(19, 68, 143, 0.3);
+  box-shadow: 0 4px 14px rgba(19, 68, 143, 0.14);
 }
 
 .logo-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform var(--transition-fast);
-}
-
-.brand-logo:hover .logo-img {
-  transform: scale(1.05);
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.brand-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .brand-title {
-  font-size: 1.175rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  color: var(--primary);
-  line-height: 1.15;
+  color: #0e3776;
+  line-height: 1.2;
   letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
-  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: var(--secondary-green);
-  letter-spacing: 0.4px;
+  color: #15803d;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
+  margin-top: 1px;
+  white-space: nowrap;
 }
 
-/* Menu điều hướng Desktop */
+.brand-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+  animation: brand-dot-pulse 2s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes brand-dot-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. DESKTOP MAIN NAVIGATION
+   -------------------------------------------------------------------------- */
 .main-nav {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
 }
 
 .nav-link {
-  display: inline-block;
-  padding: 7px 13px;
-  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 13px;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text-body);
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  color: #334155;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap !important;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
+.nav-link span {
+  position: relative;
+  z-index: 2;
+  white-space: nowrap !important;
+}
+
 .nav-link:hover {
-  color: var(--primary);
-  background-color: var(--primary-pastel);
+  color: #13448f;
+  background-color: rgba(19, 68, 143, 0.06);
+  transform: translateY(-1px);
 }
 
 .nav-link.active {
-  color: var(--primary);
-  background-color: var(--primary-pastel);
+  color: #13448f;
+  background-color: rgba(19, 68, 143, 0.09);
   font-weight: 700;
 }
 
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #13448f, #22c55e);
+  border-radius: 4px;
+}
+
+/* Các thành phần chỉ hiển thị trong Mobile Drawer */
+.mobile-drawer-header,
+.mobile-drawer-footer {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER ACTIONS (CTA & HAMBURGER)
+   -------------------------------------------------------------------------- */
 .header-actions {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
+/* Nút CTA Khảo Sát Ngay */
 .btn-header-cta {
-  font-size: 0.85rem;
-  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #13448f 0%, #1e5cb8 100%);
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(19, 68, 143, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.btn-header-cta svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.btn-header-cta:hover {
+  background: linear-gradient(135deg, #0d3674 0%, #13448f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(19, 68, 143, 0.38);
+}
+
+.btn-header-cta:hover svg {
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   6. HAMBURGER BUTTON (MOBILE / TABLET)
+   -------------------------------------------------------------------------- */
 .hamburger-btn {
   display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--border-color);
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(203, 213, 225, 0.8);
   background-color: #ffffff;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  transition: all var(--transition-fast);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .hamburger-btn:hover {
-  background-color: var(--primary-pastel);
-  border-color: var(--primary-pastel-border);
+  background-color: rgba(19, 68, 143, 0.05);
+  border-color: rgba(19, 68, 143, 0.3);
 }
 
 .hamburger-bar {
   width: 20px;
   height: 2px;
-  background-color: var(--text-main);
+  background-color: #1e293b;
   border-radius: 2px;
-  transition: all var(--transition-normal);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-btn.active .hamburger-bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
-  background-color: var(--primary);
+  background-color: #13448f;
 }
 .hamburger-btn.active .hamburger-bar:nth-child(2) {
   opacity: 0;
@@ -213,23 +355,23 @@
 }
 .hamburger-btn.active .hamburger-bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
-  background-color: var(--primary);
+  background-color: #13448f;
 }
 
+/* Backdrop mờ nền khi mở mobile drawer */
 .nav-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   opacity: 0;
   visibility: hidden;
   z-index: 850;
-  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .nav-backdrop.show {
   opacity: 1;
   visibility: visible;
 }
-
