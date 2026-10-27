@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/trust-marquee.css">
   <link rel="stylesheet" href="css/pillars.css">
   <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/workflow.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/booking.css">
@@ -34,6 +35,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <!-- Thư viện Three.js -->
   <script src="js/three.min.js"></script>
+  <script src="js/projects.js"></script>
 </head>
 <body>
 
@@ -48,6 +50,7 @@
     <div data-component="components/trust-marquee.html"></div>
     <div data-component="components/pillars.html"></div>
     <div data-component="components/services.html"></div>
+    <div data-component="components/projects.html"></div>
     <div data-component="components/workflow.html"></div>
     <div data-component="components/about.html"></div>
     <div data-component="components/booking.html"></div>
@@ -83,6 +86,7 @@
       initBookingForm();
       initChatbotWidget();
       initModal();
+      window.initProjectsShowcase?.();
 
       // 3. Khởi tạo không gian 3D nền tinh tế
       initHero3DScene();

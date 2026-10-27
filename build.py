@@ -20,7 +20,8 @@ COMPONENTS = [
     ("components/trust-marquee.html", "<!-- 4. TRUST & TECHNICAL STANDARDS MARQUEE COMPONENT -->"),
     ("components/pillars.html", "<!-- 5. PILLARS COMPONENT -->"),
     ("components/services.html", "<!-- 5. SERVICES COMPONENT -->"),
-    ("components/workflow.html", "<!-- 6. WORKFLOW COMPONENT -->"),
+    ("components/projects.html", "<!-- 6. PROJECTS SHOWCASE COMPONENT -->"),
+    ("components/workflow.html", "<!-- 7. WORKFLOW COMPONENT -->"),
     ("components/about.html", "<!-- 7. ABOUT COMPONENT -->"),
     ("components/booking.html", "<!-- 8. BOOKING COMPONENT -->"),
     ("components/contact.html", "<!-- 9. CONTACT COMPONENT -->"),
@@ -66,6 +67,7 @@ def build():
   <link rel="stylesheet" href="css/trust-marquee.css">
   <link rel="stylesheet" href="css/pillars.css">
   <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/workflow.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/booking.css">
@@ -100,6 +102,7 @@ def build():
     html_parts.append("    " + read_file("components/trust-marquee.html"))
     html_parts.append("    " + read_file("components/pillars.html"))
     html_parts.append("    " + read_file("components/services.html"))
+    html_parts.append("    " + read_file("components/projects.html"))
     html_parts.append("    " + read_file("components/workflow.html"))
     html_parts.append("    " + read_file("components/about.html"))
     html_parts.append("    " + read_file("components/booking.html"))
@@ -119,6 +122,7 @@ def build():
     html_parts.append("""  <!-- ========================================================
        HỆ THỐNG JAVASCRIPT MODULAR (ES MODULES & 3D INTERACTION)
        ======================================================== -->
+  <script src="js/projects.js"></script>
   <script type="module" src="js/app.js"></script>
   <script nomodule src="script.js"></script>
 </body>

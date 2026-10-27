@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/trust-marquee.css">
   <link rel="stylesheet" href="css/pillars.css">
   <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/projects.css">
   <link rel="stylesheet" href="css/workflow.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/booking.css">
@@ -108,6 +109,7 @@
           <li class="nav-item"><a href="#hero" class="nav-link active">Trang chủ</a></li>
           <li class="nav-item"><a href="#pillars" class="nav-link">Lĩnh vực</a></li>
           <li class="nav-item"><a href="#services" class="nav-link">Dịch vụ</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Dự án</a></li>
           <li class="nav-item"><a href="#workflow" class="nav-link">Quy trình</a></li>
           <li class="nav-item"><a href="#about" class="nav-link">Về chúng tôi</a></li>
           <li class="nav-item"><a href="#booking" class="nav-link">Đặt lịch khảo sát</a></li>
@@ -1060,6 +1062,381 @@
     </section>
 
     <!-- ========================================================
+       5. DỰ ÁN TIÊU BIỂU & THƯ VIỆN CÔNG TRÌNH THỰC TẾ (PROJECTS SHOWCASE)
+       Hồ sơ năng lực thực tế chứng minh uy tín và năng lực kỹ thuật
+       ======================================================== -->
+  <section class="section section-projects" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      
+      <!-- Tiêu đề đề mục (Section Header) -->
+      <div class="section-header text-center">
+        <span class="section-tag" data-aos="fade-up">
+          <svg class="tag-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          Hồ Sơ Năng Lực Thực Tế
+        </span>
+        <h2 class="section-title" id="projects-heading" data-aos="fade-up" data-aos-delay="100">
+          Dự Án Tiêu Biểu & <span class="text-gradient">Công Trình Đã Triển Khai</span>
+        </h2>
+        <p class="section-desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+          Khẳng định vị thế qua hàng trăm dự án tư vấn khảo sát địa chất, thiết kế & giám sát đường dây trạm biến áp đến 110kV, thẩm tra dự toán tại các khu công nghiệp trọng điểm miền Bắc.
+        </p>
+
+        <!-- Bộ lọc danh mục dự án (Filter Tabs) -->
+        <div class="project-filter-tabs" data-aos="fade-up" data-aos-delay="300" role="tablist" aria-label="Bộ lọc dự án tiêu biểu">
+          <button type="button" class="project-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+            <span>Tất Cả Dự Án</span>
+            <span class="filter-count">6</span>
+          </button>
+          <button type="button" class="project-filter-btn" data-filter="dien-110kv" role="tab" aria-selected="false">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Trạm Biến Áp & Điện 110kV</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button type="button" class="project-filter-btn" data-filter="dia-chat" role="tab" aria-selected="false">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 20h20"></path>
+              <path d="m5 20 7-14 7 14"></path>
+            </svg>
+            <span>Khảo Sát Địa Chất - Địa Hình</span>
+            <span class="filter-count">2</span>
+          </button>
+          <button type="button" class="project-filter-btn" data-filter="giam-sat" role="tab" aria-selected="false">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            <span>Giám Sát & Thẩm Tra KCN</span>
+            <span class="filter-count">2</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lưới danh sách dự án (Projects Showcase Grid) -->
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- DỰ ÁN 1: KHẢO SÁT ĐỊA CHẤT KCN ĐIỀM THỤY -->
+        <article class="project-card" data-category="dia-chat" data-project-id="p1" data-tilt data-aos="fade-up">
+          <div class="project-thumb-wrap">
+            <img src="assets/project-p1-diachat.jpg" 
+                 alt="Khảo sát địa hình địa chất mở rộng KCN Điềm Thụy" 
+                 class="project-thumb-img" 
+                 loading="lazy">
+            <div class="project-thumb-overlay"></div>
+            <div class="project-badge-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>KCN Điềm Thụy, Thái Nguyên</span>
+            </div>
+            <span class="project-badge-status">Đã Nghiệm Thu 100%</span>
+            <button type="button" class="project-quick-view-btn" aria-label="Xem chi tiết dự án">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Xem Hồ Sơ</span>
+            </button>
+          </div>
+          <div class="project-content">
+            <div class="project-meta-tags">
+              <span class="project-tag tag-primary">Khảo sát địa chất</span>
+              <span class="project-tag tag-outline">Quy mô: 35.000 m²</span>
+            </div>
+            <h3 class="project-title">
+              Khảo sát địa hình, địa chất mở rộng KCN Điềm Thụy
+            </h3>
+            <p class="project-excerpt">
+              Triển khai 24 lỗ khoan địa chất độ sâu 25–40m, thí nghiệm xuyên tiêu chuẩn SPT, cắt cánh hiện trường và lập bản đồ bình đồ trắc địa phục vụ xây dựng nhà máy.
+            </p>
+            <div class="project-specs-summary">
+              <div class="spec-item">
+                <span class="spec-label">Tiêu chuẩn:</span>
+                <span class="spec-val">TCVN 9362:2012</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Hố khoan:</span>
+                <span class="spec-val">24 hố khoan sâu</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-view-link">
+                <span>Xem chi tiết hồ sơ & bản vẽ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- DỰ ÁN 2: TRẠM BIẾN ÁP 110KV KCN SÔNG CÔNG II -->
+        <article class="project-card" data-category="dien-110kv" data-project-id="p2" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="project-thumb-wrap">
+            <img src="assets/project-p2-tramdien.jpg" 
+                 alt="Tư vấn thiết kế & giám sát Trạm biến áp 110kV KCN Sông Công II" 
+                 class="project-thumb-img" 
+                 loading="lazy">
+            <div class="project-thumb-overlay"></div>
+            <div class="project-badge-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>KCN Sông Công II, Thái Nguyên</span>
+            </div>
+            <span class="project-badge-status status-hot">Đóng Điện Vận Hành</span>
+            <button type="button" class="project-quick-view-btn" aria-label="Xem chi tiết dự án">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Xem Hồ Sơ</span>
+            </button>
+          </div>
+          <div class="project-content">
+            <div class="project-meta-tags">
+              <span class="project-tag tag-warning">Trạm điện 110kV</span>
+              <span class="project-tag tag-outline">Công suất: 2x63 MVA</span>
+            </div>
+            <h3 class="project-title">
+              Tư vấn thiết kế & giám sát Trạm biến áp 110kV KCN Sông Công II
+            </h3>
+            <p class="project-excerpt">
+              Tư vấn thiết kế kỹ thuật, lập dự toán và giám sát lắp đặt trạm 110/22kV cấp điện phụ tải cho các nhà máy cơ khí công nghệ cao, tuyến đường dây 110kV dài 3.8km.
+            </p>
+            <div class="project-specs-summary">
+              <div class="spec-item">
+                <span class="spec-label">Quy chuẩn:</span>
+                <span class="spec-val">QCVN 02:2022/BCT</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Máy biến áp:</span>
+                <span class="spec-val">2x63MVA - 110kV</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-view-link">
+                <span>Xem chi tiết hồ sơ & bản vẽ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- DỰ ÁN 3: THẨM TRA DỰ TOÁN NHÀ XƯỞNG FDI PHỔ YÊN -->
+        <article class="project-card" data-category="giam-sat" data-project-id="p3" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="project-thumb-wrap">
+            <img src="assets/project-p3-thamtrapk.jpg" 
+                 alt="Thẩm tra dự toán & hồ sơ kỹ thuật nhà xưởng phụ trợ FDI Samsung Phổ Yên" 
+                 class="project-thumb-img" 
+                 loading="lazy">
+            <div class="project-thumb-overlay"></div>
+            <div class="project-badge-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>KCN Yên Bình, Phổ Yên</span>
+            </div>
+            <span class="project-badge-status">Tiết Giảm 6.8% Dự Toán</span>
+            <button type="button" class="project-quick-view-btn" aria-label="Xem chi tiết dự án">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Xem Hồ Sơ</span>
+            </button>
+          </div>
+          <div class="project-content">
+            <div class="project-meta-tags">
+              <span class="project-tag tag-success">Thẩm tra dự toán</span>
+              <span class="project-tag tag-outline">Diện tích: 28.000 m²</span>
+            </div>
+            <h3 class="project-title">
+              Thẩm tra dự toán & hồ sơ kỹ thuật nhà xưởng phụ trợ FDI Phổ Yên
+            </h3>
+            <p class="project-excerpt">
+              Thẩm tra toàn diện thiết kế kết cấu thép vượt nhịp, định mức đơn giá xây dựng BXD, hệ thống PCCC tự động, giúp chủ đầu tư tối ưu chi phí và tăng tốc cấp phép xây dựng.
+            </p>
+            <div class="project-specs-summary">
+              <div class="spec-item">
+                <span class="spec-label">Quy chuẩn:</span>
+                <span class="spec-val">QCVN 01:2021/BXD</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Kết cấu:</span>
+                <span class="spec-val">Khung thép tiền chế</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-view-link">
+                <span>Xem chi tiết hồ sơ & bản vẽ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- DỰ ÁN 4: ĐIỆN MẶT TRỜI ÁP MÁI 1.2MWP -->
+        <article class="project-card" data-category="dien-110kv" data-project-id="p4" data-tilt data-aos="fade-up">
+          <div class="project-thumb-wrap">
+            <img src="assets/project-p4-solar.jpg" 
+                 alt="Khảo sát & Lắp đặt hệ thống Điện mặt trời áp mái 1.2MWp" 
+                 class="project-thumb-img" 
+                 loading="lazy">
+            <div class="project-thumb-overlay"></div>
+            <div class="project-badge-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Cụm CN Điềm Thụy, Thái Nguyên</span>
+            </div>
+            <span class="project-badge-status status-eco">Chứng Chỉ Xanh I-REC</span>
+            <button type="button" class="project-quick-view-btn" aria-label="Xem chi tiết dự án">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Xem Hồ Sơ</span>
+            </button>
+          </div>
+          <div class="project-content">
+            <div class="project-meta-tags">
+              <span class="project-tag tag-primary">Năng lượng tái tạo</span>
+              <span class="project-tag tag-outline">1.2 MWp • 2.180 Tấm Pin</span>
+            </div>
+            <h3 class="project-title">
+              Khảo sát & Lắp đặt hệ thống Điện mặt trời áp mái 1.2MWp
+            </h3>
+            <p class="project-excerpt">
+              Khảo sát độ chịu lực kết cấu mái tôn nhà xưởng, thiết kế hệ thống hòa lưới tự dùng Zero-Export, đấu nối an toàn với trạm biến áp nội bộ của nhà máy.
+            </p>
+            <div class="project-specs-summary">
+              <div class="spec-item">
+                <span class="spec-label">Sản lượng:</span>
+                <span class="spec-val">1.450 MWh / năm</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Tiêu chuẩn:</span>
+                <span class="spec-val">IEC 61215 • EVN</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-view-link">
+                <span>Xem chi tiết hồ sơ & bản vẽ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- DỰ ÁN 5: TRẮC ĐỊA UAV TUYẾN GIAO THÔNG -->
+        <article class="project-card" data-category="dia-chat" data-project-id="p5" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="project-thumb-wrap">
+            <img src="assets/project-p5-uavdrone.jpg" 
+                 alt="Khảo sát trắc địa địa hình & Bay chụp UAV tuyến giao thông liên KCN" 
+                 class="project-thumb-img" 
+                 loading="lazy">
+            <div class="project-thumb-overlay"></div>
+            <div class="project-badge-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Tuyến KCN Sông Công - Nam Tiến</span>
+            </div>
+            <span class="project-badge-status">Bàn Giao Mô Hình 3D</span>
+            <button type="button" class="project-quick-view-btn" aria-label="Xem chi tiết dự án">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Xem Hồ Sơ</span>
+            </button>
+          </div>
+          <div class="project-content">
+            <div class="project-meta-tags">
+              <span class="project-tag tag-warning">Trắc địa số hóa UAV</span>
+              <span class="project-tag tag-outline">Tuyến 8.5 km • Lidar 3D</span>
+            </div>
+            <h3 class="project-title">
+              Khảo sát trắc địa địa hình & Bay chụp UAV tuyến giao thông liên KCN
+            </h3>
+            <p class="project-excerpt">
+              Ứng dụng công nghệ Drone RTK kết hợp máy định vị vệ tinh GNSS 2 tần số quét bình đồ tỷ lệ 1/500, mô hình số độ cao DEM phục vụ lập dự án nâng cấp tuyến vận tải huyết mạch.
+            </p>
+            <div class="project-specs-summary">
+              <div class="spec-item">
+                <span class="spec-label">Quy chuẩn:</span>
+                <span class="spec-val">QCVN 11:2020/BTNMT</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Độ chính xác:</span>
+                <span class="spec-val">Sai số mặt phẳng ≤ 2cm</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-view-link">
+                <span>Xem chi tiết hồ sơ & bản vẽ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- DỰ ÁN 6: GIÁM SÁT HẠ TẦNG KCN SÔNG CÔNG I -->
+        <article class="project-card" data-category="giam-sat" data-project-id="p6" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="project-thumb-wrap">
+            <img src="assets/project-p6-hatang.jpg" 
+                 alt="Giám sát thi công toàn diện Hạ tầng kỹ thuật & Thoát nước thải KCN Sông Công I" 
+                 class="project-thumb-img" 
+                 loading="lazy">
+            <div class="project-thumb-overlay"></div>
+            <div class="project-badge-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>KCN Sông Công I, Thái Nguyên</span>
+            </div>
+            <span class="project-badge-status">Chứng Chỉ Nghiệm Thu BXD</span>
+            <button type="button" class="project-quick-view-btn" aria-label="Xem chi tiết dự án">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Xem Hồ Sơ</span>
+            </button>
+          </div>
+          <div class="project-content">
+            <div class="project-meta-tags">
+              <span class="project-tag tag-success">Giám sát hạ tầng</span>
+              <span class="project-tag tag-outline">Trạm XLNT 5.000 m³/ng.đ</span>
+            </div>
+            <h3 class="project-title">
+              Giám sát thi công Hạ tầng kỹ thuật & Trạm xử lý nước thải KCN
+            </h3>
+            <p class="project-excerpt">
+              Giám sát thi công hệ thống cống hộp bê tông ly tâm, kiểm soát chất lượng vật liệu đầu vào, nghiệm thu từng hạng mục bể sinh học và trạm bơm điều hòa đạt chuẩn môi trường.
+            </p>
+            <div class="project-specs-summary">
+              <div class="spec-item">
+                <span class="spec-label">Quy chuẩn:</span>
+                <span class="spec-val">QCVN 40:2011/BTNMT</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Năng lực:</span>
+                <span class="spec-val">5.000 m³ / ngày đêm</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="project-view-link">
+                <span>Xem chi tiết hồ sơ & bản vẽ</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MODAL LIGHTBOX CHI TIẾT DỰ ÁN & BẢN VẼ KỸ THUẬT
+       ======================================================== -->
+  <div class="project-lightbox-modal" id="projectLightboxModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Đóng cửa sổ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Nội dung chi tiết được JS render linh hoạt -->
+      <div class="lightbox-body" id="lightboxBody">
+        <!-- Rendered dynamically by js/projects.js -->
+      </div>
+    </div>
+  </div>
+
+    <!-- ========================================================
          QUY TRÌNH HỢP TÁC & TRIỂN KHAI DỰ ÁN 5 BƯỚC CHUẨN KỸ THUẬT
          ======================================================== -->
     <section class="workflow-section" id="workflow">
@@ -1770,6 +2147,7 @@
   <!-- ========================================================
        HỆ THỐNG JAVASCRIPT MODULAR (ES MODULES & 3D INTERACTION)
        ======================================================== -->
+  <script src="js/projects.js"></script>
   <script type="module" src="js/app.js"></script>
   <script nomodule src="script.js"></script>
 </body>

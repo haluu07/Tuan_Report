@@ -12,7 +12,7 @@ export function init3DTiltEffects() {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
   const targetCards = document.querySelectorAll(
-    '.pillar-card, .service-card, .about-profile-card, .poster-display-card, .stat-box'
+    '.pillar-card, .service-card, .project-card, .about-profile-card, .poster-display-card, .stat-box'
   );
 
   targetCards.forEach(card => {

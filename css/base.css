@@ -150,7 +150,10 @@ button {
 }
 
 .section-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   font-size: 0.775rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -158,9 +161,22 @@ button {
   color: var(--primary);
   background-color: var(--primary-pastel);
   border: 1px solid var(--primary-pastel-border);
-  padding: 5px 14px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.section-tag svg,
+.section-tag .tag-icon {
+  width: 14px;
+  height: 14px;
+  max-width: 14px;
+  max-height: 14px;
+  stroke-width: 2.2;
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .section-tag.section-tag-light {
