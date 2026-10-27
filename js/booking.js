@@ -226,6 +226,24 @@ export function initBookingForm() {
       return { ok: response.ok, data: result };
     })
     .then(({ ok, data }) => {
+      // Lưu trữ vào cơ sở dữ liệu LocalStorage (Lưu trữ và quản lý thông tin người dùng)
+      try {
+        const storedList = JSON.parse(localStorage.getItem('ktx_booking_records') || '[]');
+        storedList.push({
+          code: randomCode,
+          fullName,
+          phone,
+          email,
+          service,
+          appointmentDate: formattedDate,
+          notes: notes || '',
+          createdAt: new Date().toISOString()
+        });
+        localStorage.setItem('ktx_booking_records', JSON.stringify(storedList));
+      } catch (err) {
+        console.warn('Lỗi ghi LocalStorage:', err);
+      }
+
       // Đổ dữ liệu chi tiết vào Modal Thành Công (chỉ giữ thông tin phiếu hẹn chuyên nghiệp)
       const modalBookingDetails = document.getElementById('modalBookingDetails');
       if (modalBookingDetails) {
