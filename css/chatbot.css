@@ -1,11 +1,129 @@
 /* --------------------------------------------------------------------------
-   14. FLOATING CHATBOT WIDGET
+   14. FLOATING CHATBOT & CONTACT WIDGET
    -------------------------------------------------------------------------- */
 .chat-widget {
   position: fixed;
   bottom: 76px;
   right: 24px;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* Nút liên hệ nhanh qua Zalo (Nằm ngay trên icon Chatbot) */
+.zalo-floating-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0068FF 0%, #0084FF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 104, 255, 0.42);
+  position: relative;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  z-index: 4;
+}
+
+.zalo-floating-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 104, 255, 0.65);
+}
+
+.zalo-floating-btn:active {
+  transform: scale(0.96);
+}
+
+.zalo-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.zalo-icon-wrap svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+}
+
+/* Vòng sóng lan tỏa nhẹ thu hút sự chú ý của khách hàng */
+.zalo-pulse-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid #0068FF;
+  animation: zalo-pulse-ring 2.2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  pointer-events: none;
+}
+
+@keyframes zalo-pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+/* Tooltip thông báo hiển thị mượt mà khi hover */
+.zalo-tooltip {
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zalo-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(15, 23, 42, 0.94);
+}
+
+.zalo-floating-btn:hover .zalo-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Ẩn nhẹ nút Zalo khi người dùng đang mở cửa sổ chat */
+.chat-window.active ~ .zalo-floating-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(0.8);
 }
 
 .chat-toggle-btn {
@@ -20,6 +138,7 @@
   justify-content: center;
   position: relative;
   transition: all var(--transition-normal);
+  z-index: 5;
 }
 
 .chat-toggle-btn:hover {
