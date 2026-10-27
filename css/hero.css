@@ -1,0 +1,280 @@
+/* --------------------------------------------------------------------------
+   7. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 56px 0 72px;
+  background: linear-gradient(180deg, #f0f4fa 0%, var(--bg-body) 100%);
+  overflow: hidden;
+}
+
+.hero-backdrop-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(19, 68, 143, 0.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 13px;
+  background-color: #ffffff;
+  border: 1px solid var(--green-pastel-border);
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--secondary-green);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-xs);
+}
+
+.badge-leaf-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--secondary-green);
+}
+
+.badge-leaf-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
+.hero-title-brand {
+  color: var(--primary);
+  font-size: 3.1rem;
+}
+
+.hero-title-location {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--secondary-green);
+  letter-spacing: 0.8px;
+}
+
+/* Slogan Strip 3 trụ cột */
+.hero-slogan-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary-pastel);
+  border: 1px solid var(--primary-pastel-border);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+}
+
+.slogan-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.slogan-dot {
+  color: var(--secondary-green);
+  font-weight: 800;
+}
+
+.hero-description {
+  font-size: 1.025rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin-bottom: 28px;
+  max-width: 580px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 38px;
+}
+
+.hero-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background-color: var(--border-color);
+}
+
+/* Cột hiển thị Banner Poster chính thức duy nhất */
+.hero-poster-col {
+  position: relative;
+}
+
+.poster-display-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border-color);
+  max-width: 440px;
+  margin-left: auto;
+  transition: transform var(--transition-normal);
+}
+
+.poster-display-card:hover {
+  transform: translateY(-4px);
+}
+
+.poster-card-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.poster-brand-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.poster-status-tag {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--secondary-green);
+  background: var(--green-pastel);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--green-pastel-border);
+}
+
+.poster-img-container {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  background-color: #0f172a;
+}
+
+.poster-main-image {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.poster-img-container:hover .poster-main-image {
+  transform: scale(1.02);
+}
+
+.poster-overlay-action {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.btn-view-poster {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.btn-view-poster:hover {
+  background: var(--primary);
+}
+
+.btn-view-poster svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.poster-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.card-footer-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--secondary-green);
+}
+
+.card-footer-item svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Canvas 3D hạt ánh sáng & chiều sâu không gian nền Hero (chạy ngầm, thanh lịch) */
+.hero-3d-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+

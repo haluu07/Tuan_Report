@@ -1,0 +1,166 @@
+/* --------------------------------------------------------------------------
+   16. RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .poster-display-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .booking-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: inline-flex;
+  }
+
+  .btn-header-cta {
+    display: none;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 76px;
+    right: 0;
+    width: 280px;
+    height: calc(100vh - 76px);
+    background: #ffffff;
+    box-shadow: var(--shadow-float);
+    border-left: 1px solid var(--border-color);
+    padding: 20px 16px;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    z-index: 880;
+    overflow-y: auto;
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-title-brand {
+    font-size: 2.5rem;
+  }
+
+  .hero-title-location {
+    font-size: 1.4rem;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 22px 16px;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  .chat-window {
+    width: calc(100vw - 32px);
+    right: -8px;
+    bottom: 68px;
+    height: 460px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-title-brand {
+    font-size: 2.1rem;
+  }
+
+  .btn-lg {
+    width: 100%;
+  }
+
+  .hero-stats-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .chat-widget {
+    right: 14px;
+    bottom: 14px;
+  }
+}

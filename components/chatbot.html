@@ -1,0 +1,83 @@
+  <!-- ========================================================
+       9. KHUNG CHATBOT TỰ ĐỘNG (FLOATING CHAT WIDGET)
+       ======================================================== -->
+  <aside class="chat-widget" id="chatWidget" aria-label="Trợ lý ảo KT Xanh Thái Nguyên">
+    
+    <!-- Cửa sổ Chatbot -->
+    <div class="chat-window" id="chatWindow" aria-hidden="true">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="chat-bot-avatar">
+          <img src="assets/logo-kt-xanh.png" alt="KT Xanh Bot" width="34" height="34" class="chat-avatar-img">
+          <span class="chat-status-indicator" title="Đang trực tuyến"></span>
+        </div>
+        <div class="chat-bot-info">
+          <h4 class="chat-bot-name">Trợ lý Kỹ Thuật KT Xanh</h4>
+          <span class="chat-bot-status">Sẵn sàng phản hồi 24/7</span>
+        </div>
+        <button class="chat-close-btn" id="chatCloseBtn" aria-label="Thu nhỏ chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Khung hiển thị nội dung tin nhắn -->
+      <div class="chat-body" id="chatMessages">
+        <!-- Tin nhắn chào mừng ban đầu do script sinh ra -->
+      </div>
+
+      <!-- Khu vực gợi ý câu hỏi nhanh (Quick Question Chips) - Tuân thủ Không Emoji -->
+      <div class="chat-quick-replies" id="chatQuickReplies">
+        <span class="quick-reply-label">Gợi ý câu hỏi nhanh:</span>
+        <div class="quick-chips-wrap">
+          <button type="button" class="quick-chip" data-question="Công ty KT Xanh cung cấp những dịch vụ gì?">
+            Dịch vụ của công ty
+          </button>
+          <button type="button" class="quick-chip" data-question="Khảo sát địa hình, địa chất và trạm biến áp 110kV như thế nào?">
+            Trạm biến áp 110kV & Khảo sát
+          </button>
+          <button type="button" class="quick-chip" data-question="Địa chỉ văn phòng và hotline liên hệ ở đâu?">
+            Địa chỉ & Hotline
+          </button>
+          <button type="button" class="quick-chip" data-question="Tôi muốn đặt lịch khảo sát hiện trường ngay">
+            Đặt lịch khảo sát
+          </button>
+        </div>
+      </div>
+
+      <!-- Ô nhập tin nhắn và nút gửi -->
+      <form class="chat-footer" id="chatForm">
+        <input 
+          type="text" 
+          id="chatInput" 
+          class="chat-input" 
+          placeholder="Nhập câu hỏi của bạn tại đây..." 
+          autocomplete="off"
+        >
+        <button type="submit" class="chat-send-btn" id="chatSendBtn" aria-label="Gửi tin nhắn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Nút Floating Toggle mở/đóng Chatbot -->
+    <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Mở cửa sổ trợ lý ảo KT Xanh">
+      <div class="chat-toggle-icon chat-icon-open">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="chat-badge-pulse" aria-hidden="true"></span>
+      </div>
+      <div class="chat-toggle-icon chat-icon-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </div>
+    </button>
+  </aside>

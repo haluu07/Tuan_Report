@@ -1,0 +1,284 @@
+/* ==========================================================================
+   CÔNG TY TNHH KT XANH THÁI NGUYÊN - 3D VISUAL EXPERIENCE & DEPTH SYSTEM
+   Hệ thống hiệu ứng 3D đỉnh cao: Three.js Canvas, 3D Tilt Card, Parallax Badges
+   Tuân thủ: UI/UX Designer & UI/UX Pro Max (Hiệu ứng sang trọng, mượt mà 60fps)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. HERO 3D THREE.JS CANVAS CONTAINER
+   -------------------------------------------------------------------------- */
+.hero-3d-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#hero3dCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.85;
+  pointer-events: auto; /* Cho phép người dùng tương tác chuột xoay lưới 3D */
+}
+
+/* Gradient hòa sắc làm mờ viền Canvas 3D vào nền trang */
+.hero-3d-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 65% 50%, transparent 20%, rgba(240, 244, 250, 0.6) 70%, var(--bg-body) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   2. FLOATING 3D GLASSMORPHISM BADGES (CÁC HUY HIỆU NỔI 3D TRONG HERO)
+   -------------------------------------------------------------------------- */
+.hero-poster-col {
+  position: relative;
+  perspective: 1200px; /* Kích hoạt không gian 3D cho cột Poster */
+}
+
+.floating-3d-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(19, 68, 143, 0.08);
+  border-radius: var(--radius-md);
+  z-index: 3;
+  pointer-events: auto;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.floating-3d-badge:hover {
+  transform: translateY(-6px) scale(1.04) !important;
+  box-shadow: 0 24px 44px -8px rgba(19, 68, 143, 0.22);
+}
+
+.badge-badge-110kv {
+  top: -18px;
+  left: -24px;
+  animation: float3d-1 5s ease-in-out infinite alternate;
+}
+
+.badge-badge-solar {
+  bottom: 24px;
+  left: -32px;
+  animation: float3d-2 6s ease-in-out infinite alternate 0.8s;
+}
+
+.badge-badge-experience {
+  top: 48%;
+  right: -24px;
+  animation: float3d-3 5.5s ease-in-out infinite alternate 1.5s;
+}
+
+.badge-3d-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.badge-3d-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.badge-3d-icon.icon-blue {
+  background: linear-gradient(135deg, #13448f 0%, #2563eb 100%);
+  color: #ffffff;
+}
+
+.badge-3d-icon.icon-green {
+  background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
+  color: #ffffff;
+}
+
+.badge-3d-icon.icon-red {
+  background: linear-gradient(135deg, #c5221f 0%, #ef4444 100%);
+  color: #ffffff;
+}
+
+.badge-3d-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-3d-title {
+  font-size: 0.825rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.badge-3d-subtitle {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* 3D Keyframe Floats */
+@keyframes float3d-1 {
+  0% { transform: translateY(0px) rotate(-1deg); }
+  100% { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+@keyframes float3d-2 {
+  0% { transform: translateY(0px) rotate(1deg); }
+  100% { transform: translateY(-14px) rotate(-2deg); }
+}
+
+@keyframes float3d-3 {
+  0% { transform: translateY(0px) rotate(0.5deg); }
+  100% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+/* --------------------------------------------------------------------------
+   3. 3D PERSPECTIVE TILT CARDS & SPECULAR GLARE
+   -------------------------------------------------------------------------- */
+/* Kích hoạt môi trường 3D cho các thẻ có hiệu ứng Tilt */
+[data-tilt-3d] {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+  position: relative;
+  will-change: transform;
+}
+
+/* Lớp váng ánh sáng phản xạ 3D theo con trỏ chuột (Specular Glare) */
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 10;
+  mix-blend-mode: overlay;
+}
+
+/* Chiều sâu 3D (Z-Index popping) cho các phần tử con bên trong thẻ */
+[data-tilt-3d]:hover .card-icon-box,
+[data-tilt-3d]:hover .pillar-icon-box {
+  transform: translateZ(28px);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-tilt-3d]:hover .card-title,
+[data-tilt-3d]:hover .pillar-title {
+  transform: translateZ(20px);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-tilt-3d]:hover .card-action,
+[data-tilt-3d]:hover .pillar-tag {
+  transform: translateZ(16px);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-tilt-3d]:hover .pillar-index {
+  transform: translateZ(36px);
+  opacity: 0.35;
+  transition: all 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   4. AMBIENT 3D GLOW & MESH GRADIENTS (CHỐNG GENERIC VIBE-CODING)
+   -------------------------------------------------------------------------- */
+.mesh-glow-orb {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mesh-glow-blue {
+  background: radial-gradient(circle, #2563eb 0%, transparent 70%);
+  top: -120px;
+  right: -100px;
+  animation: orb-breathe 10s ease-in-out infinite alternate;
+}
+
+.mesh-glow-green {
+  background: radial-gradient(circle, #10b981 0%, transparent 70%);
+  bottom: -150px;
+  left: -80px;
+  animation: orb-breathe 12s ease-in-out infinite alternate 2s;
+}
+
+@keyframes orb-breathe {
+  0% { transform: scale(1) translate(0, 0); opacity: 0.18; }
+  50% { transform: scale(1.15) translate(20px, -20px); opacity: 0.28; }
+  100% { transform: scale(0.95) translate(-15px, 15px); opacity: 0.18; }
+}
+
+/* --------------------------------------------------------------------------
+   5. HIỆU ỨNG TƯƠNG TÁC CON TRỎ 3D (INTERACTIVE ACCENT LIGHT)
+   -------------------------------------------------------------------------- */
+.section-3d-highlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-3d-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--primary-light) 50%, transparent 100%);
+  opacity: 0.4;
+}
+
+/* Tối ưu khi màn hình nhỏ (Tablet/Mobile) */
+@media (max-width: 991px) {
+  .floating-3d-badge {
+    position: static;
+    margin-bottom: 12px;
+    animation: none;
+  }
+
+  .badge-badge-110kv,
+  .badge-badge-solar,
+  .badge-badge-experience {
+    position: static;
+    display: inline-flex;
+    margin: 6px;
+  }
+
+  .badges-mobile-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  #hero3dCanvas {
+    opacity: 0.45; /* Giảm độ sáng 3D trên màn nhỏ để tập trung đọc nội dung */
+  }
+}

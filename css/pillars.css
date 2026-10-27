@@ -1,0 +1,112 @@
+/* --------------------------------------------------------------------------
+   8. 5 TRỤ CỘT NĂNG LỰC (PILLARS)
+   -------------------------------------------------------------------------- */
+.pillars-section {
+  padding: 76px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.pillar-card {
+  background: var(--bg-body);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease-out, border-color 0.2s, background-color 0.2s;
+}
+
+.pillar-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(19, 68, 143, 0.08),
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.pillar-card:hover::after {
+  opacity: 1;
+}
+
+.pillar-card:hover {
+  background: #ffffff;
+  border-color: var(--primary-pastel-border);
+  box-shadow: 0 14px 28px -6px rgba(19, 68, 143, 0.1), 0 4px 10px rgba(15, 23, 42, 0.04);
+}
+
+.pillar-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--primary-pastel);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  transition: all var(--transition-fast);
+}
+
+.pillar-icon-box svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.pillar-card:hover .pillar-icon-box {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.pillar-index {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.2;
+}
+
+.pillar-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.pillar-desc {
+  font-size: 0.825rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.pillar-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-pastel);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+

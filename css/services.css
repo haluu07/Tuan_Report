@@ -1,0 +1,194 @@
+/* --------------------------------------------------------------------------
+   9. SERVICES SECTION (11 DỊCH VỤ - TINH CHỈNH GỌN GÀNG, ĐẸP MẮT)
+   -------------------------------------------------------------------------- */
+.services-section {
+  padding: 88px 0;
+  background-color: var(--bg-body);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease-out, border-color 0.2s;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    480px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(19, 68, 143, 0.07),
+    transparent 65%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card:hover {
+  border-color: var(--primary-pastel-border);
+  box-shadow: 0 16px 32px -8px rgba(19, 68, 143, 0.12), 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.card-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--primary-pastel);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all var(--transition-fast);
+}
+
+.card-icon-box svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.service-card:hover .card-icon-box {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.service-order {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.card-features {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-features li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  line-height: 1.45;
+}
+
+.card-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--secondary-green);
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+/* Tinh chỉnh thẻ Dịch vụ (Đồng bộ, hài hòa và không bị chói sáng) */
+.service-card-highlight {
+  border-color: var(--primary-pastel-border);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   THANH LỌC PHÂN NHÓM DỊCH VỤ (CATEGORY FILTER NAV)
+   -------------------------------------------------------------------------- */
+.services-filter-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 10px;
+}
+
+.service-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.service-filter-btn:hover {
+  border-color: var(--primary-pastel-border);
+  color: var(--primary);
+  background: var(--primary-pastel);
+  transform: translateY(-2px);
+}
+
+.service-filter-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(19, 68, 143, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Hiệu ứng ẩn/hiện mượt mà khi lọc thẻ */
+.service-card.is-hidden {
+  display: none !important;
+}
+
+.service-card.is-animating {
+  animation: cardFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+

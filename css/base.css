@@ -1,0 +1,316 @@
+/* ==========================================================================
+   CÔNG TY TNHH KT XANH THÁI NGUYÊN - DESIGN SYSTEM & STYLESHEET
+   Phối màu thương hiệu chuẩn xác từ Logo & Banner chính hãng:
+   - Xanh Kỹ Thuật (Navy/Tech Blue #13448f) - Năng lực xây dựng, hạ tầng, điện 110kV
+   - Xanh Lá Cây Tự Nhiên (Leaf Green #15803d) - Năng lượng xanh & môi trường
+   - Đỏ Nhận Diện (Accent Red #c5221f) - Điểm nhấn biểu tượng KT Xanh
+   Tuân thủ tiêu chuẩn: UI/UX Designer & UI/UX Pro Max (WCAG AAA, No-Emoji)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (DESIGN TOKENS)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Navy / Technical Blue */
+  --primary: #13448f;
+  --primary-hover: #0c2e63;
+  --primary-dark: #082046;
+  --primary-light: #2563eb;
+  --primary-pastel: #eff6ff;
+  --primary-pastel-border: #bfdbfe;
+
+  /* Brand Leaf Green (Từ mầm lá trong logo) */
+  --secondary-green: #15803d;
+  --secondary-green-hover: #166534;
+  --secondary-green-light: #22c55e;
+  --green-pastel: #f0fdf4;
+  --green-pastel-border: #bbf7d0;
+
+  /* Brand Accent Red (Từ dải ruy băng KT XANH) */
+  --brand-red: #c5221f;
+  --brand-red-hover: #991b1b;
+  --brand-red-pastel: #fef2f2;
+  --brand-red-border: #fecaca;
+
+  /* Neutrals & Grayscale (WCAG 2.1 AAA Contrast) */
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-topbar: #0a1e3d;
+  --text-main: #0f172a;       /* Độ tương phản cực cao 13.5:1 */
+  --text-body: #334155;       /* Văn bản chính 7.2:1 */
+  --text-muted: #64748b;      /* Chú thích 4.6:1 (Đạt chuẩn AA) */
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-dark: #cbd5e1;
+
+  /* Status Colors */
+  --success: #16a34a;
+  --success-bg: #dcfce7;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
+  --danger-border: #fca5a5;
+  --warning: #d97706;
+
+  /* Typography */
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 14px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  --shadow-float: 0 20px 40px -6px rgba(15, 23, 42, 0.16);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* KHẮC PHỤC TRIỆT ĐỂ: Không cho SVG co giãn vô hạn */
+svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & COMMON UTILITIES
+   -------------------------------------------------------------------------- */
+.text-center { text-align: center; }
+
+.section-header {
+  margin-bottom: 44px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--primary);
+  background-color: var(--primary-pastel);
+  border: 1px solid var(--primary-pastel-border);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.section-tag.section-tag-light {
+  color: #bfdbfe;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.section-title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.025rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTON COMPONENT SYSTEM (ĐƯỢC TINH CHỈNH GỌN GÀNG, CHUẨN KÍCH THƯỚC)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 0.925rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Ràng buộc kích thước toàn bộ SVG bên trong nút bấm để không bao giờ bị phóng to */
+.btn svg,
+.btn-book-service svg {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  flex-shrink: 0 !important;
+  stroke-width: 2.2 !important;
+  transition: transform var(--transition-fast) !important;
+}
+
+.btn:hover svg,
+.btn-book-service:hover svg {
+  transform: translateX(3px) !important;
+}
+
+.btn-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.btn-icon-right {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Nút Primary (Màu Navy kết hợp xanh đậm KT Xanh) */
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(19, 68, 143, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(19, 68, 143, 0.38);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Nút Outline */
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--primary);
+  border: 1.5px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-pastel);
+  transform: translateY(-2px);
+}
+
+/* Nút Đặt Lịch trên thẻ dịch vụ (Được thu nhỏ gọn gàng, thanh thoát) */
+.btn-outline-primary {
+  background-color: var(--primary-pastel);
+  color: var(--primary);
+  border: 1.5px solid var(--primary-pastel-border);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(19, 68, 143, 0.25);
+}
+
+.btn-book-service {
+  height: 42px;
+  padding: 8px 16px;
+  font-size: 0.885rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.2px;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 0.975rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công Ty TNHH KT Xanh Thái Nguyên - Tư Vấn Xây Dựng, Hạ Tầng & Điện Năng Lượng</title>
+  <meta name="description" content="Công ty TNHH KT Xanh Thái Nguyên - Đơn vị tư vấn chuyên nghiệp trong lĩnh vực xây dựng và hạ tầng: Khảo sát địa hình địa chất, giám sát công trình, đường dây trạm biến áp đến 110kV, điện mặt trời, thiết kế & thẩm tra dự án.">
+  <meta name="keywords" content="KT Xanh Thái Nguyên, Công ty TNHH KT Xanh, giám sát công trình, khảo sát địa hình địa chất, trạm biến áp 110kV, điện mặt trời, kiểm định xây dựng, tư vấn đấu thầu">
+  <meta name="author" content="Công ty TNHH KT Xanh Thái Nguyên">
+
+  <!-- Favicon từ Logo chính hãng -->
+  <link rel="icon" type="image/png" href="assets/logo-kt-xanh.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- ========================================================
+       HỆ THỐNG CSS MODULAR THEO COMPONENT ARCHITECTURE
+       ======================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/trust-marquee.css">
+  <link rel="stylesheet" href="css/pillars.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/workflow.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Fallback master stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- ========================================================
+       THƯ VIỆN ĐỒ HỌA 3D THREE.JS (CHẠY 100% OFFLINE TỪ js/three.min.js)
+       ======================================================== -->
+  <script src="js/three.min.js"></script>
+</head>
+<body>
+
+<!-- ========================================================
+       TOPBAR THÔNG TIN PHÁP LÝ & LIÊN HỆ DOANH NGHIỆP
+       ======================================================== -->
+  <aside class="top-bar" aria-label="Thông tin nhanh doanh nghiệp">
+    <div class="container top-bar-container">
+      <div class="top-bar-left">
+        <span class="top-bar-item">
+          <svg class="top-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <strong>MST:</strong> 4600361446 (Hoạt động từ 2004)
+        </span>
+        <span class="top-bar-divider" aria-hidden="true">|</span>
+        <span class="top-bar-item">
+          <svg class="top-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-item">
+          <svg class="top-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          T2 - T7: 08:00 - 17:30
+        </span>
+        <span class="top-bar-divider" aria-hidden="true">|</span>
+        <a href="tel:0988123456" class="top-bar-hotline">
+          <svg class="top-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Hotline: 0988.123.456
+        </a>
+      </div>
+    </div>
+  </aside>
+
+<!-- ========================================================
+       1. HEADER & THANH ĐIỀU HƯỚNG CHÍNH (NAVIGATION BAR)
+       ======================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      
+      <!-- Logo thương hiệu chính hãng KT XANH THÁI NGUYÊN -->
+      <a href="#hero" class="brand-logo" aria-label="Trang chủ Công ty TNHH KT Xanh Thái Nguyên">
+        <div class="logo-image-wrap">
+          <img src="assets/logo-kt-xanh.png" alt="Logo Công ty TNHH KT Xanh Thái Nguyên" class="logo-img" width="50" height="50">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">CÔNG TY TNHH KT XANH</span>
+          <span class="brand-subtitle">THÁI NGUYÊN • TƯ VẤN XÂY DỰNG & HẠ TẦNG</span>
+        </div>
+      </a>
+
+      <!-- Menu điều hướng Desktop -->
+      <nav class="main-nav" id="mainNav" aria-label="Menu điều hướng chính">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Trang chủ</a></li>
+          <li class="nav-item"><a href="#pillars" class="nav-link">Lĩnh vực</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link">Dịch vụ</a></li>
+          <li class="nav-item"><a href="#workflow" class="nav-link">Quy trình</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">Về chúng tôi</a></li>
+          <li class="nav-item"><a href="#booking" class="nav-link">Đặt lịch khảo sát</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hành động Call-to-action & Nút Mobile Menu -->
+      <div class="header-actions">
+        <a href="#booking" class="btn btn-primary btn-header-cta">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Khảo Sát Ngay</span>
+        </a>
+
+        <!-- Nút Hamburger Menu cho điện thoại/tablet -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Mở menu điều hướng" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================================================
+         2. HERO SECTION - BỐ CỤC CHUẨN POSTER CÔNG TY KT XANH
+         ======================================================== -->    <section class="hero-section" id="hero">
+      <div class="hero-backdrop-pattern" aria-hidden="true"></div>
+      <!-- Canvas 3D hạt ánh sáng & chiều sâu không gian WebGL nền (tinh tế, không che banner) -->
+      <canvas id="hero3dCanvas" class="hero-3d-background" aria-hidden="true"></canvas>
+      <div class="container hero-container">
+        
+        <!-- Cột nội dung giới thiệu theo chuẩn văn bản công ty -->
+        <div class="hero-content">
+          <div class="hero-welcome-badge">
+            <span class="badge-leaf-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C6.5 2 2 6.5 2 12c0 3.6 1.9 6.8 4.8 8.5.5-3.3 2.6-7.5 6.2-9.5-2.2 3.8-1.5 7.8-.5 10 4.8-.8 8.5-5 8.5-10 0-5.5-4.5-9-9-9z"></path>
+              </svg>
+            </span>
+            <span>CHÀO MỪNG BẠN ĐẾN VỚI</span>
+          </div>
+
+          <h1 class="hero-title">
+            CÔNG TY TNHH <br>
+            <span class="hero-title-brand">KT XANH</span>
+            <span class="hero-title-location">— THÁI NGUYÊN —</span>
+          </h1>
+
+          <div class="hero-slogan-strip">
+            <span class="slogan-badge">TẬN TÂM</span>
+            <span class="slogan-dot">•</span>
+            <span class="slogan-badge">CHUYÊN NGHIỆP</span>
+            <span class="slogan-dot">•</span>
+            <span class="slogan-badge">BỀN VỮNG</span>
+          </div>
+
+          <p class="hero-description">
+            <strong>KT Xanh Thái Nguyên</strong> là đơn vị tư vấn chuyên nghiệp trong lĩnh vực <strong>xây dựng và hạ tầng</strong>. Với đội ngũ kỹ sư giàu kinh nghiệm thực chiến từ năm 2004, chúng tôi luôn nỗ lực mang đến những giải pháp <strong>Tối ưu – Chất lượng – Hiệu quả</strong>, đáp ứng nhu cầu đa dạng của khách hàng và doanh nghiệp.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#booking" class="btn btn-primary btn-lg">
+              <span>Đăng Ký Khảo Sát & Tư Vấn</span>
+              <svg class="btn-icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-outline btn-lg">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <span>Xem 11 Lĩnh Vực Dịch Vụ</span>
+            </a>
+          </div>
+
+          <!-- Các chỉ số kinh nghiệm & năng lực -->
+          <div class="hero-stats-row">
+            <div class="stat-box">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Năm kinh nghiệm (Từ 2004)</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <span class="stat-number">110kV</span>
+              <span class="stat-label">Năng lực ĐZ & Trạm biến áp</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Hồ sơ thẩm tra đạt chuẩn</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột hiển thị Banner Poster chính thức của doanh nghiệp (Nguyên bản, sắc nét & chuẩn chỉnh) -->
+        <div class="hero-poster-col">
+          <div class="poster-display-card">
+            <!-- Huy hiệu chứng thực phía trên card -->
+            <div class="poster-card-topbar">
+              <div class="poster-brand-mini">
+                <img src="assets/logo-kt-xanh.png" alt="Logo mini" width="24" height="24">
+                <span>Hồ Sơ Năng Lực Doanh Nghiệp</span>
+              </div>
+              <span class="poster-status-tag">MST: 4600361446</span>
+            </div>
+
+            <!-- Khung hình ảnh Banner chính thức của doanh nghiệp -->
+            <div class="poster-img-container">
+              <img 
+                src="assets/banner-kt-xanh.jpg" 
+                alt="Banner giới thiệu lĩnh vực hoạt động Công ty TNHH KT Xanh Thái Nguyên" 
+                class="poster-main-image"
+                loading="eager"
+              >
+              <!-- Lớp phủ tương tác phóng to xem chi tiết -->
+              <div class="poster-overlay-action">
+                <a href="assets/banner-kt-xanh.jpg" target="_blank" rel="noopener noreferrer" class="btn-view-poster" title="Mở xem hình ảnh gốc độ phân giải cao">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                  <span>Xem Brochure Gốc</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Các thông số cam kết dưới chân card -->
+            <div class="poster-card-footer">
+              <div class="card-footer-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Quy chuẩn kỹ thuật QCVN</span>
+              </div>
+              <div class="card-footer-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Bảo hiểm trách nhiệm nghề nghiệp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         DẢI BĂNG ĐỐI TÁC & TIÊU CHUẨN KỸ THUẬT (ENTERPRISE TRUST MARQUEE)
+         Vị trí: Ngay dưới Hero Section - Khẳng định uy tín kỹ thuật & pháp lý
+         ======================================================== -->
+    <section class="trust-marquee-section" id="trustMarquee">
+      <div class="container trust-header-container">
+        <div class="trust-heading-wrap">
+          <div class="trust-badge">
+            <span class="trust-badge-dot"></span>
+            <span>HỆ THỐNG PHÁP LÝ & ĐỐI TÁC CHIẾN LƯỢC</span>
+          </div>
+          <h2 class="trust-title">Quy Chuẩn Kỹ Thuật Quốc Gia & Địa Bàn Phục Vụ Trọng Điểm</h2>
+          <p class="trust-subtitle">
+            Cam kết chất lượng tư vấn, khảo sát và giám sát theo hệ thống tiêu chuẩn <strong>ISO 9001:2015</strong>, <strong>QCVN</strong>, và tiêu chuẩn kỹ thuật lưới điện <strong>EVN</strong> tại các Khu công nghiệp lớn miền Bắc.
+          </p>
+        </div>
+      </div>
+
+      <!-- DẢI TRACK 1: HỆ THỐNG TIÊU CHUẨN & PHÁP LÝ QUỐC GIA (Cuộn sang trái) -->
+      <div class="marquee-wrapper track-standards" aria-label="Tiêu chuẩn kỹ thuật áp dụng">
+        <div class="marquee-track scroll-left">
+          
+          <!-- Item 1: ISO 9001:2015 -->
+          <div class="trust-card">
+            <div class="trust-logo-box iso-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <circle cx="24" cy="24" r="21" fill="#0d47a1" stroke="#ffb300" stroke-width="2"/>
+                <circle cx="24" cy="24" r="17" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"/>
+                <path d="M24 10 L26 15 L31 16 L27 20 L28 25 L24 22 L20 25 L21 20 L17 16 L22 15 Z" fill="#ffb300"/>
+                <text x="24" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="800" fill="#ffffff" text-anchor="middle">ISO 9001</text>
+                <text x="24" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.5" font-weight="700" fill="#ffb300" text-anchor="middle">2015 CERTIFIED</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-cert">Hệ Thống Quản Lý</span>
+              <strong class="trust-name">ISO 9001:2015</strong>
+              <span class="trust-desc">Kiểm soát quy trình chất lượng khảo sát & tư vấn</span>
+            </div>
+          </div>
+
+          <!-- Item 2: QCVN 01:2021/BXD -->
+          <div class="trust-card">
+            <div class="trust-logo-box bxd-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#b71c1c"/>
+                <polygon points="24,8 38,18 10,18" fill="#ffca28"/>
+                <rect x="13" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="20" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="27" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="34" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="9" y="34" width="30" height="3" fill="#ffca28"/>
+                <text x="24" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="800" fill="#ffffff" text-anchor="middle">BỘ XÂY DỰNG</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-bxd">Quy Chuẩn BXD</span>
+              <strong class="trust-name">QCVN 01:2021/BXD</strong>
+              <span class="trust-desc">Quy chuẩn kỹ thuật quốc gia về Quy hoạch xây dựng</span>
+            </div>
+          </div>
+
+          <!-- Item 3: EVN Grid Standard -->
+          <div class="trust-card">
+            <div class="trust-logo-box evn-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#003399"/>
+                <!-- Biểu tượng chữ EVN & tia sét đặc trưng -->
+                <path d="M12 16 L22 16 L22 19 L16 19 L16 22 L21 22 L21 25 L16 25 L16 29 L22 29 L22 32 L12 32 Z" fill="#ffffff"/>
+                <path d="M23 16 L27 28 L30 16 L34 16 L29 32 L25 32 L20 16 Z" fill="#ffffff"/>
+                <!-- Ngôi sao đỏ & tia chớp năng lượng -->
+                <polygon points="36,12 39,18 36,18 38,24 33,18 36,18" fill="#d32f2f"/>
+                <text x="24" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="5.5" font-weight="900" fill="#ffca28" text-anchor="middle">LƯỚI ĐIỆN EVN</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-evn">Điện Lực Quốc Gia</span>
+              <strong class="trust-name">Tiêu Chuẩn Lưới Điện EVN</strong>
+              <span class="trust-desc">Thỏa thuận đấu nối TBA & đường dây đến 110kV</span>
+            </div>
+          </div>
+
+          <!-- Item 4: QCVN 02:2022/BCT -->
+          <div class="trust-card">
+            <div class="trust-logo-box bct-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <circle cx="24" cy="24" r="21" fill="#c2185b"/>
+                <circle cx="24" cy="24" r="16" fill="none" stroke="#ffeb3b" stroke-width="1.5"/>
+                <!-- Bánh răng công nghiệp & tia điện -->
+                <path d="M24 12 L26 15 L29 14 L29 17 L32 18 L30 21 L32 23 L29 24 L29 27 L26 26 L24 29 L22 26 L19 27 L19 24 L16 23 L18 21 L16 18 L19 17 L19 14 L22 15 Z" fill="#ffeb3b"/>
+                <circle cx="24" cy="20.5" r="3" fill="#c2185b"/>
+                <text x="24" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.8" font-weight="800" fill="#ffffff" text-anchor="middle">BỘ CÔNG THƯƠNG</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-bct">Quy Chuẩn BCT</span>
+              <strong class="trust-name">QCVN 02:2022/BCT</strong>
+              <span class="trust-desc">Quy chuẩn quốc gia về an toàn công trình điện lực</span>
+            </div>
+          </div>
+
+          <!-- Item 5: TCVN 9385 & Tiêu Chuẩn Xây Dựng -->
+          <div class="trust-card">
+            <div class="trust-logo-box tcvn-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#1b5e20"/>
+                <path d="M12 18 L36 18 L24 34 Z" fill="#a5d6a7" opacity="0.3"/>
+                <circle cx="24" cy="22" r="10" fill="none" stroke="#ffffff" stroke-width="2"/>
+                <text x="24" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="900" fill="#ffffff" text-anchor="middle">TCVN</text>
+                <text x="24" y="39" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.5" font-weight="700" fill="#a5d6a7" text-anchor="middle">TIÊU CHUẨN VN</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-tcvn">Quy Chuẩn Quốc Gia</span>
+              <strong class="trust-name">TCVN 9385:2012</strong>
+              <span class="trust-desc">Chống sét, tiếp địa & an toàn kết cấu xây dựng</span>
+            </div>
+          </div>
+
+          <!-- BẢN SAO ĐỂ CHẠY LIÊN TỤC VÔ TẬN (INFINITE MARQUEE CLONE) -->
+          <div class="trust-card">
+            <div class="trust-logo-box iso-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <circle cx="24" cy="24" r="21" fill="#0d47a1" stroke="#ffb300" stroke-width="2"/>
+                <circle cx="24" cy="24" r="17" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,2"/>
+                <path d="M24 10 L26 15 L31 16 L27 20 L28 25 L24 22 L20 25 L21 20 L17 16 L22 15 Z" fill="#ffb300"/>
+                <text x="24" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="6.5" font-weight="800" fill="#ffffff" text-anchor="middle">ISO 9001</text>
+                <text x="24" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.5" font-weight="700" fill="#ffb300" text-anchor="middle">2015 CERTIFIED</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-cert">Hệ Thống Quản Lý</span>
+              <strong class="trust-name">ISO 9001:2015</strong>
+              <span class="trust-desc">Kiểm soát quy trình chất lượng khảo sát & tư vấn</span>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-logo-box bxd-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#b71c1c"/>
+                <polygon points="24,8 38,18 10,18" fill="#ffca28"/>
+                <rect x="13" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="20" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="27" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="34" y="19" width="4" height="15" fill="#ffffff"/>
+                <rect x="9" y="34" width="30" height="3" fill="#ffca28"/>
+                <text x="24" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="5" font-weight="800" fill="#ffffff" text-anchor="middle">BỘ XÂY DỰNG</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-bxd">Quy Chuẩn BXD</span>
+              <strong class="trust-name">QCVN 01:2021/BXD</strong>
+              <span class="trust-desc">Quy chuẩn kỹ thuật quốc gia về Quy hoạch xây dựng</span>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-logo-box evn-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#003399"/>
+                <path d="M12 16 L22 16 L22 19 L16 19 L16 22 L21 22 L21 25 L16 25 L16 29 L22 29 L22 32 L12 32 Z" fill="#ffffff"/>
+                <path d="M23 16 L27 28 L30 16 L34 16 L29 32 L25 32 L20 16 Z" fill="#ffffff"/>
+                <polygon points="36,12 39,18 36,18 38,24 33,18 36,18" fill="#d32f2f"/>
+                <text x="24" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="5.5" font-weight="900" fill="#ffca28" text-anchor="middle">LƯỚI ĐIỆN EVN</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-evn">Điện Lực Quốc Gia</span>
+              <strong class="trust-name">Tiêu Chuẩn Lưới Điện EVN</strong>
+              <span class="trust-desc">Thỏa thuận đấu nối TBA & đường dây đến 110kV</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DẢI TRACK 2: ĐỐI TÁC KHU CÔNG NGHIỆP & ĐỊA BÀN PHỤC VỤ (Cuộn sang phải) -->
+      <div class="marquee-wrapper track-partners" aria-label="Địa bàn và Khu công nghiệp tiêu biểu">
+        <div class="marquee-track scroll-right">
+          
+          <!-- Item A: KCN Yên Bình -->
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box yb-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#0284c7"/>
+                <path d="M10 34 L20 14 L28 26 L38 12 L38 34 Z" fill="#e0f2fe" opacity="0.3"/>
+                <!-- Tòa nhà & Nhà xưởng công nghiệp -->
+                <rect x="12" y="24" width="7" height="12" fill="#ffffff"/>
+                <rect x="22" y="18" width="8" height="18" fill="#38bdf8"/>
+                <rect x="32" y="22" width="6" height="14" fill="#ffffff"/>
+                <text x="24" y="43" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.8" font-weight="800" fill="#ffffff" text-anchor="middle">YÊN BÌNH IP</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-kcn">Địa Bàn Trọng Điểm</span>
+              <strong class="trust-name">KCN Yên Bình Thái Nguyên</strong>
+              <span class="trust-desc">Tổ hợp công nghiệp FDI Samsung & phụ trợ 400ha</span>
+            </div>
+          </div>
+
+          <!-- Item B: KCN Sông Công -->
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box sc-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#15803d"/>
+                <!-- Dòng sông lượn sóng & nhà máy -->
+                <path d="M8 32 C 16 28, 22 36, 30 30 C 35 26, 38 29, 42 27 L 42 38 L 8 38 Z" fill="#86efac"/>
+                <polygon points="14,24 19,16 24,24 24,28 14,28" fill="#ffffff"/>
+                <rect x="26" y="18" width="8" height="10" fill="#ffffff"/>
+                <line x1="30" y1="14" x2="30" y2="18" stroke="#ffffff" stroke-width="2"/>
+                <text x="24" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.6" font-weight="800" fill="#ffffff" text-anchor="middle">SÔNG CÔNG I & II</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-kcn">Địa Bàn Trọng Điểm</span>
+              <strong class="trust-name">KCN Sông Công I & II</strong>
+              <span class="trust-desc">Trung tâm công nghiệp chế tạo, cơ khí & luyện kim</span>
+            </div>
+          </div>
+
+          <!-- Item C: KCN Điềm Thụy -->
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box dt-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#6366f1"/>
+                <!-- Cấu trúc đa giác hạ tầng kỹ thuật -->
+                <polygon points="24,10 38,18 38,32 24,40 10,32 10,18" fill="none" stroke="#c7d2fe" stroke-width="2"/>
+                <circle cx="24" cy="25" r="6" fill="#818cf8"/>
+                <polyline points="24,14 24,25 32,25" stroke="#ffffff" stroke-width="2"/>
+                <text x="24" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.6" font-weight="800" fill="#ffffff" text-anchor="middle">ĐIỀM THỤY IP</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-kcn">Địa Bàn Trọng Điểm</span>
+              <strong class="trust-name">KCN Điềm Thụy</strong>
+              <span class="trust-desc">Khu công nghiệp công nghệ cao & dịch vụ logistics</span>
+            </div>
+          </div>
+
+          <!-- Item D: Dự Án Doanh Nghiệp FDI -->
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box fdi-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#0f172a"/>
+                <!-- Quả cầu toàn cầu & kết nối kỹ thuật -->
+                <circle cx="24" cy="24" r="14" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+                <ellipse cx="24" cy="24" rx="7" ry="14" fill="none" stroke="#38bdf8" stroke-width="1.4"/>
+                <line x1="10" y1="24" x2="38" y2="24" stroke="#38bdf8" stroke-width="1.4"/>
+                <circle cx="24" cy="24" r="3" fill="#ef4444"/>
+                <text x="24" y="43" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.8" font-weight="800" fill="#38bdf8" text-anchor="middle">FDI GLOBAL</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-fdi">Dự Án Doanh Nghiệp</span>
+              <strong class="trust-name">Dự Án FDI Miền Bắc</strong>
+              <span class="trust-desc">Tư vấn hạ tầng trạm điện & khảo sát địa chất FDI</span>
+            </div>
+          </div>
+
+          <!-- BẢN SAO ĐỂ CHẠY LIÊN TỤC VÔ TẬN (INFINITE MARQUEE CLONE) -->
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box yb-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#0284c7"/>
+                <path d="M10 34 L20 14 L28 26 L38 12 L38 34 Z" fill="#e0f2fe" opacity="0.3"/>
+                <rect x="12" y="24" width="7" height="12" fill="#ffffff"/>
+                <rect x="22" y="18" width="8" height="18" fill="#38bdf8"/>
+                <rect x="32" y="22" width="6" height="14" fill="#ffffff"/>
+                <text x="24" y="43" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.8" font-weight="800" fill="#ffffff" text-anchor="middle">YÊN BÌNH IP</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-kcn">Địa Bàn Trọng Điểm</span>
+              <strong class="trust-name">KCN Yên Bình Thái Nguyên</strong>
+              <span class="trust-desc">Tổ hợp công nghiệp FDI Samsung & phụ trợ 400ha</span>
+            </div>
+          </div>
+
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box sc-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#15803d"/>
+                <path d="M8 32 C 16 28, 22 36, 30 30 C 35 26, 38 29, 42 27 L 42 38 L 8 38 Z" fill="#86efac"/>
+                <polygon points="14,24 19,16 24,24 24,28 14,28" fill="#ffffff"/>
+                <rect x="26" y="18" width="8" height="10" fill="#ffffff"/>
+                <line x1="30" y1="14" x2="30" y2="18" stroke="#ffffff" stroke-width="2"/>
+                <text x="24" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.6" font-weight="800" fill="#ffffff" text-anchor="middle">SÔNG CÔNG I & II</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-kcn">Địa Bàn Trọng Điểm</span>
+              <strong class="trust-name">KCN Sông Công I & II</strong>
+              <span class="trust-desc">Trung tâm công nghiệp chế tạo, cơ khí & luyện kim</span>
+            </div>
+          </div>
+
+          <div class="trust-card partner-card">
+            <div class="trust-logo-box dt-box">
+              <svg viewBox="0 0 48 48" class="trust-svg-logo">
+                <rect x="4" y="4" width="40" height="40" rx="10" fill="#6366f1"/>
+                <polygon points="24,10 38,18 38,32 24,40 10,32 10,18" fill="none" stroke="#c7d2fe" stroke-width="2"/>
+                <circle cx="24" cy="25" r="6" fill="#818cf8"/>
+                <polyline points="24,14 24,25 32,25" stroke="#ffffff" stroke-width="2"/>
+                <text x="24" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="4.6" font-weight="800" fill="#ffffff" text-anchor="middle">ĐIỀM THỤY IP</text>
+              </svg>
+            </div>
+            <div class="trust-info">
+              <span class="trust-tag tag-kcn">Địa Bàn Trọng Điểm</span>
+              <strong class="trust-name">KCN Điềm Thụy</strong>
+              <span class="trust-desc">Khu công nghiệp công nghệ cao & dịch vụ logistics</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. NĂM TRỤ CỘT HOẠT ĐỘNG CHÍNH (5 PILLARS TỪ BANNER)
+         ======================================================== -->
+    <section class="pillars-section" id="pillars">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Năng Lực Cốt Lõi</span>
+          <h2 class="section-title">5 Trụ Cột Năng Lực Của KT Xanh Thái Nguyên</h2>
+          <p class="section-subtitle">
+            Hệ sinh thái dịch vụ kỹ thuật khép kín đáp ứng trọn vẹn vòng đời dự án xây dựng, công nghiệp và năng lượng.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Trụ cột 1 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <span class="pillar-index">01</span>
+            <h3 class="pillar-title">Tư Vấn – Thiết Kế</h3>
+            <p class="pillar-desc">
+              Lập dự án đầu tư, thiết kế kiến trúc cảnh quan, tổng mặt bằng và thiết kế kỹ thuật công trình dân dụng, công nghiệp.
+            </p>
+            <div class="pillar-tag">Kiến trúc & Dự án</div>
+          </article>
+
+          <!-- Trụ cột 2 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="12" x2="2" y2="12"></line>
+                <line x1="12" y1="6" x2="12" y2="2"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+              </svg>
+            </div>
+            <span class="pillar-index">02</span>
+            <h3 class="pillar-title">Khảo Sát</h3>
+            <p class="pillar-desc">
+              Khảo sát địa hình bằng máy toàn đạc điện tử, bay quét định vị và khảo sát địa chất công trình, thủy văn phục vụ nền móng vững chắc.
+            </p>
+            <div class="pillar-tag">Địa hình & Địa chất</div>
+          </article>
+
+          <!-- Trụ cột 3 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <span class="pillar-index">03</span>
+            <h3 class="pillar-title">Quản Lý – Giám Sát</h3>
+            <p class="pillar-desc">
+              Giám sát thi công xây dựng dân dụng, công nghiệp, giao thông, hạ tầng kỹ thuật, thẩm tra thiết kế dự toán và quản lý chi phí.
+            </p>
+            <div class="pillar-tag">Giám sát & Thẩm tra</div>
+          </article>
+
+          <!-- Trụ cột 4 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span class="pillar-index">04</span>
+            <h3 class="pillar-title">Điện – Năng Lượng</h3>
+            <p class="pillar-desc">
+              Khảo sát, thiết kế, giám sát thi công đường dây tải điện và hệ thống trạm biến áp cấp điện áp lên đến 110 kV đạt chuẩn an toàn EVN.
+            </p>
+            <div class="pillar-tag">Trạm biến áp 110kV</div>
+          </article>
+
+          <!-- Trụ cột 5 -->
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </div>
+            <span class="pillar-index">05</span>
+            <h3 class="pillar-title">Năng Lượng Mặt Trời</h3>
+            <p class="pillar-desc">
+              Tư vấn thiết kế & lắp đặt hệ thống điện mặt trời áp mái công nghiệp, chuyển đổi xanh giảm phát thải carbon cho nhà xưởng.
+            </p>
+            <div class="pillar-tag">Điện mặt trời sạch</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. LĨNH VỰC HOẠT ĐỘNG / 11 DỊCH VỤ CHUẨN XÁC TỪ POSTER
+         ======================================================== -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Lĩnh Vực Hoạt Động & Dịch Vụ</span>
+          <h2 class="section-title">Danh Mục 11 Dịch Vụ Tư Vấn Chuyên Nghiệp</h2>
+          <p class="section-subtitle">
+            Tất cả các dịch vụ đều được cấp phép hoạt động xây dựng theo quy định của Bộ Xây dựng và Sở Xây dựng Tỉnh Thái Nguyên.
+          </p>
+
+          <!-- Thanh lọc phân nhóm lĩnh vực dịch vụ trực quan -->
+          <div class="services-filter-nav" role="tablist" aria-label="Bộ lọc phân loại dịch vụ">
+            <button type="button" class="service-filter-btn active" data-filter="all">
+              <span>Tất Cả (11)</span>
+            </button>
+            <button type="button" class="service-filter-btn" data-filter="khao-sat">
+              <span>Khảo Sát & Kiểm Định (2)</span>
+            </button>
+            <button type="button" class="service-filter-btn" data-filter="thiet-ke">
+              <span>Thiết Kế & Quy Hoạch (4)</span>
+            </button>
+            <button type="button" class="service-filter-btn" data-filter="giam-sat">
+              <span>Giám Sát & Đấu Thầu (3)</span>
+            </button>
+            <button type="button" class="service-filter-btn" data-filter="dien-nang-luong">
+              <span>Điện 110kV & Năng Lượng (2)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="services-grid" id="servicesGrid">
+          <!-- Dịch vụ 1 -->
+          <article class="service-card" data-service-id="giam-sat" data-category="giam-sat">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V7l8-4v18"></path>
+                <path d="M19 21V11l-6-3"></path>
+                <path d="M9 9v.01"></path>
+                <path d="M9 12v.01"></path>
+                <path d="M9 15v.01"></path>
+                <path d="M9 18v.01"></path>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 01</div>
+            <h3 class="card-title">Giám Sát Công Trình Đa Ngành</h3>
+            <p class="card-desc">
+              Giám sát chất lượng, tiến độ và an toàn thi công các công trình: dân dụng, hạ tầng kỹ thuật, công nghiệp, đường dây và trạm biến áp, nông nghiệp & PTNT, giao thông.
+            </p>
+            <ul class="card-features">
+              <li>Đội ngũ kỹ sư có chứng chỉ hành nghề hạng I, II</li>
+              <li>Kiểm soát chặt chẽ chất lượng vật tư đầu vào</li>
+              <li>Nhật ký giám sát điện tử & báo cáo định kỳ minh bạch</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Giám sát công trình đa ngành (Dân dụng, Công nghiệp, Hạ tầng, Giao thông)">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 2 -->
+          <article class="service-card" data-service-id="thiet-ke-thong-tin" data-category="thiet-ke">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <line x1="2" y1="20" x2="22" y2="20"></line>
+                <path d="m9 10 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 02</div>
+            <h3 class="card-title">Thiết Kế Kỹ Thuật & Tư Vấn Thông Tin Liên Lạc</h3>
+            <p class="card-desc">
+              Tư vấn giải pháp và thiết kế hệ thống mạng viễn thông, truyền dẫn thông tin liên lạc, hạ tầng số hiện đại cho các dự án khu công nghiệp và tòa nhà.
+            </p>
+            <ul class="card-features">
+              <li>Quy hoạch mạng cáp quang và trung tâm dữ liệu chuẩn</li>
+              <li>Đảm bảo băng thông ổn định và tính bảo mật cao</li>
+              <li>Tối ưu chi phí đầu tư thiết bị viễn thông công trình</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Thiết kế kỹ thuật và tư vấn thông tin liên lạc">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 3 -->
+          <article class="service-card" data-service-id="khao-sat-dia-chat" data-category="khao-sat">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 03</div>
+            <h3 class="card-title">Khảo Sát Địa Hình – Khảo Sát Địa Chất</h3>
+            <p class="card-desc">
+              Đo vẽ bản đồ địa hình tỷ lệ 1/500, 1/2000; khoan lấy mẫu thí nghiệm cơ lý đất đá, khảo sát địa chất thủy văn đánh giá nền móng công trình.
+            </p>
+            <ul class="card-features">
+              <li>Thiết bị định vị vệ tinh GPS RTK và toàn đạc Leica</li>
+              <li>Phòng thí nghiệm hợp chuẩn LAS-XD kết quả chính xác</li>
+              <li>Cung cấp số liệu tin cậy cho bài toán kết cấu nền móng</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Khảo sát địa hình – Khảo sát địa chất">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 4 -->
+          <article class="service-card" data-service-id="kiem-dinh" data-category="khao-sat">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 04</div>
+            <h3 class="card-title">Kiểm Định Chất Lượng Xây Dựng</h3>
+            <p class="card-desc">
+              Kiểm tra, đánh giá chất lượng hiện trạng các kết cấu bê tông, cốt thép, kết cấu kim loại; giám định nguyên nhân sự cố công trình xây dựng.
+            </p>
+            <ul class="card-features">
+              <li>Siêu âm bê tông, khoan rút lõi và kiểm tra biến dạng</li>
+              <li>Đánh giá an toàn chịu lực để nâng tầng hoặc lắp pin mặt trời</li>
+              <li>Báo cáo kiểm định có giá trị pháp lý cao trước thanh tra</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Kiểm định chất lượng xây dựng">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 5 -->
+          <article class="service-card" data-service-id="quan-ly-chi-phi" data-category="giam-sat">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 05</div>
+            <h3 class="card-title">Tư Vấn Quản Lý Chi Phí Đầu Tư Xây Dựng</h3>
+            <p class="card-desc">
+              Xác định tổng mức đầu tư, lập dự toán xây dựng, quản lý định mức đơn giá và kiểm soát dòng tiền giải ngân dự án hiệu quả, chống thất thoát.
+            </p>
+            <ul class="card-features">
+              <li>Cập nhật đơn giá vật liệu và nhân công xây dựng mới nhất</li>
+              <li>Phân tích chi phí vòng đời công trình (LCC)</li>
+              <li>Kiểm soát khối lượng thanh quyết toán công trình</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Tư vấn quản lý chi phí đầu tư xây dựng">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 6 -->
+          <article class="service-card" data-service-id="lap-du-an" data-category="thiet-ke">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 06</div>
+            <h3 class="card-title">Lập Dự Án Đầu Tư Các Công Trình Xây Dựng</h3>
+            <p class="card-desc">
+              Lập Báo cáo nghiên cứu tiền khả thi (Pre-FS), Báo cáo nghiên cứu khả thi (FS) và Báo cáo kinh tế - kỹ thuật theo đúng quy định Luật Xây dựng.
+            </p>
+            <ul class="card-features">
+              <li>Đánh giá hiệu quả tài chính và xã hội của dự án</li>
+              <li>Đề xuất quy mô công nghệ & phương án mặt bằng tối ưu</li>
+              <li>Hỗ trợ hoàn tất thủ tục chấp thuận chủ trương đầu tư</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Lập dự án đầu tư các công trình xây dựng">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 7 -->
+          <article class="service-card" data-service-id="dau-thau" data-category="giam-sat">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 07</div>
+            <h3 class="card-title">Tư Vấn Kế Hoạch Đấu Thầu & Hồ Sơ Mời Thầu</h3>
+            <p class="card-desc">
+              Lập kế hoạch lựa chọn nhà thầu, lập Hồ sơ mời thầu (HSMT), Hồ sơ yêu cầu và đánh giá Hồ sơ dự thầu (HSDT) theo Luật Đấu thầu hiện hành.
+            </p>
+            <ul class="card-features">
+              <li>Đảm bảo tính cạnh tranh, công bằng và minh bạch</li>
+              <li>Tiết giảm tối đa rủi ro khiếu nại trong đấu thầu</li>
+              <li>Thực hiện thành thạo đấu thầu qua Hệ thống mạng quốc gia</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Tư vấn lập kế hoạch đấu thầu, hồ sơ mời thầu">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 8 -->
+          <article class="service-card" data-service-id="thiet-ke-kien-truc" data-category="thiet-ke">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 08</div>
+            <h3 class="card-title">Khảo Sát Thiết Kế Kiến Trúc & Tổng Mặt Bằng</h3>
+            <p class="card-desc">
+              Khảo sát hiện trạng, lập quy hoạch tổng mặt bằng, thiết kế kiến trúc ngoại thất, nội thất và giải pháp công năng hiện đại cho mọi loại công trình.
+            </p>
+            <ul class="card-features">
+              <li>Phối cảnh mô phỏng 3D sinh động, thẩm mỹ cao</li>
+              <li>Tối ưu ánh sáng tự nhiên và thông gió tiết kiệm điện</li>
+              <li>Đáp ứng đầy đủ tiêu chuẩn PCCC và an toàn thoát hiểm</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Khảo sát thiết kế kiến trúc, tổng mặt bằng các công trình">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 9 -->
+          <article class="service-card" data-service-id="tham-tra" data-category="thiet-ke">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 09</div>
+            <h3 class="card-title">Thẩm Tra Dự Án, Thiết Kế & Dự Toán Công Trình</h3>
+            <p class="card-desc">
+              Thẩm tra sự phù hợp của giải pháp thiết kế với quy chuẩn kỹ thuật; kiểm tra tính đúng đắn của khối lượng và định mức dự toán chi phí.
+            </p>
+            <ul class="card-features">
+              <li>Phát hiện sớm các sai sót kết cấu trước khi thi công</li>
+              <li>Cắt giảm chi phí phát sinh bất hợp lý cho chủ đầu tư</li>
+              <li>Hồ sơ thẩm tra chuẩn xác hỗ trợ thẩm định của Sở ban ngành</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Thẩm tra dự án, thiết kế, dự toán công trình xây dựng">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 10 -->
+          <article class="service-card" data-service-id="bien-quang-cao" data-category="dien-nang-luong">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 10</div>
+            <h3 class="card-title">Tư Vấn Tạo Mẫu Biển Quảng Cáo & Nhận Diện</h3>
+            <p class="card-desc">
+              Thiết kế kết cấu chịu lực, tính toán tải trọng gió và tạo mẫu thẩm mỹ cho biển quảng cáo tấm lớn ngoài trời, pano và cổng chào công trình.
+            </p>
+            <ul class="card-features">
+              <li>Đảm bảo an toàn chịu bão gió cấp cao theo QCVN 02:2022</li>
+              <li>Hài hòa cảnh quan đô thị và nhận diện thương hiệu nổi bật</li>
+              <li>Hồ sơ xin cấp phép quảng cáo nhanh chóng, đúng quy định</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Tư vấn tạo mẫu biển quảng cáo">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Dịch vụ 11 (Điện trạm biến áp 110kV & Điện mặt trời) -->
+          <article class="service-card" data-service-id="dien-nang-luong" data-category="dien-nang-luong">
+            <div class="card-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div class="service-order">Dịch vụ 11</div>
+            <h3 class="card-title">Đường Dây, Trạm Biến Áp Đến 110kV & Điện Mặt Trời</h3>
+            <p class="card-desc">
+              Khảo sát, thiết kế, giám sát thi công xây dựng công trình đường dây tải điện và trạm biến áp đến cấp điện áp 110 kV; tư vấn hệ thống điện mặt trời xanh.
+            </p>
+            <ul class="card-features">
+              <li>Hồ sơ đấu nối lưới điện quốc gia EVN đạt chuẩn 100%</li>
+              <li>Giải pháp điện mặt trời áp mái cắt giảm đến 40% chi phí điện</li>
+              <li>Đảm bảo an toàn hành lang lưới điện cao áp và bảo vệ môi trường</li>
+            </ul>
+            <div class="card-action">
+              <button type="button" class="btn btn-outline-primary btn-block btn-book-service" data-service="Khảo sát, thiết kế, giám sát thi công ĐZ & Trạm biến áp đến 110kV; Điện mặt trời">
+                <span>Đặt Lịch Ngay</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         QUY TRÌNH HỢP TÁC & TRIỂN KHAI DỰ ÁN 5 BƯỚC CHUẨN KỸ THUẬT
+         ======================================================== -->
+    <section class="workflow-section" id="workflow">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Quy Trình Chuẩn Hóa</span>
+          <h2 class="section-title">5 Bước Triển Khai Kỹ Thuật Chuyên Nghiệp</h2>
+          <p class="section-subtitle">
+            Mọi dự án tư vấn, khảo sát, thiết kế và giám sát tại KT Xanh đều tuân thủ quy trình kiểm soát chất lượng nghiêm ngặt theo tiêu chuẩn ISO và QCVN.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <!-- Bước 1 -->
+          <div class="workflow-step-card" data-step="01">
+            <div class="step-badge">Bước 01</div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="step-title">Tiếp Nhận & Tư Vấn</h3>
+            <p class="step-desc">Lắng nghe nhu cầu, nghiên cứu đề bài quy mô công trình và tư vấn giải pháp kỹ thuật sơ bộ hoàn toàn miễn phí.</p>
+          </div>
+
+          <!-- Bước 2 -->
+          <div class="workflow-step-card" data-step="02">
+            <div class="step-badge">Bước 02</div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="12" x2="2" y2="12"></line>
+                <line x1="12" y1="6" x2="12" y2="2"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="step-title">Khảo Sát Thực Địa</h3>
+            <p class="step-desc">Đội ngũ kỹ sư mang thiết bị toàn đạc điện tử, GPS RTK trực tiếp đo vẽ địa hình và khoan khảo sát địa chất hiện trường.</p>
+          </div>
+
+          <!-- Bước 3 -->
+          <div class="workflow-step-card" data-step="03">
+            <div class="step-badge">Bước 03</div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3 class="step-title">Hồ Sơ & Dự Toán</h3>
+            <p class="step-desc">Lập hồ sơ thiết kế kỹ thuật, bản vẽ 3D tổng mặt bằng, tính toán kết cấu tải trọng và bóc tách định mức dự toán chi tiết.</p>
+          </div>
+
+          <!-- Bước 4 -->
+          <div class="workflow-step-card" data-step="04">
+            <div class="step-badge">Bước 04</div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3 class="step-title">Thẩm Tra & Giám Sát</h3>
+            <p class="step-desc">Thẩm tra sự phù hợp kỹ thuật, túc trực giám sát thi công từng hạng mục và phối hợp đấu nối lưới điện an toàn.</p>
+          </div>
+
+          <!-- Bước 5 -->
+          <div class="workflow-step-card" data-step="05">
+            <div class="step-badge">Bước 05</div>
+            <div class="step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="step-title">Nghiệm Thu & Đồng Hành</h3>
+            <p class="step-desc">Hoàn tất hồ sơ hoàn công, hỗ trợ nghiệm thu bàn giao đưa vào sử dụng và bảo hành kỹ thuật dự án dài hạn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         5. GIỚI THIỆU DOANH NGHIỆP & HỒ SƠ NĂNG LỰC (ABOUT SECTION)
+         (ĐÃ THAY THẾ BANNER BỊ LẶP BẰNG BẢNG PROFILE DOANH NGHIỆP HIỆN ĐẠI)
+         ======================================================== -->
+    <section class="about-section" id="about">
+      <div class="container about-container">
+        
+        <!-- Cột trái: Bảng Hồ Sơ Năng Lực & Dấu Mốc Khẳng Định Đẳng Cấp -->
+        <div class="about-left-col">
+          <div class="about-profile-card">
+            
+            <!-- Header của thẻ Profile -->
+            <div class="profile-card-header">
+              <div class="profile-logo-wrap">
+                <img src="assets/logo-kt-xanh.png" alt="Logo KT Xanh" class="profile-logo-img" width="56" height="56">
+              </div>
+              <div class="profile-header-text">
+                <h3>CÔNG TY TNHH KT XANH</h3>
+                <span class="profile-slogan-motto">TẬN TÂM • CHUYÊN NGHIỆP • BỀN VỮNG</span>
+              </div>
+            </div>
+
+            <!-- Lưới số liệu năng lực chính thức -->
+            <div class="profile-stats-grid">
+              <div class="profile-stat-box">
+                <span class="p-stat-val">20+</span>
+                <span class="p-stat-lbl">Năm Thành Lập (Từ 2004)</span>
+              </div>
+              <div class="profile-stat-box">
+                <span class="p-stat-val">110 kV</span>
+                <span class="p-stat-lbl">Cấp TBA & Đường Dây</span>
+              </div>
+              <div class="profile-stat-box">
+                <span class="p-stat-val">11 Lĩnh Vực</span>
+                <span class="p-stat-lbl">Tư Vấn & Khảo Sát Kỹ Thuật</span>
+              </div>
+              <div class="profile-stat-box">
+                <span class="p-stat-val">02 Trụ Sở</span>
+                <span class="p-stat-lbl">Thái Nguyên & Cao Bằng</span>
+              </div>
+            </div>
+
+            <!-- Khung thông tin pháp lý doanh nghiệp -->
+            <div class="profile-legal-box">
+              <div class="profile-legal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span><strong>Mã số thuế:</strong> 4600361446</span>
+              </div>
+              <div class="profile-legal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                </svg>
+                <span><strong>Đại diện pháp luật:</strong> Giám đốc Trần Văn Vinh</span>
+              </div>
+              <div class="profile-legal-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span><strong>Kiểm định:</strong> Hợp chuẩn phòng LAS-XD</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Cột phải: Câu chuyện thương hiệu & 3 Giá trị cốt lõi từ Logo -->
+        <div class="about-right-col">
+          <span class="section-tag">Về KT Xanh Thái Nguyên</span>
+          <h2 class="section-title">20 Năm Kiến Tạo Giá Trị Bền Vững Cho Mọi Công Trình</h2>
+          
+          <p class="about-lead">
+            <strong>Công ty TNHH KT Xanh</strong> (Tên quốc tế: <em>KT GREEN CO., LTD</em>) được thành lập ngày 19/08/2004 tại Thái Nguyên, là một trong những doanh nghiệp tư vấn xây dựng và hạ tầng kỹ thuật uy tín hàng đầu khu vực miền Bắc.
+          </p>
+
+          <p class="about-desc">
+            Trải qua hơn hai thập kỷ phát triển, KT Xanh không ngừng đầu tư nâng cao năng lực máy móc trắc địa, phòng kiểm định và bồi dưỡng đội ngũ kỹ sư chất lượng cao. Chúng tôi tự hào tham gia tư vấn, khảo sát và giám sát hàng trăm công trình trọng điểm, các dự án đường dây trạm biến áp đến 110kV và các dự án năng lượng xanh bền vững.
+          </p>
+
+          <!-- 3 Giá trị cốt lõi từ logo -->
+          <div class="core-values-list">
+            <div class="core-value-card">
+              <div class="core-val-icon icon-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <div class="core-val-content">
+                <h4>TẬN TÂM TRONG TỪNG CHI TIẾT</h4>
+                <p>Khảo sát tỉ mỉ hiện trường, lắng nghe mọi nhu cầu của chủ đầu tư và luôn đặt lợi ích khách hàng lên hàng đầu.</p>
+              </div>
+            </div>
+
+            <div class="core-value-card">
+              <div class="core-val-icon icon-navy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div class="core-val-content">
+                <h4>CHUYÊN NGHIỆP TRONG GIẢI PHÁP</h4>
+                <p>Tuân thủ nghiêm ngặt quy chuẩn QCVN, tiến độ chính xác và báo cáo kỹ thuật rõ ràng, trung thực.</p>
+              </div>
+            </div>
+
+            <div class="core-value-card">
+              <div class="core-val-icon icon-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C6.5 2 2 6.5 2 12c0 3.6 1.9 6.8 4.8 8.5.5-3.3 2.6-7.5 6.2-9.5-2.2 3.8-1.5 7.8-.5 10 4.8-.8 8.5-5 8.5-10 0-5.5-4.5-9-9-9z"></path>
+                </svg>
+              </div>
+              <div class="core-val-content">
+                <h4>BỀN VỮNG CÙNG THỜI GIAN</h4>
+                <p>Tiên phong ứng dụng công nghệ xanh, năng lượng tái tạo hướng tới mục tiêu phát triển kinh tế tuần hoàn và Net Zero.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. FORM ĐẶT LỊCH KHẢO SÁT & TƯ VẤN (BOOKING FORM)
+         ======================================================== -->
+    <section class="booking-section" id="booking">
+      <div class="container">
+        <div class="booking-wrapper">
+          
+          <!-- Cột thông tin hỗ trợ bên trái -->
+          <div class="booking-info-col">
+            <span class="section-tag section-tag-light">Tư Vấn Trực Tiếp</span>
+            <h2 class="booking-heading">Đăng Ký Khảo Sát Hiện Trường & Tư Vấn Kỹ Thuật</h2>
+            <p class="booking-sub">
+              Để lại thông tin dự án, chuyên viên kỹ thuật của <strong>KT Xanh Thái Nguyên</strong> sẽ chủ động liên hệ lại xác nhận và bố trí lịch khảo sát sớm nhất.
+            </p>
+
+            <div class="booking-commitments">
+              <div class="commit-item">
+                <div class="commit-icon">✓</div>
+                <div>
+                  <h4>Khảo sát sơ bộ hiện trường nhanh chóng</h4>
+                  <p>Cử kỹ sư đến tận vị trí công trình để đo đạc và tư vấn phương án kỹ thuật.</p>
+                </div>
+              </div>
+              <div class="commit-item">
+                <div class="commit-icon">✓</div>
+                <div>
+                  <h4>Báo giá minh bạch, bám sát dự toán</h4>
+                  <p>Dự toán chi phí tối ưu theo đúng định mức xây dựng của Nhà nước.</p>
+                </div>
+              </div>
+              <div class="commit-item">
+                <div class="commit-icon">✓</div>
+                <div>
+                  <h4>Bảo mật hồ sơ & bản vẽ công trình</h4>
+                  <p>Cam kết bảo mật tuyệt đối các số liệu đo đạc và hồ sơ thiết kế của dự án.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Hotline Kỹ thuật 24/7 -->
+            <div class="booking-hotline-box">
+              <div class="hotline-badge-top">Hỗ Trợ Kỹ Thuật Nhanh</div>
+              <a href="tel:0988123456" class="hotline-phone-link">0988.123.456</a>
+              <p class="hotline-desc">Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên</p>
+            </div>
+          </div>
+
+          <!-- Cột Form Đặt Lịch bên phải -->
+          <div class="booking-form-col">
+            <div class="form-card">
+              <div class="form-card-header">
+                <h3>Phiếu Đặt Lịch Khảo Sát</h3>
+                <p>Vui lòng điền thông tin chính xác để kỹ sư KT Xanh chuẩn bị hồ sơ khảo sát.</p>
+              </div>
+
+              <!-- Form chính kết nối trực tiếp FormSubmit gửi về dtc235270180@ictu.edu.vn -->
+              <form id="bookingForm" class="booking-form" action="https://formsubmit.co/dtc235270180@ictu.edu.vn" method="POST" novalidate>
+                <!-- Cấu hình FormSubmit cho GitHub Pages -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="[KT XANH] Yêu Cầu Đặt Lịch Khảo Sát Mới Từ Website">
+                <input type="hidden" name="_autoresponse" value="Cảm ơn quý khách đã gửi thông tin đặt lịch khảo sát tại Công ty TNHH KT Xanh Thái Nguyên. Kỹ sư trưởng của chúng tôi sẽ liên hệ trong 30 phút để xác nhận lịch trình.">
+                
+                <!-- Họ và tên -->
+                <div class="form-group" id="group-fullName">
+                  <label for="fullName" class="form-label">
+                    Họ và tên người đại diện / Kỹ sư phụ trách <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <input 
+                      type="text" 
+                      id="fullName" 
+                      name="fullName" 
+                      class="form-control" 
+                      placeholder="Ví dụ: Nguyễn Văn Tuấn"
+                      required
+                    >
+                  </div>
+                  <span class="field-error" id="error-fullName">Vui lòng nhập họ và tên (tối thiểu 2 ký tự)</span>
+                </div>
+
+                <!-- 2 cột: Số điện thoại & Email -->
+                <div class="form-row-2">
+                  <div class="form-group" id="group-phone">
+                    <label for="phone" class="form-label">
+                      Số điện thoại liên hệ <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                      <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        class="form-control" 
+                        placeholder="09xx xxx xxx"
+                        required
+                      >
+                    </div>
+                    <span class="field-error" id="error-phone">Số điện thoại không hợp lệ (10 chữ số, bắt đầu bằng 0)</span>
+                  </div>
+
+                  <div class="form-group" id="group-email">
+                    <label for="email" class="form-label">
+                      Email doanh nghiệp / cá nhân <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-control" 
+                        placeholder="tuan.nguyen@company.vn"
+                        required
+                      >
+                    </div>
+                    <span class="field-error" id="error-email">Email không đúng định dạng (VD: abc@gmail.com)</span>
+                  </div>
+                </div>
+
+                <!-- 2 cột: Dịch vụ quan tâm (11 dịch vụ chuẩn) & Ngày giờ hẹn -->
+                <div class="form-row-2">
+                  <div class="form-group" id="group-service">
+                    <label for="serviceSelect" class="form-label">
+                      Dịch vụ cần tư vấn <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                      </svg>
+                      <select id="serviceSelect" name="service" class="form-control form-select" required>
+                        <option value="" disabled selected>-- Chọn 1 trong 11 lĩnh vực dịch vụ --</option>
+                        <option value="Giám sát công trình đa ngành (Dân dụng, Công nghiệp, Hạ tầng, Giao thông)">01. Giám sát công trình đa ngành</option>
+                        <option value="Thiết kế kỹ thuật và tư vấn thông tin liên lạc">02. Thiết kế kỹ thuật & Thông tin liên lạc</option>
+                        <option value="Khảo sát địa hình – Khảo sát địa chất">03. Khảo sát địa hình – Khảo sát địa chất</option>
+                        <option value="Kiểm định chất lượng xây dựng">04. Kiểm định chất lượng xây dựng</option>
+                        <option value="Tư vấn quản lý chi phí đầu tư xây dựng">05. Tư vấn quản lý chi phí đầu tư xây dựng</option>
+                        <option value="Lập dự án đầu tư các công trình xây dựng">06. Lập dự án đầu tư các công trình</option>
+                        <option value="Tư vấn lập kế hoạch đấu thầu, hồ sơ mời thầu">07. Tư vấn lập kế hoạch đấu thầu, HSMT</option>
+                        <option value="Khảo sát thiết kế kiến trúc, tổng mặt bằng các công trình">08. Thiết kế kiến trúc & Tổng mặt bằng</option>
+                        <option value="Thẩm tra dự án, thiết kế, dự toán công trình xây dựng">09. Thẩm tra dự án, thiết kế & Dự toán</option>
+                        <option value="Tư vấn tạo mẫu biển quảng cáo">10. Tư vấn tạo mẫu biển quảng cáo</option>
+                        <option value="Khảo sát, thiết kế, giám sát thi công ĐZ & Trạm biến áp đến 110kV; Điện mặt trời">11. ĐZ & Trạm biến áp đến 110kV; Điện mặt trời</option>
+                      </select>
+                    </div>
+                    <span class="field-error" id="error-service">Vui lòng chọn lĩnh vực dịch vụ bạn quan tâm</span>
+                  </div>
+
+                  <div class="form-group" id="group-appointmentDate">
+                    <label for="appointmentDate" class="form-label">
+                      Ngày & giờ mong muốn <span class="required-star">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                      <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                      <input 
+                        type="datetime-local" 
+                        id="appointmentDate" 
+                        name="appointmentDate" 
+                        class="form-control"
+                        required
+                      >
+                    </div>
+                    <span class="field-error" id="error-appointmentDate">Vui lòng chọn thời gian từ thời điểm hiện tại trở đi</span>
+                  </div>
+                </div>
+
+                <!-- Ghi chú dự án -->
+                <div class="form-group">
+                  <label for="notes" class="form-label">
+                    Thông tin công trình / Địa điểm khảo sát / Yêu cầu cụ thể
+                  </label>
+                  <textarea 
+                    id="notes" 
+                    name="notes" 
+                    class="form-control form-textarea" 
+                    rows="3" 
+                    placeholder="VD: Cần khảo sát địa hình địa chất cho dự án nhà xưởng 2.000m² tại KCN Sông Công, Thái Nguyên..."
+                  ></textarea>
+                </div>
+
+                <!-- Banner thông báo lỗi / thành công -->
+                <div class="form-alert alert-hidden" id="formAlert" role="alert">
+                  <div class="alert-icon" id="alertIcon"></div>
+                  <div class="alert-message" id="alertMessage"></div>
+                </div>
+
+                <!-- Nút Submit Form -->
+                <button type="submit" class="btn btn-primary btn-block btn-submit" id="btnSubmit">
+                  <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
+                  <span class="btn-text" id="btnText">Gửi Yêu Cầu Đặt Lịch Khảo Sát</span>
+                </button>
+
+                <p class="form-privacy-note">
+                  KT Xanh cam kết bảo mật tuyệt đối dữ liệu khảo sát và thông tin khách hàng theo tiêu chuẩn ISO.
+                </p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. THÔNG TIN LIÊN HỆ & BẢN ĐỒ ĐỊA LÝ (CONTACT SECTION)
+         ======================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Thông Tin Liên Hệ</span>
+          <h2 class="section-title">Kết Nối Với KT Xanh Thái Nguyên</h2>
+          <p class="section-subtitle">
+            Quý khách có thể liên hệ trực tiếp tại trụ sở chính hoặc gửi yêu cầu qua Hotline/Email để nhận phản hồi nhanh nhất.
+          </p>
+        </div>
+
+        <div class="contact-cards-grid">
+          <!-- Card Trụ sở chính -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Trụ Sở Chính</h3>
+            <p class="contact-card-val">Số 13, Tổ 90, P. Phan Đình Phùng</p>
+            <span class="contact-card-hint">TP. Thái Nguyên, Tỉnh Thái Nguyên</span>
+          </div>
+
+          <!-- Card Chi nhánh -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3>Chi Nhánh Trực Thuộc</h3>
+            <p class="contact-card-val">Chi Nhánh Cao Bằng</p>
+            <span class="contact-card-hint">Phục vụ các dự án hạ tầng vùng Đông Bắc</span>
+          </div>
+
+          <!-- Card Hotline -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h3>Hotline Kỹ Thuật</h3>
+            <p class="contact-card-val"><a href="tel:0988123456">0988.123.456</a></p>
+            <span class="contact-card-hint">Tư vấn trực tiếp cùng kỹ sư trưởng</span>
+          </div>
+
+          <!-- Card Email & Giờ làm -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3>Email Doanh Nghiệp</h3>
+            <p class="contact-card-val"><a href="mailto:lienhe@ktxanh.vn">lienhe@ktxanh.vn</a></p>
+            <span class="contact-card-hint">Mở cửa: 08:00 - 17:30 (T2 - T7)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<!-- ========================================================
+       8. CHÂN TRANG DOANH NGHIỆP (FOOTER)
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <!-- Cột 1: Thông tin pháp lý & Logo KT Xanh -->
+      <div class="footer-col footer-col-brand">
+        <div class="brand-logo footer-logo">
+          <div class="logo-image-wrap">
+            <img src="assets/logo-kt-xanh.png" alt="Logo KT Xanh" width="46" height="46">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title" style="color: #ffffff;">CÔNG TY TNHH KT XANH</span>
+            <span class="brand-subtitle" style="color: #94a3b8;">THÁI NGUYÊN • EST. 2004</span>
+          </div>
+        </div>
+
+        <p class="footer-desc">
+          Đơn vị tư vấn xây dựng và hạ tầng kỹ thuật chuyên nghiệp. Hơn 20 năm đồng hành cùng các công trình dân dụng, công nghiệp, đường dây trạm biến áp đến 110kV và năng lượng mặt trời.
+        </p>
+
+        <div class="footer-legal-badge">
+          <p><strong>Mã số thuế:</strong> 4600361446</p>
+          <p><strong>Người đại diện:</strong> Trần Văn Vinh (Giám đốc)</p>
+          <p><strong>Ngày hoạt động:</strong> 19/08/2004</p>
+        </div>
+      </div>
+
+      <!-- Cột 2: Lĩnh vực dịch vụ cốt lõi -->
+      <div class="footer-col">
+        <h4 class="footer-title">Lĩnh Vực Hoạt Động</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Giám sát công trình đa ngành</a></li>
+          <li><a href="#services">Khảo sát địa hình – Địa chất</a></li>
+          <li><a href="#services">Đường dây & Trạm biến áp 110kV</a></li>
+          <li><a href="#services">Điện năng lượng mặt trời</a></li>
+          <li><a href="#services">Kiểm định chất lượng xây dựng</a></li>
+          <li><a href="#services">Thiết kế kiến trúc & Dự toán</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 3: Liên kết nhanh -->
+      <div class="footer-col">
+        <h4 class="footer-title">Liên Kết Nhanh</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Về đầu trang</a></li>
+          <li><a href="#pillars">5 Trụ cột năng lực</a></li>
+          <li><a href="#about">Về KT Xanh Thái Nguyên</a></li>
+          <li><a href="#booking">Đăng ký lịch khảo sát</a></li>
+          <li><a href="#contact">Địa chỉ & Liên hệ</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4: Thông tin liên hệ chuẩn -->
+      <div class="footer-col">
+        <h4 class="footer-title">Thông Tin Liên Hệ</h4>
+        <ul class="footer-contact-list">
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Trụ sở: Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Chi nhánh: Tỉnh Cao Bằng</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>Hotline: 0988.123.456</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>Email: lienhe@ktxanh.vn</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Dòng bản quyền chân trang -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>© 2004 - 2026 <strong>CÔNG TY TNHH KT XANH THÁI NGUYÊN</strong>. Bản quyền đã được bảo lưu.</p>
+        <p class="footer-slogan-note">Khẩu hiệu: <em>TẬN TÂM - CHUYÊN NGHIỆP - BỀN VỮNG</em></p>
+      </div>
+    </div>
+  </footer>
+
+<!-- ========================================================
+       9. KHUNG CHATBOT TỰ ĐỘNG (FLOATING CHAT WIDGET)
+       ======================================================== -->
+  <aside class="chat-widget" id="chatWidget" aria-label="Trợ lý ảo KT Xanh Thái Nguyên">
+    
+    <!-- Cửa sổ Chatbot -->
+    <div class="chat-window" id="chatWindow" aria-hidden="true">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <div class="chat-bot-avatar">
+          <img src="assets/logo-kt-xanh.png" alt="KT Xanh Bot" width="34" height="34" class="chat-avatar-img">
+          <span class="chat-status-indicator" title="Đang trực tuyến"></span>
+        </div>
+        <div class="chat-bot-info">
+          <h4 class="chat-bot-name">Trợ lý Kỹ Thuật KT Xanh</h4>
+          <span class="chat-bot-status">Sẵn sàng phản hồi 24/7</span>
+        </div>
+        <button class="chat-close-btn" id="chatCloseBtn" aria-label="Thu nhỏ chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Khung hiển thị nội dung tin nhắn -->
+      <div class="chat-body" id="chatMessages">
+        <!-- Tin nhắn chào mừng ban đầu do script sinh ra -->
+      </div>
+
+      <!-- Khu vực gợi ý câu hỏi nhanh (Quick Question Chips) - Tuân thủ Không Emoji -->
+      <div class="chat-quick-replies" id="chatQuickReplies">
+        <span class="quick-reply-label">Gợi ý câu hỏi nhanh:</span>
+        <div class="quick-chips-wrap">
+          <button type="button" class="quick-chip" data-question="Công ty KT Xanh cung cấp những dịch vụ gì?">
+            Dịch vụ của công ty
+          </button>
+          <button type="button" class="quick-chip" data-question="Khảo sát địa hình, địa chất và trạm biến áp 110kV như thế nào?">
+            Trạm biến áp 110kV & Khảo sát
+          </button>
+          <button type="button" class="quick-chip" data-question="Địa chỉ văn phòng và hotline liên hệ ở đâu?">
+            Địa chỉ & Hotline
+          </button>
+          <button type="button" class="quick-chip" data-question="Tôi muốn đặt lịch khảo sát hiện trường ngay">
+            Đặt lịch khảo sát
+          </button>
+        </div>
+      </div>
+
+      <!-- Ô nhập tin nhắn và nút gửi -->
+      <form class="chat-footer" id="chatForm">
+        <input 
+          type="text" 
+          id="chatInput" 
+          class="chat-input" 
+          placeholder="Nhập câu hỏi của bạn tại đây..." 
+          autocomplete="off"
+        >
+        <button type="submit" class="chat-send-btn" id="chatSendBtn" aria-label="Gửi tin nhắn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Nút Floating Toggle mở/đóng Chatbot -->
+    <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Mở cửa sổ trợ lý ảo KT Xanh">
+      <div class="chat-toggle-icon chat-icon-open">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="chat-badge-pulse" aria-hidden="true"></span>
+      </div>
+      <div class="chat-toggle-icon chat-icon-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </div>
+    </button>
+  </aside>
+
+<!-- ========================================================
+       10. MODAL THÔNG BÁO ĐẶT LỊCH THÀNH CÔNG
+       ======================================================== -->
+  <div class="modal-overlay" id="successModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="success-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 class="modal-title">Đặt Lịch Khảo Sát Thành Công!</h3>
+        <p class="modal-subtitle">Cảm ơn bạn đã tin tưởng Công ty TNHH KT Xanh Thái Nguyên.</p>
+      </div>
+
+      <div class="modal-body" id="modalBookingDetails">
+        <!-- Thông tin chi tiết được JS đẩy vào động -->
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-block" id="modalCloseBtn">
+          Đóng và Tiếp tục
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       HỆ THỐNG JAVASCRIPT MODULAR (ES MODULES & 3D INTERACTION)
+       ======================================================== -->
+  <script type="module" src="js/app.js"></script>
+  <script nomodule src="script.js"></script>
+</body>
+</html>

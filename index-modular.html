@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công Ty TNHH KT Xanh Thái Nguyên - Modular Component Architecture</title>
+  <meta name="description" content="Kiến trúc Component tách rời: Mỗi phần giao diện là một file HTML, CSS và JS độc lập.">
+
+  <!-- Favicon từ Logo chính hãng -->
+  <link rel="icon" type="image/png" href="assets/logo-kt-xanh.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- ========================================================
+       HỆ THỐNG CSS MODULAR THEO TỪNG COMPONENT ĐỘC LẬP
+       ======================================================== -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/trust-marquee.css">
+  <link rel="stylesheet" href="css/pillars.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/workflow.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Thư viện Three.js -->
+  <script src="js/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ========================================================
+       CÁC VÙNG CHỨA COMPONENT (TẢI ĐỘNG QUA FETCH API)
+       ======================================================== -->
+  <div data-component="components/topbar.html"></div>
+  <div data-component="components/header.html"></div>
+
+  <main>
+    <div data-component="components/hero.html"></div>
+    <div data-component="components/trust-marquee.html"></div>
+    <div data-component="components/pillars.html"></div>
+    <div data-component="components/services.html"></div>
+    <div data-component="components/workflow.html"></div>
+    <div data-component="components/about.html"></div>
+    <div data-component="components/booking.html"></div>
+    <div data-component="components/contact.html"></div>
+  </main>
+
+  <div data-component="components/footer.html"></div>
+  <div data-component="components/chatbot.html"></div>
+  <div data-component="components/modal.html"></div>
+
+  <!-- ========================================================
+       JAVASCRIPT: TẢI COMPONENT & KHỞI TẠO CÁC MODULE 3D
+       ======================================================== -->
+  <script type="module">
+    import { loadComponents } from './components/component-loader.js';
+    import { initNavigation } from './js/navigation.js';
+    import { initServiceCardActions, initServiceFilter } from './js/services.js';
+    import { initBookingForm } from './js/booking.js';
+    import { initChatbotWidget } from './js/chatbot.js';
+    import { initModal } from './js/modal.js';
+    import { initHero3DScene } from './js/three-scene.js';
+    import { init3DTiltEffects } from './js/tilt-effects.js';
+    import { initDynamicAnimations } from './js/animations.js';
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Tải và nhúng tất cả các HTML component độc lập
+      await loadComponents();
+
+      // 2. Khởi động logic tương tác sau khi DOM component đã sẵn sàng
+      initNavigation();
+      initServiceCardActions();
+      initServiceFilter();
+      initBookingForm();
+      initChatbotWidget();
+      initModal();
+
+      // 3. Khởi tạo không gian 3D nền tinh tế
+      initHero3DScene();
+
+      // 4. Kích hoạt hiệu ứng nghiêng 3D Perspective Tilt & Spotlight Sheen
+      init3DTiltEffects();
+
+      // 5. Kích hoạt hiệu ứng động sinh động (Scroll Bar, Back to top SVG, Counter Numbers, Scroll Reveal)
+      initDynamicAnimations();
+    });
+  </script>
+</body>
+</html>

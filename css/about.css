@@ -1,0 +1,197 @@
+/* --------------------------------------------------------------------------
+   10. ABOUT SECTION - THAY THẾ BANNER LẶP LẠI BẰNG BẢNG NĂNG LỰC DOANH NGHIỆP
+   -------------------------------------------------------------------------- */
+.about-section {
+  padding: 88px 0;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 52px;
+}
+
+/* Bảng Hồ Sơ Năng Lực thay thế poster bị lặp lại */
+.about-profile-card {
+  background: linear-gradient(135deg, #0a1e3d 0%, var(--primary) 100%);
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-logo-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.profile-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profile-header-text h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.profile-slogan-motto {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.5px;
+}
+
+/* Grid số liệu năng lực */
+.profile-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.profile-stat-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.p-stat-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #facc15;
+  line-height: 1.1;
+  display: block;
+}
+
+.p-stat-lbl {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Khung chứng nhận pháp lý */
+.profile-legal-box {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  border-left: 3px solid #22c55e;
+}
+
+.profile-legal-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  margin-bottom: 6px;
+}
+
+.profile-legal-item:last-child {
+  margin-bottom: 0;
+}
+
+.profile-legal-item svg {
+  width: 14px !important;
+  height: 14px !important;
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+/* Cột văn bản About */
+.about-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
+.about-desc {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin-bottom: 24px;
+}
+
+.core-values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.core-value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast);
+}
+
+.core-value-card:hover {
+  transform: translateX(4px);
+  border-color: var(--primary-pastel-border);
+}
+
+.core-val-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.core-val-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.icon-blue { background: var(--primary-pastel); color: var(--primary); }
+.icon-navy { background: #e0e7ff; color: #3730a3; }
+.icon-green { background: var(--green-pastel); color: var(--secondary-green); }
+
+.core-val-content h4 {
+  font-size: 0.925rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.3px;
+  margin-bottom: 3px;
+}
+
+.core-val-content p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+

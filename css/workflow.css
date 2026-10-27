@@ -1,0 +1,128 @@
+/* ==========================================================================
+   QUY TRÌNH HỢP TÁC KỸ THUẬT 5 BƯỚC (WORKFLOW COMPONENT)
+   ========================================================================== */
+.workflow-section {
+  padding: 88px 0;
+  background: linear-gradient(180deg, var(--bg-body) 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+  margin-top: 48px;
+}
+
+/* Đường nối liên kết giữa các bước */
+.workflow-grid::before {
+  content: "";
+  position: absolute;
+  top: 52px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--primary-pastel-border) 0px,
+    var(--primary-pastel-border) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.workflow-step-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-xs);
+}
+
+.workflow-step-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary-pastel-border);
+  box-shadow: 0 14px 28px -6px rgba(19, 68, 143, 0.12);
+}
+
+.step-badge {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-xs);
+}
+
+.workflow-step-card:nth-child(even) .step-badge {
+  background: var(--secondary-green);
+}
+
+.step-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--primary-pastel);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 16px;
+  transition: all var(--transition-fast);
+}
+
+.step-icon-wrap svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.workflow-step-card:hover .step-icon-wrap {
+  background: var(--primary);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.step-title {
+  font-size: 1.025rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.step-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .workflow-grid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+}
