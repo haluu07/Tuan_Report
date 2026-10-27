@@ -24,10 +24,9 @@ COMPONENTS = [
     ("components/workflow.html", "<!-- 7. WORKFLOW COMPONENT -->"),
     ("components/about.html", "<!-- 7. ABOUT COMPONENT -->"),
     ("components/booking.html", "<!-- 8. BOOKING COMPONENT -->"),
-    ("components/contact.html", "<!-- 9. CONTACT COMPONENT -->"),
-    ("components/footer.html", "<!-- 10. FOOTER COMPONENT -->"),
-    ("components/chatbot.html", "<!-- 11. CHATBOT COMPONENT -->"),
-    ("components/modal.html", "<!-- 12. MODAL COMPONENT -->"),
+    ("components/footer.html", "<!-- 9. FOOTER COMPONENT -->"),
+    ("components/chatbot.html", "<!-- 10. CHATBOT COMPONENT -->"),
+    ("components/modal.html", "<!-- 11. MODAL COMPONENT -->"),
 ]
 
 def read_file(path):
@@ -71,7 +70,6 @@ def build():
   <link rel="stylesheet" href="css/workflow.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/booking.css">
-  <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/modal.css">
@@ -109,7 +107,6 @@ def build():
     html_parts.append("    " + read_file("components/workflow.html"))
     html_parts.append("    " + read_file("components/about.html"))
     html_parts.append("    " + read_file("components/booking.html"))
-    html_parts.append("    " + read_file("components/contact.html"))
 
     # Main tag end
     html_parts.append("  </main>")
