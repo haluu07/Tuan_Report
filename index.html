@@ -35,14 +35,17 @@
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- Thư viện Bản đồ số GIS Leaflet -->
+  <link rel="stylesheet" href="css/leaflet.css">
   
   <!-- Fallback master stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- ========================================================
-       THƯ VIỆN ĐỒ HỌA 3D THREE.JS (CHẠY 100% OFFLINE TỪ js/three.min.js)
+       THƯ VIỆN ĐỒ HỌA 3D THREE.JS & BẢN ĐỒ SỐ LEAFLET
        ======================================================== -->
   <script src="js/three.min.js"></script>
+  <script src="js/leaflet.js"></script>
 </head>
 <body>
 
@@ -1085,8 +1088,32 @@
           Khẳng định vị thế qua hàng trăm dự án tư vấn khảo sát địa chất, thiết kế & giám sát đường dây trạm biến áp đến 110kV, thẩm tra dự toán tại các khu công nghiệp trọng điểm miền Bắc.
         </p>
 
-        <!-- Bộ lọc danh mục dự án (Filter Tabs) -->
-        <div class="project-filter-tabs" data-aos="fade-up" data-aos-delay="300" role="tablist" aria-label="Bộ lọc dự án tiêu biểu">
+        <!-- Thanh chuyển đổi Chế độ hiển thị: Danh sách Card vs Bản đồ số GPS vệ tinh -->
+        <div class="project-view-mode-bar" data-aos="fade-up" data-aos-delay="250">
+          <div class="view-mode-toggle" role="tablist" aria-label="Chuyển chế độ hiển thị dự án">
+            <button type="button" class="view-toggle-btn active" data-view="grid" id="btnViewGrid" role="tab" aria-selected="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Danh Sách Thẻ (6)</span>
+            </button>
+            <button type="button" class="view-toggle-btn" data-view="map" id="btnViewMap" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+              <span>Bản Đồ Số GPS (Mới)</span>
+              <span class="live-dot-pulse" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bộ lọc danh mục dự án (Filter Tabs - chỉ áp dụng cho dạng Card) -->
+        <div class="project-filter-tabs" id="projectFilterTabs" data-aos="fade-up" data-aos-delay="300" role="tablist" aria-label="Bộ lọc dự án tiêu biểu">
           <button type="button" class="project-filter-btn active" data-filter="all" role="tab" aria-selected="true">
             <span>Tất Cả Dự Án</span>
             <span class="filter-count">6</span>
@@ -1118,6 +1145,240 @@
             <span class="filter-count">2</span>
           </button>
         </div>
+      </div>
+
+      <!-- ========================================================
+           BẢN ĐỒ SỐ PHÂN BỔ CÔNG TRÌNH THỰC TẾ (REAL LEAFLET GIS MAP)
+           Tích hợp bản đồ vệ tinh & bản đồ giao thông trắc địa thực tế
+           ======================================================== -->
+      <div class="projects-map-view is-hidden" id="projectsMapView" aria-hidden="true">
+        
+        <!-- Cột Trái: Danh sách Vị trí Dự Án (Interactive Sidebar) -->
+        <div class="map-sidebar">
+          <div class="map-sidebar-header">
+            <div class="map-sidebar-title-row">
+              <h3 class="map-sidebar-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                  <line x1="8" y1="2" x2="8" y2="18"></line>
+                  <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+                <span>Mạng Lưới Dự Án GIS</span>
+              </h3>
+              <span class="map-live-badge">7 Điểm Trọng Điểm</span>
+            </div>
+            <p class="map-sidebar-subtitle">Bấm chọn từng vị trí để tự động bay đến tọa độ GPS và xem công trình</p>
+            
+            <!-- Bộ chuyển đổi Layer bản đồ: Giao Thông vs Vệ Tinh -->
+            <div class="map-layer-switch">
+              <button type="button" class="layer-switch-btn active" id="btnLayerStreet" data-layer="street">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                <span>Bản Đồ Giao Thông</span>
+              </button>
+              <button type="button" class="layer-switch-btn" id="btnLayerSatellite" data-layer="satellite">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                <span>Ảnh Vệ Tinh (Satellite)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Danh sách vị trí công trình có thể cuộn -->
+          <div class="map-locations-list" id="mapLocationsList">
+            <!-- 1. Trụ sở chính KT Xanh -->
+            <div class="map-loc-item active" data-pin-id="pin-hq">
+              <div class="map-loc-indicator loc-hq">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-hq">Trụ Sở Chính</span>
+                  <span class="map-loc-gps-pill">21°35'N, 105°50'E</span>
+                </div>
+                <h4 class="map-loc-name">Công Ty TNHH KT Xanh Thái Nguyên</h4>
+                <p class="map-loc-address">Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot green"></span>
+                  <span>Trung tâm tư vấn & điều hành dự án</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Dự án 2: Trạm biến áp 110kV Sông Công II -->
+            <div class="map-loc-item" data-pin-id="pin-p2" data-project-id="p2">
+              <div class="map-loc-indicator loc-dien">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-dien">Trạm Điện 110kV</span>
+                  <span class="map-loc-badge-hot">2x63 MVA</span>
+                </div>
+                <h4 class="map-loc-name">Trạm Biến Áp 110kV KCN Sông Công II</h4>
+                <p class="map-loc-address">KCN Sông Công II, TP. Sông Công, Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot orange"></span>
+                  <span>Đóng điện an toàn • ĐZ 110kV dài 3.8km</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Dự án 1: KCN Điềm Thụy -->
+            <div class="map-loc-item" data-pin-id="pin-p1" data-project-id="p1">
+              <div class="map-loc-indicator loc-diachat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"></path><path d="m5 20 7-14 7 14"></path></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-diachat">Khảo Sát Địa Chất</span>
+                  <span class="map-loc-badge-ok">TCVN 9362</span>
+                </div>
+                <h4 class="map-loc-name">Khảo Sát Địa Chất KCN Điềm Thụy</h4>
+                <p class="map-loc-address">KCN Điềm Thụy, H. Phú Bình, Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot green"></span>
+                  <span>35.000 m² • 24 hố khoan sâu 40m</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Dự án 4: Điện mặt trời áp mái 1.2MWp -->
+            <div class="map-loc-item" data-pin-id="pin-p4" data-project-id="p4">
+              <div class="map-loc-indicator loc-solar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-solar">Năng Lượng Xanh</span>
+                  <span class="map-loc-badge-eco">I-REC</span>
+                </div>
+                <h4 class="map-loc-name">Điện Mặt Trời Áp Mái 1.2MWp</h4>
+                <p class="map-loc-address">Cụm CN Điềm Thụy, Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot green"></span>
+                  <span>1.450 MWh/năm • Zero-Export EVN</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Dự án 3: Thẩm tra xưởng FDI Samsung Yên Bình -->
+            <div class="map-loc-item" data-pin-id="pin-p3" data-project-id="p3">
+              <div class="map-loc-indicator loc-thamtra">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-thamtra">Thẩm Tra Dự Toán</span>
+                  <span class="map-loc-badge-save">-6.8% CP</span>
+                </div>
+                <h4 class="map-loc-name">Nhà Xưởng Phụ Trợ FDI KCN Yên Bình</h4>
+                <p class="map-loc-address">KCN Yên Bình, TP. Phổ Yên, Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot purple"></span>
+                  <span>28.000 m² sàn • Khung thép vượt nhịp</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Dự án 5: Tuyến giao thông UAV Sông Công - Nam Tiến -->
+            <div class="map-loc-item" data-pin-id="pin-p5" data-project-id="p5">
+              <div class="map-loc-indicator loc-uav">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-uav">Trắc Địa UAV 3D</span>
+                  <span class="map-loc-badge-tech">Lidar RTK</span>
+                </div>
+                <h4 class="map-loc-name">Bay Chụp UAV Tuyến Sông Công - Nam Tiến</h4>
+                <p class="map-loc-address">Tuyến giao thông liên KCN, Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot blue"></span>
+                  <span>Tuyến 8.5 km • Sai số mặt phẳng ≤ 2cm</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Dự án 6: Hạ tầng & Trạm XLNT KCN Sông Công I -->
+            <div class="map-loc-item" data-pin-id="pin-p6" data-project-id="p6">
+              <div class="map-loc-indicator loc-hatang">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-hatang">Giám Sát Hạ Tầng</span>
+                  <span class="map-loc-badge-ok">QCVN 40</span>
+                </div>
+                <h4 class="map-loc-name">Trạm Xử Lý Nước Thải KCN Sông Công I</h4>
+                <p class="map-loc-address">KCN Sông Công I, TP. Sông Công, Thái Nguyên</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot teal"></span>
+                  <span>5.000 m³/ngày đêm • Cống bê tông D1200</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Chi nhánh Cao Bằng -->
+            <div class="map-loc-item" data-pin-id="pin-branch">
+              <div class="map-loc-indicator loc-branch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="map-loc-details">
+                <div class="map-loc-topline">
+                  <span class="map-loc-tag tag-branch">Chi Nhánh</span>
+                  <span class="map-loc-gps-pill">Cao Bằng</span>
+                </div>
+                <h4 class="map-loc-name">Chi Nhánh KT Xanh Cao Bằng</h4>
+                <p class="map-loc-address">Tỉnh Cao Bằng • Tư vấn & Khảo sát công trình</p>
+                <div class="map-loc-status-row">
+                  <span class="map-status-dot red"></span>
+                  <span>Văn phòng đại diện thường trực</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Cột Phải: Không gian Bản đồ Thực tế Leaflet Canvas -->
+        <div class="map-viewport-wrapper">
+          <!-- Top bar định vị và điều khiển bản đồ -->
+          <div class="map-topbar">
+            <div class="map-status-pill">
+              <span class="radar-dot"></span>
+              <span class="map-status-text">HỆ THỐNG ĐỊNH VỊ CÔNG TRÌNH VỆ TINH GIS</span>
+            </div>
+            <div class="map-coord-display" id="mapCoordDisplay">
+              KHU VỰC THÁI NGUYÊN • TỌA ĐỘ VỆ TINH WGS84
+            </div>
+            <div class="map-controls">
+              <button type="button" class="map-ctrl-btn" id="btnConfigMapApiKey" title="Cài đặt API Key bản đồ (CARTO / Basemaps)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-1.5 1.5L14 9l-3-3 1.5-1.5M3 21l9-9"></path><circle cx="7.5" cy="16.5" r="3.5"></circle></svg>
+                <span>Cài API Key</span>
+              </button>
+              <button type="button" class="map-ctrl-btn" id="mapReset" title="Đặt lại góc nhìn toàn cảnh Thái Nguyên">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                <span>Toàn Cảnh</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Container chứa bản đồ Leaflet thật -->
+          <div id="realLeafletMap" class="real-leaflet-map-container"></div>
+
+          <!-- Chú giải dưới đáy bản đồ -->
+          <div class="map-legend-bar">
+            <span class="legend-item"><span class="legend-dot dot-hq"></span> Trụ sở KT Xanh</span>
+            <span class="legend-item"><span class="legend-dot dot-dien"></span> Trạm Biến Áp 110kV</span>
+            <span class="legend-item"><span class="legend-dot dot-diachat"></span> Khảo sát Địa chất</span>
+            <span class="legend-item"><span class="legend-dot dot-solar"></span> Điện Mặt Trời</span>
+            <span class="legend-item"><span class="legend-dot dot-thamtra"></span> Thẩm tra Dự toán</span>
+            <span class="legend-item"><span class="legend-dot dot-uav"></span> Trắc địa UAV 3D</span>
+            <span class="legend-item"><span class="legend-dot dot-hatang"></span> Hạ tầng KCN</span>
+            <span class="legend-item"><span class="legend-dot dot-branch"></span> Chi nhánh Cao Bằng</span>
+          </div>
+
+        </div>
+
       </div>
 
       <!-- Lưới danh sách dự án (Projects Showcase Grid) -->

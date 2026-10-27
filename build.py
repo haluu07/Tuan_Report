@@ -77,14 +77,17 @@ def build():
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- Thư viện Bản đồ số GIS Leaflet -->
+  <link rel="stylesheet" href="css/leaflet.css">
   
   <!-- Fallback master stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- ========================================================
-       THƯ VIỆN ĐỒ HỌA 3D THREE.JS (CHẠY 100% OFFLINE TỪ js/three.min.js)
+       THƯ VIỆN ĐỒ HỌA 3D THREE.JS & BẢN ĐỒ SỐ LEAFLET
        ======================================================== -->
   <script src="js/three.min.js"></script>
+  <script src="js/leaflet.js"></script>
 </head>
 <body>""")
 
