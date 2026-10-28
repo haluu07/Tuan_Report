@@ -256,9 +256,9 @@ html.theme-transitioning *::after {
 
 /* Mobile Drawer trên Dark Mode */
 [data-theme="dark"] .main-nav {
-  background: rgba(11, 19, 38, 0.98) !important;
+  background: #0b1326 !important;
   border-left-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
+  box-shadow: -10px 0 45px rgba(0, 0, 0, 0.9) !important;
 }
 
 [data-theme="dark"] .mobile-drawer-header {
@@ -278,6 +278,30 @@ html.theme-transitioning *::after {
   background: #1e293b !important;
   color: #facc15 !important;
   border-color: rgba(250, 204, 21, 0.3) !important;
+}
+
+[data-theme="dark"] .nav-link {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link:active {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: #60a5fa !important;
+  background: rgba(37, 99, 235, 0.22) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+[data-theme="dark"] .drawer-link-arrow {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .nav-link.active .drawer-link-arrow {
+  color: #60a5fa !important;
 }
 
 /* --------------------------------------------------------------------------

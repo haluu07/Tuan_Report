@@ -263,7 +263,8 @@
 
 /* Các thành phần chỉ hiển thị trong Mobile Drawer */
 .mobile-drawer-header,
-.mobile-drawer-footer {
+.mobile-drawer-footer,
+.drawer-link-arrow {
   display: none;
 }
 
