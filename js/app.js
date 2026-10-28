@@ -4,6 +4,8 @@
  * Khởi tạo toàn bộ các module giao diện, 3D WebGL & tương tác
  */
 
+import { initTheme } from './theme.js';
+import { initI18n } from './i18n.js';
 import { initNavigation } from './navigation.js';
 import { initServiceCardActions, initServiceFilter } from './services.js';
 import { initBookingForm } from './booking.js';
@@ -15,6 +17,10 @@ import { initDynamicAnimations } from './animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
+
+  // 0. Khởi tạo hệ thống Chuyển đổi Ngôn ngữ (VIE / ENG) & Chế độ Sáng / Tối (Theme System)
+  initI18n();
+  initTheme();
 
   // 1. Khởi chạy các khối tương tác cốt lõi
   initNavigation();

@@ -7,9 +7,9 @@
           
           <!-- Cột thông tin hỗ trợ bên trái -->
           <div class="booking-info-col">
-            <span class="section-tag section-tag-light">Tư Vấn Trực Tiếp</span>
-            <h2 class="booking-heading">Đăng Ký Khảo Sát Hiện Trường & Tư Vấn Kỹ Thuật</h2>
-            <p class="booking-sub">
+            <span class="section-tag section-tag-light" data-i18n="booking_tag">Tư Vấn Trực Tiếp</span>
+            <h2 class="booking-heading" data-i18n="booking_heading">Đăng Ký Khảo Sát Hiện Trường & Tư Vấn Kỹ Thuật</h2>
+            <p class="booking-sub" data-i18n-html="booking_sub">
               Để lại thông tin dự án, chuyên viên kỹ thuật của <strong>KT Xanh Thái Nguyên</strong> sẽ chủ động liên hệ lại xác nhận và bố trí lịch khảo sát sớm nhất.
             </p>
 
@@ -17,31 +17,31 @@
               <div class="commit-item">
                 <div class="commit-icon">✓</div>
                 <div>
-                  <h4>Khảo sát sơ bộ hiện trường nhanh chóng</h4>
-                  <p>Cử kỹ sư đến tận vị trí công trình để đo đạc và tư vấn phương án kỹ thuật.</p>
+                  <h4 data-i18n="commit_1_title">Khảo sát sơ bộ hiện trường nhanh chóng</h4>
+                  <p data-i18n="commit_1_desc">Cử kỹ sư đến tận vị trí công trình để đo đạc và tư vấn phương án kỹ thuật.</p>
                 </div>
               </div>
               <div class="commit-item">
                 <div class="commit-icon">✓</div>
                 <div>
-                  <h4>Báo giá minh bạch, bám sát dự toán</h4>
-                  <p>Dự toán chi phí tối ưu theo đúng định mức xây dựng của Nhà nước.</p>
+                  <h4 data-i18n="commit_2_title">Báo giá minh bạch, bám sát dự toán</h4>
+                  <p data-i18n="commit_2_desc">Dự toán chi phí tối ưu theo đúng định mức xây dựng của Nhà nước.</p>
                 </div>
               </div>
               <div class="commit-item">
                 <div class="commit-icon">✓</div>
                 <div>
-                  <h4>Bảo mật hồ sơ & bản vẽ công trình</h4>
-                  <p>Cam kết bảo mật tuyệt đối các số liệu đo đạc và hồ sơ thiết kế của dự án.</p>
+                  <h4 data-i18n="commit_3_title">Bảo mật hồ sơ & bản vẽ công trình</h4>
+                  <p data-i18n="commit_3_desc">Cam kết bảo mật tuyệt đối các số liệu đo đạc và hồ sơ thiết kế của dự án.</p>
                 </div>
               </div>
             </div>
 
             <!-- Card Hotline Kỹ thuật 24/7 -->
             <div class="booking-hotline-box">
-              <div class="hotline-badge-top">Hỗ Trợ Kỹ Thuật Nhanh</div>
-              <a href="tel:0988123456" class="hotline-phone-link">0988.123.456</a>
-              <p class="hotline-desc">Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên</p>
+              <div class="hotline-badge-top" data-i18n="hotline_box_badge">Hỗ Trợ Kỹ Thuật Nhanh</div>
+              <a href="tel:0988123456" class="hotline-phone-link" data-i18n="hotline_box_phone">0988.123.456</a>
+              <p class="hotline-desc" data-i18n="hotline_box_addr">Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên</p>
             </div>
           </div>
 
@@ -49,8 +49,8 @@
           <div class="booking-form-col">
             <div class="form-card">
               <div class="form-card-header">
-                <h3>Phiếu Đặt Lịch Khảo Sát</h3>
-                <p>Vui lòng điền thông tin chính xác để kỹ sư KT Xanh chuẩn bị hồ sơ khảo sát.</p>
+                <h3 data-i18n="form_title">Phiếu Đặt Lịch Khảo Sát</h3>
+                <p data-i18n="form_subtitle">Vui lòng điền thông tin chính xác để kỹ sư KT Xanh chuẩn bị hồ sơ khảo sát.</p>
               </div>
 
               <!-- Form chính kết nối trực tiếp FormSubmit gửi về dtc235270180@ictu.edu.vn -->
@@ -64,7 +64,7 @@
                 <!-- Họ và tên -->
                 <div class="form-group" id="group-fullName">
                   <label for="fullName" class="form-label">
-                    Họ và tên người đại diện / Kỹ sư phụ trách <span class="required-star">*</span>
+                    <span data-i18n="form_label_name">Họ và tên người đại diện / Kỹ sư phụ trách</span> <span class="required-star">*</span>
                   </label>
                   <div class="input-wrapper">
                     <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -77,6 +77,7 @@
                       name="fullName" 
                       class="form-control" 
                       placeholder="Ví dụ: Nguyễn Văn Tuấn"
+                      data-i18n-placeholder="form_ph_name"
                       required
                     >
                   </div>
@@ -87,7 +88,7 @@
                 <div class="form-row-2">
                   <div class="form-group" id="group-phone">
                     <label for="phone" class="form-label">
-                      Số điện thoại liên hệ <span class="required-star">*</span>
+                      <span data-i18n="form_label_phone">Số điện thoại liên hệ</span> <span class="required-star">*</span>
                     </label>
                     <div class="input-wrapper">
                       <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -99,6 +100,7 @@
                         name="phone" 
                         class="form-control" 
                         placeholder="09xx xxx xxx"
+                        data-i18n-placeholder="form_ph_phone"
                         required
                       >
                     </div>
@@ -107,7 +109,7 @@
 
                   <div class="form-group" id="group-email">
                     <label for="email" class="form-label">
-                      Email doanh nghiệp / cá nhân <span class="required-star">*</span>
+                      <span data-i18n="form_label_email">Email doanh nghiệp / cá nhân</span> <span class="required-star">*</span>
                     </label>
                     <div class="input-wrapper">
                       <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -120,6 +122,7 @@
                         name="email" 
                         class="form-control" 
                         placeholder="tuan.nguyen@company.vn"
+                        data-i18n-placeholder="form_ph_email"
                         required
                       >
                     </div>
@@ -131,25 +134,25 @@
                 <div class="form-row-2">
                   <div class="form-group" id="group-service">
                     <label for="serviceSelect" class="form-label">
-                      Dịch vụ cần tư vấn <span class="required-star">*</span>
+                      <span data-i18n="form_label_service">Dịch vụ cần tư vấn</span> <span class="required-star">*</span>
                     </label>
                     <div class="input-wrapper">
                       <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                       </svg>
                       <select id="serviceSelect" name="service" class="form-control form-select" required>
-                        <option value="" disabled selected>-- Chọn 1 trong 11 lĩnh vực dịch vụ --</option>
-                        <option value="Giám sát công trình đa ngành (Dân dụng, Công nghiệp, Hạ tầng, Giao thông)">01. Giám sát công trình đa ngành</option>
-                        <option value="Thiết kế kỹ thuật và tư vấn thông tin liên lạc">02. Thiết kế kỹ thuật & Thông tin liên lạc</option>
-                        <option value="Khảo sát địa hình – Khảo sát địa chất">03. Khảo sát địa hình – Khảo sát địa chất</option>
-                        <option value="Kiểm định chất lượng xây dựng">04. Kiểm định chất lượng xây dựng</option>
-                        <option value="Tư vấn quản lý chi phí đầu tư xây dựng">05. Tư vấn quản lý chi phí đầu tư xây dựng</option>
-                        <option value="Lập dự án đầu tư các công trình xây dựng">06. Lập dự án đầu tư các công trình</option>
-                        <option value="Tư vấn lập kế hoạch đấu thầu, hồ sơ mời thầu">07. Tư vấn lập kế hoạch đấu thầu, HSMT</option>
-                        <option value="Khảo sát thiết kế kiến trúc, tổng mặt bằng các công trình">08. Thiết kế kiến trúc & Tổng mặt bằng</option>
-                        <option value="Thẩm tra dự án, thiết kế, dự toán công trình xây dựng">09. Thẩm tra dự án, thiết kế & Dự toán</option>
-                        <option value="Tư vấn tạo mẫu biển quảng cáo">10. Tư vấn tạo mẫu biển quảng cáo</option>
-                        <option value="Khảo sát, thiết kế, giám sát thi công ĐZ & Trạm biến áp đến 110kV; Điện mặt trời">11. ĐZ & Trạm biến áp đến 110kV; Điện mặt trời</option>
+                        <option value="" disabled selected data-i18n="form_opt_default">-- Chọn 1 trong 11 lĩnh vực dịch vụ --</option>
+                        <option value="Giám sát công trình đa ngành (Dân dụng, Công nghiệp, Hạ tầng, Giao thông)" data-i18n="s1_title">01. Giám sát công trình đa ngành</option>
+                        <option value="Thiết kế kỹ thuật và tư vấn thông tin liên lạc" data-i18n="s2_title">02. Thiết kế kỹ thuật & Thông tin liên lạc</option>
+                        <option value="Khảo sát địa hình – Khảo sát địa chất" data-i18n="s3_title">03. Khảo sát địa hình – Khảo sát địa chất</option>
+                        <option value="Kiểm định chất lượng xây dựng" data-i18n="s4_title">04. Kiểm định chất lượng xây dựng</option>
+                        <option value="Tư vấn quản lý chi phí đầu tư xây dựng" data-i18n="s5_title">05. Tư vấn quản lý chi phí đầu tư xây dựng</option>
+                        <option value="Lập dự án đầu tư các công trình xây dựng" data-i18n="s6_title">06. Lập dự án đầu tư các công trình</option>
+                        <option value="Tư vấn lập kế hoạch đấu thầu, hồ sơ mời thầu" data-i18n="s7_title">07. Tư vấn lập kế hoạch đấu thầu, HSMT</option>
+                        <option value="Khảo sát thiết kế kiến trúc, tổng mặt bằng các công trình" data-i18n="s8_title">08. Thiết kế kiến trúc & Tổng mặt bằng</option>
+                        <option value="Thẩm tra dự án, thiết kế, dự toán công trình xây dựng" data-i18n="s9_title">09. Thẩm tra dự án, thiết kế & Dự toán</option>
+                        <option value="Tư vấn tạo mẫu biển quảng cáo" data-i18n="s10_title">10. Tư vấn tạo mẫu biển quảng cáo</option>
+                        <option value="Khảo sát, thiết kế, giám sát thi công ĐZ & Trạm biến áp đến 110kV; Điện mặt trời" data-i18n="s11_title">11. ĐZ & Trạm biến áp đến 110kV; Điện mặt trời</option>
                       </select>
                     </div>
                     <span class="field-error" id="error-service">Vui lòng chọn lĩnh vực dịch vụ bạn quan tâm</span>
@@ -157,7 +160,7 @@
 
                   <div class="form-group" id="group-appointmentDate">
                     <label for="appointmentDate" class="form-label">
-                      Ngày & giờ mong muốn <span class="required-star">*</span>
+                      <span data-i18n="form_label_date">Ngày & giờ mong muốn</span> <span class="required-star">*</span>
                     </label>
                     <div class="input-wrapper">
                       <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -181,7 +184,7 @@
                 <!-- Ghi chú dự án -->
                 <div class="form-group">
                   <label for="notes" class="form-label">
-                    Thông tin công trình / Địa điểm khảo sát / Yêu cầu cụ thể
+                    <span data-i18n="form_label_notes">Thông tin công trình / Địa điểm khảo sát / Yêu cầu cụ thể</span>
                   </label>
                   <textarea 
                     id="notes" 
@@ -189,6 +192,7 @@
                     class="form-control form-textarea" 
                     rows="3" 
                     placeholder="VD: Cần khảo sát địa hình địa chất cho dự án nhà xưởng 2.000m² tại KCN Sông Công, Thái Nguyên..."
+                    data-i18n-placeholder="form_ph_notes"
                   ></textarea>
                 </div>
 
@@ -201,10 +205,10 @@
                 <!-- Nút Submit Form -->
                 <button type="submit" class="btn btn-primary btn-block btn-submit" id="btnSubmit">
                   <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
-                  <span class="btn-text" id="btnText">Gửi Yêu Cầu Đặt Lịch Khảo Sát</span>
+                  <span class="btn-text" id="btnText" data-i18n="form_btn_submit">Gửi Yêu Cầu Đặt Lịch Khảo Sát</span>
                 </button>
 
-                <p class="form-privacy-note">
+                <p class="form-privacy-note" data-i18n="form_privacy_note">
                   KT Xanh cam kết bảo mật tuyệt đối dữ liệu khảo sát và thông tin khách hàng theo tiêu chuẩn ISO.
                 </p>
               </form>

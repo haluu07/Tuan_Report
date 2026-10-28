@@ -75,6 +75,7 @@ def build():
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
   <!-- Thư viện Bản đồ số GIS Leaflet -->
   <link rel="stylesheet" href="css/leaflet.css">
   
@@ -86,6 +87,25 @@ def build():
        ======================================================== -->
   <script src="js/three.min.js"></script>
   <script src="js/leaflet.js"></script>
+
+  <!-- Khởi tạo Chế độ Giao diện Sáng / Tối & Ngôn ngữ (Chống chớp màn hình Anti-FOUT) -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('kt_theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+        var savedLang = localStorage.getItem('kt_lang');
+        if (savedLang === 'en') {
+          document.documentElement.setAttribute('lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>""")
 

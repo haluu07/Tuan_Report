@@ -1,7 +1,7 @@
   <!-- ========================================================
        9. KHUNG CHATBOT TỰ ĐỘNG (FLOATING CHAT WIDGET)
        ======================================================== -->
-  <aside class="chat-widget" id="chatWidget" aria-label="Trợ lý ảo KT Xanh Thái Nguyên">
+  <aside class="chat-widget" id="chatWidget" aria-label="Trợ lý ảo KT Xanh Thái Nguyên" data-i18n-aria="chat_bot_name">
     
     <!-- Cửa sổ Chatbot -->
     <div class="chat-window" id="chatWindow" aria-hidden="true">
@@ -12,8 +12,8 @@
           <span class="chat-status-indicator" title="Đang trực tuyến"></span>
         </div>
         <div class="chat-bot-info">
-          <h4 class="chat-bot-name">Trợ lý Kỹ Thuật KT Xanh</h4>
-          <span class="chat-bot-status">Sẵn sàng phản hồi 24/7</span>
+          <h4 class="chat-bot-name" data-i18n="chat_bot_name">Trợ lý Kỹ Thuật KT Xanh</h4>
+          <span class="chat-bot-status" data-i18n="chat_bot_status">Sẵn sàng phản hồi 24/7</span>
         </div>
         <button class="chat-close-btn" id="chatCloseBtn" aria-label="Thu nhỏ chat">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -30,18 +30,18 @@
 
       <!-- Khu vực gợi ý câu hỏi nhanh (Quick Question Chips) -->
       <div class="chat-quick-replies" id="chatQuickReplies">
-        <span class="quick-reply-label">Gợi ý câu hỏi nhanh:</span>
+        <span class="quick-reply-label" data-i18n="chat_quick_label">Gợi ý câu hỏi nhanh:</span>
         <div class="quick-chips-wrap">
-          <button type="button" class="quick-chip" data-question="Báo giá khảo sát địa chất">
+          <button type="button" class="quick-chip" data-question="Báo giá khảo sát địa chất" data-question-en="Geotechnical survey quotation" data-i18n="chip_geology">
             Báo giá khảo sát địa chất?
           </button>
-          <button type="button" class="quick-chip" data-question="Quy trình thẩm tra dự toán">
+          <button type="button" class="quick-chip" data-question="Quy trình thẩm tra dự toán" data-question-en="Cost verification process" data-i18n="chip_estimate">
             Quy trình thẩm tra dự toán?
           </button>
-          <button type="button" class="quick-chip" data-question="Tư vấn trạm 110kV">
+          <button type="button" class="quick-chip" data-question="Tư vấn trạm 110kV" data-question-en="110kV substation advice" data-i18n="chip_substation">
             Tư vấn trạm 110kV?
           </button>
-          <button type="button" class="quick-chip" data-question="Tôi muốn đặt lịch khảo sát hiện trường ngay">
+          <button type="button" class="quick-chip" data-question="Tôi muốn đặt lịch khảo sát hiện trường ngay" data-question-en="Book on-site survey now" data-i18n="chip_booking">
             Đặt lịch khảo sát hiện trường?
           </button>
         </div>
@@ -54,6 +54,7 @@
           id="chatInput" 
           class="chat-input" 
           placeholder="Nhập câu hỏi của bạn tại đây..." 
+          data-i18n-placeholder="chat_input_ph"
           autocomplete="off"
         >
         <button type="submit" class="chat-send-btn" id="chatSendBtn" aria-label="Gửi tin nhắn">
@@ -72,6 +73,7 @@
        class="zalo-floating-btn" 
        id="zaloFloatingBtn" 
        title="Chat Zalo ngay: 0988.123.456"
+       data-i18n-title="zalo_tooltip"
        aria-label="Liên hệ Zalo với kỹ sư KT Xanh">
       <div class="zalo-icon-wrap">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ffffff">
@@ -80,7 +82,7 @@
         </svg>
       </div>
       <span class="zalo-pulse-ring" aria-hidden="true"></span>
-      <span class="zalo-tooltip">Tư vấn Zalo: 0988.123.456</span>
+      <span class="zalo-tooltip" data-i18n="zalo_tooltip">Tư vấn Zalo: 0988.123.456</span>
     </a>
 
     <!-- Nút Floating Toggle mở/đóng Chatbot -->

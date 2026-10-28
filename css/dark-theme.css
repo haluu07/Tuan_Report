@@ -1,0 +1,1103 @@
+/* ==========================================================================
+   CÔNG TY TNHH KT XANH THÁI NGUYÊN - ENTERPRISE DARK THEME SYSTEM
+   Thiết kế giao diện Tối công nghệ cao (Deep Navy & Slate)
+   Chuẩn mực: WCAG 2.1 AAA Contrast, Không chói mắt, Tinh tế & Đẳng cấp
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CẬP NHẬT BIẾN TOKENS KHI Ở CHẾ ĐỘ DARK MODE
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  /* Brand Navy & Tech Blue (Được hiệu chỉnh sáng hơn để nổi bật trên nền tối) */
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-dark: #1d4ed8;
+  --primary-light: #93c5fd;
+  --primary-pastel: rgba(59, 130, 246, 0.15);
+  --primary-pastel-border: rgba(59, 130, 246, 0.32);
+
+  /* Brand Leaf Green (Sáng rực rỡ chuẩn Cyber Green) */
+  --secondary-green: #22c55e;
+  --secondary-green-hover: #4ade80;
+  --secondary-green-light: #86efac;
+  --green-pastel: rgba(34, 197, 94, 0.15);
+  --green-pastel-border: rgba(34, 197, 94, 0.32);
+
+  /* Brand Red */
+  --brand-red: #ef4444;
+  --brand-red-hover: #f87171;
+  --brand-red-pastel: rgba(239, 68, 68, 0.15);
+  --brand-red-border: rgba(239, 68, 68, 0.32);
+
+  /* Nền Tối Công Nghệ Cao (Midnight Slate & Deep Navy) */
+  --bg-body: #070d18;
+  --bg-card: #0f172a;
+  --bg-topbar: #030712;
+  --bg-surface: #0a1120;
+
+  /* Văn bản độ tương phản cao */
+  --text-main: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+
+  /* Đường viền tinh tế */
+  --border-color: rgba(255, 255, 255, 0.09);
+  --border-dark: rgba(255, 255, 255, 0.18);
+
+  /* Bóng đổ chiều sâu bóng đêm */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 14px 32px rgba(0, 0, 0, 0.85);
+  --shadow-float: 0 24px 48px -6px rgba(0, 0, 0, 0.9);
+}
+
+/* Hiệu ứng chuyển theme mượt mà toàn trang */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: background-color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. NÚT CHUYỂN ĐỔI GIAO DIỆN (THEME TOGGLE BUTTON)
+   -------------------------------------------------------------------------- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.05);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  position: relative;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--primary-pastel);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.theme-toggle-btn .theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+}
+
+.theme-toggle-btn svg {
+  width: 19px !important;
+  height: 19px !important;
+}
+
+/* Chế độ Sáng: Ẩn mặt trời, Hiện mặt trăng để bấm chuyển sang Tối */
+:root:not([data-theme="dark"]) .theme-toggle-btn .sun-icon,
+[data-theme="light"] .theme-toggle-btn .sun-icon {
+  display: none !important;
+}
+
+:root:not([data-theme="dark"]) .theme-toggle-btn .moon-icon,
+[data-theme="light"] .theme-toggle-btn .moon-icon {
+  display: flex !important;
+  color: #1e293b;
+}
+
+/* Chế độ Tối: Ẩn mặt trăng, Hiện mặt trời vàng để bấm chuyển sang Sáng */
+[data-theme="dark"] .theme-toggle-btn .moon-icon {
+  display: none !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn .sun-icon {
+  display: flex !important;
+  color: #facc15; /* Màu nắng vàng ấm áp */
+  filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.6));
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #facc15;
+  color: #facc15;
+  box-shadow: 0 4px 14px rgba(250, 204, 21, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   2.1. NÚT CHUYỂN ĐỔI NGÔN NGỮ (LANGUAGE SWITCHER: VIE / ENG)
+   -------------------------------------------------------------------------- */
+.lang-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.05);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 2px;
+  gap: 2px;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 9px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 750;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.lang-btn .lang-flag {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--text-main);
+  background: rgba(19, 68, 143, 0.08);
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(19, 68, 143, 0.25);
+}
+
+[data-theme="dark"] .lang-switch-wrap {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-theme="dark"] .lang-btn {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .lang-btn:hover:not(.active) {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .lang-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   3. CHI TIẾT HEADER & NAVIGATION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .site-header {
+  background: rgba(7, 13, 24, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  background: rgba(7, 13, 24, 0.98);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .brand-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .logo-image-wrap {
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="dark"] .nav-link {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .nav-link.active {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.18);
+}
+
+[data-theme="dark"] .nav-link.active::after {
+  background: linear-gradient(90deg, #60a5fa, #22c55e);
+}
+
+/* Mobile Drawer trên Dark Mode */
+[data-theme="dark"] .main-nav {
+  background: rgba(11, 19, 38, 0.98) !important;
+  border-left-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="dark"] .mobile-drawer-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .drawer-company {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .drawer-close-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .drawer-phone-btn {
+  background: #1e293b !important;
+  color: #facc15 !important;
+  border-color: rgba(250, 204, 21, 0.3) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .hero-section {
+  background: linear-gradient(180deg, #091122 0%, var(--bg-body) 100%);
+}
+
+[data-theme="dark"] .hero-backdrop-pattern {
+  background-image: radial-gradient(rgba(59, 130, 246, 0.16) 1.2px, transparent 1.2px);
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .hero-3d-vignette {
+  background: radial-gradient(circle at 65% 50%, transparent 20%, rgba(7, 13, 24, 0.6) 70%, var(--bg-body) 100%);
+}
+
+[data-theme="dark"] .hero-welcome-badge {
+  background-color: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.32);
+  color: #4ade80;
+}
+
+[data-theme="dark"] .hero-title-brand {
+  color: #60a5fa;
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+}
+
+[data-theme="dark"] .hero-title-location {
+  color: #4ade80;
+  text-shadow: 0 0 25px rgba(34, 197, 94, 0.3);
+}
+
+[data-theme="dark"] .hero-slogan-strip {
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="dark"] .slogan-badge {
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .slogan-dot {
+  color: #4ade80;
+}
+
+[data-theme="dark"] .hero-description {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .hero-description strong {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .btn-outline {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-theme="dark"] .btn-outline:hover {
+  background-color: rgba(37, 99, 235, 0.2);
+  border-color: #60a5fa;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .hero-stats-row {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .stat-number {
+  color: #60a5fa;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+[data-theme="dark"] .poster-display-card {
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .poster-card-topbar,
+[data-theme="dark"] .poster-card-footer {
+  background: #090e1a;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .poster-brand-mini span {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .card-footer-item {
+  color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   5. TRUST MARQUEE SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .trust-marquee-section {
+  background: #070d18;
+  border-top-color: rgba(255, 255, 255, 0.08);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .trust-card {
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .trust-card:hover {
+  background: #141f36;
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .trust-logo-box {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .trust-card-title {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .trust-card-desc {
+  color: #94a3b8;
+}
+
+/* --------------------------------------------------------------------------
+   6. 5 PILLARS SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .pillars-section {
+  background-color: #070d18;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .pillar-card {
+  background: #0f172a;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .pillar-card:hover {
+  background: #131d35;
+  border-color: #3b82f6;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .pillar-title {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .pillar-desc {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .pillar-index {
+  color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .pillar-tag {
+  background: rgba(37, 99, 235, 0.16);
+  border-color: rgba(59, 130, 246, 0.28);
+  color: #93c5fd;
+}
+
+/* --------------------------------------------------------------------------
+   7. SERVICES SECTION (DARK MODE) - WCAG AAA HIGH CONTRAST
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .services-section {
+  background-color: #070d18;
+}
+
+[data-theme="dark"] .service-filter-btn {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .service-filter-btn:hover {
+  background: #1e293b !important;
+  border-color: #3b82f6 !important;
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .service-filter-btn.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+}
+
+[data-theme="dark"] .service-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55) !important;
+}
+
+[data-theme="dark"] .service-card:hover {
+  background: #131d35 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(59, 130, 246, 0.22) !important;
+}
+
+[data-theme="dark"] .card-icon-box,
+[data-theme="dark"] .service-icon-box {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+[data-theme="dark"] .service-card:hover .card-icon-box,
+[data-theme="dark"] .service-card:hover .service-icon-box {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .service-order {
+  background: rgba(59, 130, 246, 0.2) !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.38) !important;
+}
+
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .service-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .card-desc,
+[data-theme="dark"] .service-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .card-features li,
+[data-theme="dark"] .service-feature-item {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .card-features li::before,
+[data-theme="dark"] .service-feature-item svg {
+  color: #4ade80 !important;
+}
+
+[data-theme="dark"] .card-action {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .card-action .btn-book-service,
+[data-theme="dark"] .btn-service-action {
+  background: rgba(37, 99, 235, 0.18) !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+  color: #93c5fd !important;
+}
+
+[data-theme="dark"] .card-action .btn-book-service:hover,
+[data-theme="dark"] .btn-service-action:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45) !important;
+}
+
+[data-theme="dark"] .btn-services-expand {
+  background: #0f172a !important;
+  border-color: #3b82f6 !important;
+  color: #93c5fd !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-services-expand:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5) !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. PROJECTS SECTION & LEAFLET GIS MAP (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .section-projects {
+  background-color: #070d18;
+}
+
+[data-theme="dark"] .view-mode-toggle {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .view-toggle-btn {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .view-toggle-btn.active {
+  background: #1e293b !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .project-filter-btn {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .project-filter-btn:hover {
+  background-color: #1e293b !important;
+  border-color: #3b82f6 !important;
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .project-filter-btn.active {
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .filter-count {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .project-card {
+  background-color: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .project-card:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.75), 0 0 20px rgba(59, 130, 246, 0.22) !important;
+}
+
+[data-theme="dark"] .project-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .project-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .project-meta-row {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .project-meta-row .meta-label {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .project-meta-row .meta-value {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .project-chip {
+  background: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+[data-theme="dark"] .project-btn-detail {
+  background: rgba(37, 99, 235, 0.18) !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+[data-theme="dark"] .project-btn-detail:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45) !important;
+}
+
+[data-theme="dark"] .projects-bottom-bar {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .p-stat-num {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .p-stat-lbl {
+  color: #cbd5e1 !important;
+}
+
+/* Bản đồ GIS Leaflet trên Dark Mode */
+[data-theme="dark"] .projects-map-view {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75) !important;
+}
+
+[data-theme="dark"] .map-sidebar {
+  background: #090e1a !important;
+  border-right-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .map-sidebar-header {
+  background: #0f172a !important;
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .map-sidebar-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .layer-switch-btn {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .layer-switch-btn:hover {
+  background: #334155 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .layer-switch-btn.active {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%) !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .map-loc-item {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+[data-theme="dark"] .map-loc-item:hover {
+  background: #1e293b !important;
+  border-color: #3b82f6 !important;
+}
+
+[data-theme="dark"] .map-loc-item.active {
+  background: #131d35 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.28) !important;
+}
+
+[data-theme="dark"] .map-loc-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .map-loc-sub {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .map-loc-tag {
+  color: #93c5fd !important;
+  background: rgba(59, 130, 246, 0.18) !important;
+}
+
+[data-theme="dark"] .gis-control-box,
+[data-theme="dark"] .gis-stat-badge {
+  background: rgba(15, 23, 42, 0.96) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #f8fafc !important;
+}
+
+/* Popup Leaflet trên Dark Mode */
+[data-theme="dark"] .leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85) !important;
+}
+
+[data-theme="dark"] .leaflet-popup-tip {
+  background: #0f172a !important;
+}
+
+[data-theme="dark"] .map-layer-control {
+  background: rgba(15, 23, 42, 0.96) !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. WORKFLOW SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .workflow-section {
+  background: #070d18;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .workflow-step-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .workflow-step-card:hover {
+  background: #131d35 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.7), 0 0 20px rgba(59, 130, 246, 0.18) !important;
+}
+
+[data-theme="dark"] .step-badge {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .step-icon-wrap {
+  background: #1e293b !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+[data-theme="dark"] .step-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .step-desc {
+  color: #cbd5e1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. ABOUT SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .about-section {
+  background-color: #070d18;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .about-profile-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.8), 0 0 25px rgba(59, 130, 246, 0.15) !important;
+}
+
+[data-theme="dark"] .profile-header-text h3 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .profile-slogan-motto {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .profile-stat-box {
+  background: #090e1a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .p-stat-val {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .profile-legal-box {
+  background: #090e1a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .profile-legal-item span {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .profile-legal-item span strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .about-lead {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .about-lead strong {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .about-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .core-value-card {
+  background: #0f172a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .core-value-card:hover {
+  background: #131d35 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.65) !important;
+}
+
+[data-theme="dark"] .core-val-content h4 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .core-val-content p {
+  color: #cbd5e1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. BOOKING FORM SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .booking-section {
+  background: linear-gradient(135deg, #030712 0%, #0c1830 100%);
+}
+
+[data-theme="dark"] .booking-wrapper {
+  background: #0b1329 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .booking-heading {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .booking-sub {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .commit-item h4 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .commit-item p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .booking-hotline-box {
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .hotline-phone-link {
+  color: #facc15 !important;
+}
+
+[data-theme="dark"] .hotline-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .form-card {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85) !important;
+}
+
+[data-theme="dark"] .form-card-header h3 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .form-card-header p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .form-label {
+  color: #f1f5f9 !important;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #070d18 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .form-control:focus {
+  border-color: #3b82f6 !important;
+  background-color: #0b1329 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] select.form-control option {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .form-privacy-note {
+  color: #94a3b8 !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. FOOTER SECTION (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .site-footer {
+  background-color: #030712 !important;
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .footer-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .footer-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .footer-links a {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .footer-links a:hover {
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .footer-contact-item span {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .footer-legal-badge {
+  background: #090e1a !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .footer-legal-badge p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .footer-legal-badge p strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .footer-bottom {
+  background-color: #02050c !important;
+  border-top-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .footer-bottom p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .footer-bottom strong {
+  color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   13. CHATBOT & FLOATING WIDGETS (DARK MODE)
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] .chat-window {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.88) !important;
+}
+
+[data-theme="dark"] .chat-body {
+  background: #070d18 !important;
+}
+
+[data-theme="dark"] .chat-bubble-bot .chat-bubble-content {
+  background: #1e293b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .chat-bubble-user .chat-bubble-content {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .chat-quick-replies {
+  background: #090e1a !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .quick-reply-label {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .quick-chip {
+  background: rgba(37, 99, 235, 0.22) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  color: #93c5fd !important;
+}
+
+[data-theme="dark"] .quick-chip:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .chat-footer {
+  background: #0f172a !important;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .chat-input {
+  background: #070d18 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .chat-input:focus {
+  border-color: #3b82f6 !important;
+}
+
+[data-theme="dark"] .back-to-top-btn {
+  background: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color: #60a5fa !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="dark"] .back-to-top-btn:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.45) !important;
+}
+
+[data-theme="dark"] .progress-ring-bg {
+  stroke: rgba(255, 255, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .modal-dialog {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-theme="dark"] .modal-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-subtitle {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .modal-body {
+  color: #e2e8f0 !important;
+}
+
