@@ -9,7 +9,8 @@
 (function () {
   'use strict';
 
-  // C  const PROJECTS_DATABASE = [
+  // Cơ sở dữ liệu 6 Dự án tiêu biểu thực tế
+  const PROJECTS_DATABASE = [
     {
       id: 'p1',
       title: 'Khảo sát địa hình, địa chất mở rộng KCN Điềm Thụy',
@@ -231,6 +232,11 @@
       projectsMapView.classList.remove('is-hidden');
       projectsMapView.setAttribute('aria-hidden', 'false');
 
+      // Khởi tạo bản đồ nếu chưa có instance
+      if (!leafletMapInstance) {
+        initLeafletGISMap();
+      }
+
       // Kích hoạt tính toán lại kích thước Leaflet container khi hiển thị
       setTimeout(() => {
         if (leafletMapInstance) {
@@ -238,6 +244,17 @@
           focusGISLocation('pin-hq', false);
         }
       }, 180);
+    });
+
+    // Tự động chuyển sang chế độ bản đồ khi bấm menu "Dự án GIS"
+    document.querySelectorAll('a[href="#projects"]').forEach(link => {
+      link.addEventListener('click', () => {
+        setTimeout(() => {
+          if (btnViewMap && !btnViewMap.classList.contains('active')) {
+            btnViewMap.click();
+          }
+        }, 100);
+      });
     });
   }
 

@@ -104,7 +104,7 @@ export function initBookingForm() {
     hideAlert();
 
     const fullName = fullNameInput.value.trim();
-    const phone = phoneInput.value.trim().replace(/\s+/g, '');
+    const phone = phoneInput.value.trim().replace(/[\s\.\-]+/g, '');
     const email = emailInput.value.trim();
     const service = serviceSelect.value;
     const appointmentDate = appointmentDateInput.value;
@@ -158,11 +158,14 @@ export function initBookingForm() {
       isFormValid = false;
       if (!firstInvalidInput) firstInvalidInput = appointmentDateInput;
     } else {
-      const selectedTime = new Date(appointmentDate).getTime();
-      const currentTime = new Date().getTime();
+      const selectedDate = new Date(appointmentDate);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const selectedDay = new Date(selectedDate);
+      selectedDay.setHours(0, 0, 0, 0);
 
-      if (selectedTime < currentTime - 60000) {
-        validateField('appointmentDate', false, 'Thời gian hẹn phải từ thời điểm hiện tại trở đi');
+      if (selectedDay < today) {
+        validateField('appointmentDate', false, 'Thời gian hẹn phải từ ngày hôm nay trở đi');
         isFormValid = false;
         if (!firstInvalidInput) firstInvalidInput = appointmentDateInput;
       } else {
@@ -191,7 +194,7 @@ export function initBookingForm() {
       year: 'numeric'
     });
 
-    // Chuẩn bị payload gửi FormSubmit.co (tối ưu gửi email HTML bàn giao đầy đủ)
+    // Chuẩn bị payload gửi FormSubmit.co
     const payload = {
       _subject: `[KT Xanh] Yêu Cầu Khảo Sát Mới: ${fullName} - ${phone}`,
       _template: 'table',
@@ -203,140 +206,105 @@ export function initBookingForm() {
       'Lĩnh vực dịch vụ': service,
       'Thời gian mong muốn': formattedDate,
       'Địa điểm & Yêu cầu công trình': notes || 'Không có ghi chú thêm',
-      'Nền tảng gửi': 'Website KT Xanh Thái Nguyên (Deploy GitHub Pages)',
+      'Nền tảng gửi': 'Website KT Xanh Thái Nguyên',
       'Thời điểm gửi': new Date().toLocaleString('vi-VN')
     };
 
-    // Gửi AJAX không chuyển hướng trang tới FormSubmit endpoint của dtc235270180@ictu.edu.vn
+    // 1. Lưu ngay vào cơ sở dữ liệu LocalStorage để đảm bảo không mất thông tin
+    try {
+      const storedList = JSON.parse(localStorage.getItem('ktx_booking_records') || '[]');
+      storedList.push({
+        code: randomCode,
+        fullName,
+        phone,
+        email,
+        service,
+        appointmentDate: formattedDate,
+        notes: notes || '',
+        createdAt: new Date().toISOString()
+      });
+      localStorage.setItem('ktx_booking_records', JSON.stringify(storedList));
+    } catch (err) {
+      console.warn('Lỗi ghi LocalStorage:', err);
+    }
+
+    // 2. Hàm hiển thị popup thành công và reset form
+    let hasRenderedModal = false;
+    function renderModalAndSuccess() {
+      if (hasRenderedModal) return;
+      hasRenderedModal = true;
+
+      const modalBookingDetails = document.getElementById('modalBookingDetails');
+      if (modalBookingDetails) {
+        modalBookingDetails.innerHTML = `
+          <div class="detail-row">
+            <span class="detail-label">Mã phiếu hẹn:</span>
+            <span class="detail-value text-primary" style="font-weight: 800; color: #13448f;">${randomCode}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Khách hàng / Kỹ sư:</span>
+            <span class="detail-value">${escapeHTML(fullName)}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Số điện thoại:</span>
+            <span class="detail-value">${escapeHTML(phone)}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value">${escapeHTML(email)}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Dịch vụ đăng ký:</span>
+            <span class="detail-value">${escapeHTML(service)}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Thời gian khảo sát:</span>
+            <span class="detail-value">${formattedDate}</span>
+          </div>
+          ${notes ? `
+          <div class="detail-row">
+            <span class="detail-label">Ghi chú dự án:</span>
+            <span class="detail-value">${escapeHTML(notes)}</span>
+          </div>` : ''}
+        `;
+      }
+
+      openModal();
+      form.reset();
+      document.querySelectorAll('.form-group').forEach(grp => {
+        grp.classList.remove('is-valid', 'has-error');
+      });
+      showAlert('success', 'Yêu cầu của bạn đã được tiếp nhận. Đội ngũ kỹ sư KT Xanh Thái Nguyên sẽ liên hệ xác nhận trong 30 phút!');
+
+      btnSubmit.classList.remove('loading');
+      btnSubmit.disabled = false;
+      btnText.textContent = 'Gửi Yêu Cầu Đặt Lịch Khảo Sát';
+    }
+
+    // 3. Gửi AJAX tới FormSubmit với Timeout 4s phòng trường hợp mạng chậm/CORS
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timeoutId = setTimeout(() => {
+      if (controller) controller.abort();
+      renderModalAndSuccess();
+    }, 4000);
+
     fetch('https://formsubmit.co/ajax/dtc235270180@ictu.edu.vn', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
+      signal: controller ? controller.signal : undefined
     })
     .then(async (response) => {
-      let result = null;
-      try {
-        result = await response.json();
-      } catch (e) {
-        result = { success: response.ok };
-      }
-      return { ok: response.ok, data: result };
-    })
-    .then(({ ok, data }) => {
-      // Lưu trữ vào cơ sở dữ liệu LocalStorage (Lưu trữ và quản lý thông tin người dùng)
-      try {
-        const storedList = JSON.parse(localStorage.getItem('ktx_booking_records') || '[]');
-        storedList.push({
-          code: randomCode,
-          fullName,
-          phone,
-          email,
-          service,
-          appointmentDate: formattedDate,
-          notes: notes || '',
-          createdAt: new Date().toISOString()
-        });
-        localStorage.setItem('ktx_booking_records', JSON.stringify(storedList));
-      } catch (err) {
-        console.warn('Lỗi ghi LocalStorage:', err);
-      }
-
-      // Đổ dữ liệu chi tiết vào Modal Thành Công (chỉ giữ thông tin phiếu hẹn chuyên nghiệp)
-      const modalBookingDetails = document.getElementById('modalBookingDetails');
-      if (modalBookingDetails) {
-        modalBookingDetails.innerHTML = `
-          <div class="detail-row">
-            <span class="detail-label">Mã phiếu hẹn:</span>
-            <span class="detail-value text-primary" style="font-weight: 800; color: #13448f;">${randomCode}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Khách hàng / Kỹ sư:</span>
-            <span class="detail-value">${escapeHTML(fullName)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Số điện thoại:</span>
-            <span class="detail-value">${escapeHTML(phone)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Email:</span>
-            <span class="detail-value">${escapeHTML(email)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Dịch vụ đăng ký:</span>
-            <span class="detail-value">${escapeHTML(service)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Thời gian khảo sát:</span>
-            <span class="detail-value">${formattedDate}</span>
-          </div>
-          ${notes ? `
-          <div class="detail-row">
-            <span class="detail-label">Ghi chú dự án:</span>
-            <span class="detail-value">${escapeHTML(notes)}</span>
-          </div>` : ''}
-        `;
-      }
-
-      openModal();
-
-      form.reset();
-      document.querySelectorAll('.form-group').forEach(grp => {
-        grp.classList.remove('is-valid', 'has-error');
-      });
-
-      showAlert('success', 'Yêu cầu của bạn đã được tiếp nhận. Đội ngũ kỹ sư KT Xanh Thái Nguyên sẽ liên hệ xác nhận trong 30 phút!');
+      clearTimeout(timeoutId);
+      renderModalAndSuccess();
     })
     .catch((error) => {
-      console.warn('Gửi Form qua FormSubmit:', error);
-      const modalBookingDetails = document.getElementById('modalBookingDetails');
-      if (modalBookingDetails) {
-        modalBookingDetails.innerHTML = `
-          <div class="detail-row">
-            <span class="detail-label">Mã phiếu hẹn:</span>
-            <span class="detail-value text-primary" style="font-weight: 800; color: #13448f;">${randomCode}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Khách hàng / Kỹ sư:</span>
-            <span class="detail-value">${escapeHTML(fullName)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Số điện thoại:</span>
-            <span class="detail-value">${escapeHTML(phone)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Email:</span>
-            <span class="detail-value">${escapeHTML(email)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Dịch vụ đăng ký:</span>
-            <span class="detail-value">${escapeHTML(service)}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Thời gian khảo sát:</span>
-            <span class="detail-value">${formattedDate}</span>
-          </div>
-          ${notes ? `
-          <div class="detail-row">
-            <span class="detail-label">Ghi chú dự án:</span>
-            <span class="detail-value">${escapeHTML(notes)}</span>
-          </div>` : ''}
-        `;
-      }
-
-      openModal();
-      form.reset();
-      document.querySelectorAll('.form-group').forEach(grp => {
-        grp.classList.remove('is-valid', 'has-error');
-      });
-      showAlert('success', 'Yêu cầu của bạn đã được tiếp nhận. Đội ngũ kỹ sư KT Xanh Thái Nguyên sẽ liên hệ xác nhận trong 30 phút!');
-    })
-    .finally(() => {
-      btnSubmit.classList.remove('loading');
-      btnSubmit.disabled = false;
-      btnText.textContent = 'Gửi Yêu Cầu Đặt Lịch Khảo Sát';
+      clearTimeout(timeoutId);
+      console.warn('FormSubmit kết quả:', error);
+      renderModalAndSuccess();
     });
   });
 }
