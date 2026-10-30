@@ -358,7 +358,7 @@ Mở file [js/chatbot.js](file:///d:/Bao_cao_doanh_nghiep_Tuan/js/chatbot.js) v�
 ```javascript
 {
   keywords: ['giá', 'chi phí', 'báo giá', 'dự toán'],
-  response: 'Báo giá dịch vụ của KT Xanh được lập dựa trên định mức xây dựng hiện hành của Nhà nước và quy mô công trình thực tế. Quý khách vui lòng để lại thông tin tại Form Đặt Lịch hoặc gọi Hotline 0988.123.456 để nhận báo giá chi tiết.'
+  response: 'Báo giá dịch vụ của KT Xanh được lập dựa trên định mức xây dựng hiện hành của Nhà nước và quy mô công trình thực tế. Quý khách vui lòng để lại thông tin tại Form Đặt Lịch hoặc gọi Hotline 0982.346.837 để nhận báo giá chi tiết.'
 }
 ```
 

@@ -126,7 +126,7 @@ export function initBookingForm() {
       isFormValid = false;
       if (!firstInvalidInput) firstInvalidInput = phoneInput;
     } else if (!REGEX.phone.test(phone)) {
-      validateField('phone', false, 'Số điện thoại không hợp lệ (10 chữ số, VD: 0988123456)');
+      validateField('phone', false, 'Số điện thoại không hợp lệ (10 chữ số, VD: 0982346837)');
       isFormValid = false;
       if (!firstInvalidInput) firstInvalidInput = phoneInput;
     } else {

@@ -347,7 +347,7 @@ function initBookingForm() {
       isFormValid = false;
       if (!firstInvalidInput) firstInvalidInput = phoneInput;
     } else if (!REGEX.phone.test(phone)) {
-      validateField('phone', false, 'Số điện thoại không hợp lệ (10 chữ số, VD: 0988123456)');
+      validateField('phone', false, 'Số điện thoại không hợp lệ (10 chữ số, VD: 0982346837)');
       isFormValid = false;
       if (!firstInvalidInput) firstInvalidInput = phoneInput;
     } else {
@@ -657,22 +657,22 @@ function initChatbotWidget() {
 
     // 1. Hỏi về Báo giá khảo sát địa chất / Địa hình / Khoan
     if (msg.includes('báo giá') || msg.includes('đơn giá') || msg.includes('chi phí') || msg.includes('địa chất') || msg.includes('khoan')) {
-      return 'Báo giá khảo sát địa chất & địa hình tại KT Xanh căn cứ theo Định mức Thông tư 12/2021/TT-BXD:\n• Trọn gói bao gồm: Khoan khảo sát hiện trường, thí nghiệm SPT, thí nghiệm cơ lý mẫu đất đá tại phòng kiểm định hợp chuẩn LAS-XD.\n• Bàn giao Báo cáo kết quả địa chất có đóng dấu pháp nhân chứng chỉ năng lực hạng II/III, phục vụ trực tiếp thiết kế móng và xin phép xây dựng.\n• Tiến độ hoàn thành: Từ 3 - 5 ngày làm việc.\nQuý khách chỉ cần cung cấp vị trí mặt bằng và diện tích dự án, kỹ sư KT Xanh sẽ gửi Đề cương & Báo giá chi tiết trong 2 giờ qua Hotline: 0988.123.456!';
+      return 'Báo giá khảo sát địa chất & địa hình tại KT Xanh căn cứ theo Định mức Thông tư 12/2021/TT-BXD:\n• Trọn gói bao gồm: Khoan khảo sát hiện trường, thí nghiệm SPT, thí nghiệm cơ lý mẫu đất đá tại phòng kiểm định hợp chuẩn LAS-XD.\n• Bàn giao Báo cáo kết quả địa chất có đóng dấu pháp nhân chứng chỉ năng lực hạng II/III, phục vụ trực tiếp thiết kế móng và xin phép xây dựng.\n• Tiến độ hoàn thành: Từ 3 - 5 ngày làm việc.\nQuý khách chỉ cần cung cấp vị trí mặt bằng và diện tích dự án, kỹ sư KT Xanh sẽ gửi Đề cương & Báo giá chi tiết trong 2 giờ qua Hotline: 0982.346.837!';
     }
 
     // 2. Hỏi về Quy trình thẩm tra dự toán / Thẩm tra dự án
     if (msg.includes('thẩm tra') || msg.includes('dự toán') || msg.includes('quản lý chi phí')) {
-      return 'Quy trình thẩm tra thiết kế & dự toán tại KT Xanh tuân thủ Nghị định 10/2021/NĐ-CP & Nghị định 15/2021/NĐ-CP:\n1. Tiếp nhận hồ sơ: Bản vẽ thiết kế, thuyết minh và bảng dự toán ban đầu.\n2. Rà soát khối lượng: Đối chiếu định mức, đơn giá nhân công - ca máy theo công bố giá của Sở Xây dựng.\n3. Thẩm định kết cấu & tối ưu: Đề xuất giải pháp kỹ thuật tối ưu chi phí, tránh lãng phí hoặc đội vốn (tiết kiệm từ 5 - 15% ngân sách).\n4. Phát hành Báo cáo kết quả thẩm tra độc lập có dấu pháp nhân, đủ điều kiện trình Chủ đầu tư phê duyệt khởi công.\nThời gian thực hiện nhanh chóng: 3 - 7 ngày làm việc. Hotline: 0988.123.456.';
+      return 'Quy trình thẩm tra thiết kế & dự toán tại KT Xanh tuân thủ Nghị định 10/2021/NĐ-CP & Nghị định 15/2021/NĐ-CP:\n1. Tiếp nhận hồ sơ: Bản vẽ thiết kế, thuyết minh và bảng dự toán ban đầu.\n2. Rà soát khối lượng: Đối chiếu định mức, đơn giá nhân công - ca máy theo công bố giá của Sở Xây dựng.\n3. Thẩm định kết cấu & tối ưu: Đề xuất giải pháp kỹ thuật tối ưu chi phí, tránh lãng phí hoặc đội vốn (tiết kiệm từ 5 - 15% ngân sách).\n4. Phát hành Báo cáo kết quả thẩm tra độc lập có dấu pháp nhân, đủ điều kiện trình Chủ đầu tư phê duyệt khởi công.\nThời gian thực hiện nhanh chóng: 3 - 7 ngày làm việc. Hotline: 0982.346.837.';
     }
 
     // 3. Hỏi về Đường dây & Trạm biến áp 110kV, điện mặt trời
     if (msg.includes('110') || msg.includes('trạm biến áp') || msg.includes('đường dây') || msg.includes('mặt trời') || msg.includes('solar') || msg.includes('điện')) {
-      return 'Năng lực tư vấn Đường dây & Trạm biến áp đến 110kV và Điện mặt trời của KT Xanh:\n• Khảo sát hướng tuyến, đo đạc trắc địa mặt bằng trạm biến áp và hành lang an toàn lưới điện.\n• Lập Báo cáo nghiên cứu khả thi (FS), thiết kế bản vẽ thi công trạm 110kV/35kV/22kV.\n• Tư vấn thỏa thuận đấu nối chuyên sâu với Tổng công ty Điện lực miền Bắc (EVNNPC) và PC Thái Nguyên.\n• Giám sát thi công lắp đặt máy biến áp, hệ thống SCADA, rơ-le bảo vệ và thí nghiệm đóng điện bàn giao.\n• Tư vấn giải pháp Điện mặt trời áp mái công nghiệp (Rooftop Solar) giảm phát thải xanh cho nhà xưởng.\nLiên hệ Kỹ sư trưởng chuyên trách điện: 0988.123.456 để được khảo sát thực tế!';
+      return 'Năng lực tư vấn Đường dây & Trạm biến áp đến 110kV và Điện mặt trời của KT Xanh:\n• Khảo sát hướng tuyến, đo đạc trắc địa mặt bằng trạm biến áp và hành lang an toàn lưới điện.\n• Lập Báo cáo nghiên cứu khả thi (FS), thiết kế bản vẽ thi công trạm 110kV/35kV/22kV.\n• Tư vấn thỏa thuận đấu nối chuyên sâu với Tổng công ty Điện lực miền Bắc (EVNNPC) và PC Thái Nguyên.\n• Giám sát thi công lắp đặt máy biến áp, hệ thống SCADA, rơ-le bảo vệ và thí nghiệm đóng điện bàn giao.\n• Tư vấn giải pháp Điện mặt trời áp mái công nghiệp (Rooftop Solar) giảm phát thải xanh cho nhà xưởng.\nLiên hệ Kỹ sư trưởng chuyên trách điện: 0982.346.837 để được khảo sát thực tế!';
     }
 
     // 4. Đặt lịch khảo sát
     if (msg.includes('đặt lịch') || msg.includes('khảo sát') || msg.includes('hẹn') || msg.includes('tư vấn')) {
-      return 'Dạ vâng! KT Xanh sẵn sàng cử kỹ sư mang máy toàn đạc điện tử và thiết bị GPS RTK đến khảo sát trực tiếp tại hiện trường công trình:\n• Quý khách có thể kéo xuống mục "Đăng Ký Khảo Sát & Tư Vấn" trên trang web để điền thông tin.\n• Hoặc bấm gọi ngay Hotline Kỹ sư trưởng: 0988.123.456 để xếp lịch hẹn khảo sát trong ngày!\nKỹ sư KT Xanh sẽ liên hệ lại xác nhận trong vòng 15 phút ạ.';
+      return 'Dạ vâng! KT Xanh sẵn sàng cử kỹ sư mang máy toàn đạc điện tử và thiết bị GPS RTK đến khảo sát trực tiếp tại hiện trường công trình:\n• Quý khách có thể kéo xuống mục "Đăng Ký Khảo Sát & Tư Vấn" trên trang web để điền thông tin.\n• Hoặc bấm gọi ngay Hotline Kỹ sư trưởng: 0982.346.837 để xếp lịch hẹn khảo sát trong ngày!\nKỹ sư KT Xanh sẽ liên hệ lại xác nhận trong vòng 15 phút ạ.';
     }
 
     // 5. Hỏi về dịch vụ, lĩnh vực hoạt động
@@ -692,10 +692,10 @@ function initChatbotWidget() {
 
     // 8. Hỏi về giờ làm việc, hotline
     if (msg.includes('giờ') || msg.includes('thời gian') || msg.includes('hotline') || msg.includes('liên hệ') || msg.includes('sđt')) {
-      return 'Thông tin liên hệ & Giờ làm việc:\n• Giờ làm việc: 08:00 - 17:30 (Thứ 2 đến Thứ 7)\n• Hotline kỹ sư trưởng: 0988.123.456\n• Email: lienhe@ktxanh.vn\nKỹ sư luôn sẵn sàng tư vấn trực tiếp tận nơi!';
+      return 'Thông tin liên hệ & Giờ làm việc:\n• Giờ làm việc: 08:00 - 17:30 (Thứ 2 đến Thứ 7)\n• Hotline kỹ sư trưởng: 0982.346.837\n• Email: lienhe@ktxanh.vn\nKỹ sư luôn sẵn sàng tư vấn trực tiếp tận nơi!';
     }
 
-    return 'Cảm ơn Quý khách! Để nhận được tư vấn kỹ thuật chính xác nhất theo quy mô công trình, Quý khách vui lòng để lại số điện thoại hoặc gọi ngay Hotline 0988.123.456. KT Xanh Thái Nguyên luôn sẵn sàng phục vụ!';
+    return 'Cảm ơn Quý khách! Để nhận được tư vấn kỹ thuật chính xác nhất theo quy mô công trình, Quý khách vui lòng để lại số điện thoại hoặc gọi ngay Hotline 0982.346.837. KT Xanh Thái Nguyên luôn sẵn sàng phục vụ!';
   }
 
   function handleSendMessage(text) {

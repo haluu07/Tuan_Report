@@ -14,7 +14,7 @@ export const TRANSLATIONS = {
     topbar_tax: "MST: 4600361446 (Hoạt động từ 2004)",
     topbar_address: "Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên",
     topbar_hours: "T2 - T7: 08:00 - 17:30",
-    topbar_hotline: "Hotline: 0988.123.456",
+    topbar_hotline: "Hotline: 0982.346.837",
 
     // 2. Header & Nav
     nav_brand_title: "CÔNG TY TNHH KT XANH",
@@ -30,7 +30,7 @@ export const TRANSLATIONS = {
     drawer_company: "KT XANH THÁI NGUYÊN",
     drawer_tagline: "Tư Vấn Xây Dựng & Hạ Tầng",
     drawer_cta: "Đặt Lịch Khảo Sát Ngay",
-    drawer_hotline: "Hotline 24/7: 0988.123.456",
+    drawer_hotline: "Hotline 24/7: 0982.346.837",
 
     // 3. Hero Section
     hero_welcome_badge: "CHÀO MỪNG BẠN ĐẾN VỚI",
@@ -341,7 +341,7 @@ export const TRANSLATIONS = {
 
     // 10. Booking Section
     booking_tag: "Tư Vấn Trực Tiếp",
-    booking_heading: "Đăng Ký Khảo Sát Hiện Trường & Tư Vấn Kỹ Thuật",
+    booking_heading: "Đăng Ký Tư Vấn",
     booking_sub: "Để lại thông tin dự án, chuyên viên kỹ thuật của <strong>KT Xanh Thái Nguyên</strong> sẽ chủ động liên hệ lại xác nhận và bố trí lịch khảo sát sớm nhất.",
     commit_1_title: "Khảo sát sơ bộ hiện trường nhanh chóng",
     commit_1_desc: "Cử kỹ sư đến tận vị trí công trình để đo đạc và tư vấn phương án kỹ thuật.",
@@ -350,7 +350,7 @@ export const TRANSLATIONS = {
     commit_3_title: "Bảo mật hồ sơ & bản vẽ công trình",
     commit_3_desc: "Cam kết bảo mật tuyệt đối các số liệu đo đạc và hồ sơ thiết kế của dự án.",
     hotline_box_badge: "Hỗ Trợ Kỹ Thuật Nhanh",
-    hotline_box_phone: "0988.123.456",
+    hotline_box_phone: "0982.346.837",
     hotline_box_addr: "Số 13, Tổ 90, P. Phan Đình Phùng, TP. Thái Nguyên",
 
     form_title: "Phiếu Đặt Lịch Khảo Sát",
@@ -358,7 +358,7 @@ export const TRANSLATIONS = {
     form_label_name: "Họ và tên người đại diện / Kỹ sư phụ trách",
     form_ph_name: "Ví dụ: Nguyễn Văn Tuấn",
     form_label_phone: "Số điện thoại liên hệ",
-    form_ph_phone: "Ví dụ: 0988123456",
+    form_ph_phone: "Ví dụ: 0982346837",
     form_label_email: "Địa chỉ Email (Nhận hồ sơ)",
     form_ph_email: "Ví dụ: contact@doanhnghiep.vn",
     form_label_service: "Lĩnh vực dịch vụ cần hỗ trợ",
@@ -400,7 +400,7 @@ export const TRANSLATIONS = {
     chip_substation: "Tư vấn trạm 110kV?",
     chip_booking: "Đặt lịch khảo sát hiện trường?",
     chat_input_ph: "Nhập câu hỏi của bạn tại đây...",
-    zalo_tooltip: "Tư vấn Zalo: 0988.123.456",
+    zalo_tooltip: "Tư vấn Zalo: 0982.346.837",
     chat_welcome_msg: "Kính chào Quý khách! Em là Trợ lý Kỹ thuật của Công ty TNHH KT Xanh Thái Nguyên.\nQuý khách có thể bấm nhanh vào 4 câu hỏi gợi ý bên dưới (Báo giá địa chất, Thẩm tra dự toán, Trạm 110kV, Đặt lịch khảo sát) hoặc nhập nội dung để em hỗ trợ ngay ạ!",
 
     // 13. Modal
@@ -418,7 +418,7 @@ export const TRANSLATIONS = {
     topbar_tax: "Tax ID: 4600361446 (Est. 2004)",
     topbar_address: "No. 13, Group 90, Phan Dinh Phung Ward, Thai Nguyen City",
     topbar_hours: "Mon - Sat: 08:00 - 17:30",
-    topbar_hotline: "Hotline: (+84) 988.123.456",
+    topbar_hotline: "Hotline: (+84) 982.346.837",
 
     // 2. Header & Nav
     nav_brand_title: "KT XANH CO., LTD",
@@ -434,7 +434,7 @@ export const TRANSLATIONS = {
     drawer_company: "KT XANH THAI NGUYEN",
     drawer_tagline: "Construction & Infrastructure Consulting",
     drawer_cta: "Book Field Survey Now",
-    drawer_hotline: "Hotline 24/7: (+84) 988.123.456",
+    drawer_hotline: "Hotline 24/7: (+84) 982.346.837",
 
     // 3. Hero Section
     hero_welcome_badge: "WELCOME TO",
@@ -745,7 +745,7 @@ export const TRANSLATIONS = {
 
     // 10. Booking Section
     booking_tag: "Direct Consultation",
-    booking_heading: "Book Field Survey & Technical Consultation",
+    booking_heading: "Register for Consultation",
     booking_sub: "Submit your project information, and <strong>KT Xanh Thai Nguyen</strong> engineers will promptly contact you to confirm and arrange an on-site survey schedule.",
     commit_1_title: "Rapid preliminary on-site inspection",
     commit_1_desc: "Deploying licensed engineers directly to your site for measurement and technical advice.",
@@ -754,7 +754,7 @@ export const TRANSLATIONS = {
     commit_3_title: "Strict confidentiality of engineering data",
     commit_3_desc: "Strict guarantee of non-disclosure for all site survey data and design drawings.",
     hotline_box_badge: "24/7 Technical Hotline",
-    hotline_box_phone: "(+84) 988.123.456",
+    hotline_box_phone: "(+84) 982.346.837",
     hotline_box_addr: "No. 13, Group 90, Phan Dinh Phung, Thai Nguyen",
 
     form_title: "Survey Appointment Form",
@@ -762,7 +762,7 @@ export const TRANSLATIONS = {
     form_label_name: "Full Name / Lead Engineer",
     form_ph_name: "E.g., John Doe",
     form_label_phone: "Phone Number",
-    form_ph_phone: "E.g., +84 988 123 456",
+    form_ph_phone: "E.g., +84 982 346 837",
     form_label_email: "Email Address (Receive dossier)",
     form_ph_email: "E.g., contact@company.com",
     form_label_service: "Service Required",
@@ -804,7 +804,7 @@ export const TRANSLATIONS = {
     chip_substation: "110kV substation advice?",
     chip_booking: "Book on-site survey?",
     chat_input_ph: "Type your question here...",
-    zalo_tooltip: "Zalo support: (+84) 988.123.456",
+    zalo_tooltip: "Zalo support: (+84) 982.346.837",
     chat_welcome_msg: "Welcome to KT Xanh Thai Nguyen Co., Ltd! I am your Technical AI Assistant.\nYou can tap any of the quick suggestions below or type your inquiry, and I will gladly assist you immediately!",
 
     // 13. Modal
