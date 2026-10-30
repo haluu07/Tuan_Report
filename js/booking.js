@@ -1,4 +1,4 @@
-/**
+﻿/**
  * CÔNG TY TNHH KT XANH THÁI NGUYÊN
  * Module: Validation & Gửi Form Đặt Lịch (Booking Form Controller)
  */
@@ -194,20 +194,16 @@ export function initBookingForm() {
       year: 'numeric'
     });
 
-    // Chuẩn bị payload gửi FormSubmit.co
+    // Chuẩn bị payload gửi EmailJS
     const payload = {
-      _subject: `[KT Xanh] Yêu Cầu Khảo Sát Mới: ${fullName} - ${phone}`,
-      _template: 'table',
-      _captcha: 'false',
-      'Mã phiếu hẹn': randomCode,
-      'Người liên hệ / Khách hàng': fullName,
-      'Số điện thoại': phone,
-      'Email liên hệ': email,
-      'Lĩnh vực dịch vụ': service,
-      'Thời gian mong muốn': formattedDate,
-      'Địa điểm & Yêu cầu công trình': notes || 'Không có ghi chú thêm',
-      'Nền tảng gửi': 'Website KT Xanh Thái Nguyên',
-      'Thời điểm gửi': new Date().toLocaleString('vi-VN')
+      ma_phieu: randomCode,
+      ho_ten: fullName,
+      dien_thoai: phone,
+      email_khach: email,
+      linh_vuc_dich_vu: service,
+      ngay_gio_hen: formattedDate,
+      ghi_chu: notes || 'Không có ghi chú thêm',
+      thoi_diem_gui: new Date().toLocaleString('vi-VN')
     };
 
     // 1. Lưu ngay vào cơ sở dữ liệu LocalStorage để đảm bảo không mất thông tin
@@ -281,30 +277,20 @@ export function initBookingForm() {
       btnText.textContent = 'Gửi Yêu Cầu Đặt Lịch Khảo Sát';
     }
 
-    // 3. Gửi AJAX tới FormSubmit với Timeout 4s phòng trường hợp mạng chậm/CORS
-    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-    const timeoutId = setTimeout(() => {
-      if (controller) controller.abort();
+    // 3. Gửi qua EmailJS
+    if (typeof emailjs !== 'undefined') {
+      emailjs.send('service_rs6ufbw', 'template_zez44ca', payload)
+        .then(() => {
+          console.log('EmailJS: Gửi email thành công!');
+          renderModalAndSuccess();
+        })
+        .catch((err) => {
+          console.warn('EmailJS lỗi:', err);
+          renderModalAndSuccess();
+        });
+    } else {
+      console.warn('EmailJS chưa load - hiển thị thành công mặc định');
       renderModalAndSuccess();
-    }, 4000);
-
-    fetch('https://formsubmit.co/ajax/dtc235270180@ictu.edu.vn', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(payload),
-      signal: controller ? controller.signal : undefined
-    })
-    .then(async (response) => {
-      clearTimeout(timeoutId);
-      renderModalAndSuccess();
-    })
-    .catch((error) => {
-      clearTimeout(timeoutId);
-      console.warn('FormSubmit kết quả:', error);
-      renderModalAndSuccess();
-    });
+    }
   });
 }

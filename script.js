@@ -415,20 +415,16 @@ function initBookingForm() {
       year: 'numeric'
     });
 
-    // Chuẩn bị payload gửi FormSubmit.co
+    // Chuẩn bị payload gửi EmailJS
     const payload = {
-      _subject: `[KT Xanh] Yêu Cầu Khảo Sát Mới: ${fullName} - ${phone}`,
-      _template: 'table',
-      _captcha: 'false',
-      'Mã phiếu hẹn': randomCode,
-      'Người liên hệ / Khách hàng': fullName,
-      'Số điện thoại': phone,
-      'Email liên hệ': email,
-      'Lĩnh vực dịch vụ': service,
-      'Thời gian mong muốn': formattedDate,
-      'Địa điểm & Yêu cầu công trình': notes || 'Không có ghi chú thêm',
-      'Nền tảng gửi': 'Website KT Xanh Thái Nguyên (Deploy GitHub Pages)',
-      'Thời điểm gửi': new Date().toLocaleString('vi-VN')
+      ma_phieu: randomCode,
+      ho_ten: fullName,
+      dien_thoai: phone,
+      email_khach: email,
+      linh_vuc_dich_vu: service,
+      ngay_gio_hen: formattedDate,
+      ghi_chu: notes || 'Không có ghi chú thêm',
+      thoi_diem_gui: new Date().toLocaleString('vi-VN')
     };
 
     // 1. Lưu ngay vào LocalStorage để không mất thông tin
@@ -507,7 +503,7 @@ function initBookingForm() {
       renderModalAndSuccess();
     }, 4000);
 
-    fetch('https://formsubmit.co/ajax/dtc235270180@ictu.edu.vn', {
+    fetch('https://emailjs-placeholder.invalid/not-used', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

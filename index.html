@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -2555,6 +2555,13 @@
        HỆ THỐNG JAVASCRIPT MODULAR (ES MODULES & 3D INTERACTION)
        ======================================================== -->
   <script src="js/projects.js"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init({ publicKey: "b1u5T1EHVcVJlYzUQ1o8W" });
+    })();
+  </script>
   <script type="module" src="js/app.js"></script>
   <script nomodule src="script.js"></script>
 </body>
